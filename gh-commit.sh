@@ -7,7 +7,7 @@
 #
 
 git checkout gh-pages
-cp -rf _site/*  .
+mv -rf _site/*  .
 sed -i "" -e "s#http://localhost:4000#https://www.lijiaocn.com#g" ./sitemap.xml
 sed -i "" -e "s#http://localhost:4000#https://www.lijiaocn.com#g" ./feed.xml
 git add .

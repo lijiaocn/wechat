@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="chinese">
+<head>
+<meta charset="utf-8" content="text/html">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度学习并非最优方案|caoz的梦呓|微信公众号文章合集|鼹鼠看看</title>
+<meta name="description" content="在完全信息博弈场景下，可穷举，可暴力计算的领域；以及不完全信息波异常场景下，概率可计算的局面里，完全可以一步走向最优解，使用深度学习是多此一举的。 特举几个场景案例来说明。" />
+<meta name="keywords" content="caoz的梦呓,caozsay,微信公众号,公众号文章导出"/>
+<link rel="shortcut icon" href="/wechat/favicon.ico"/>
+<link rel="bookmark" href="/wechat/favicon.ico"/>
+<link rel="stylesheet" href="/wechat/assets/css/style.css">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- google ad -->
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8176866190626448",
+          enable_page_level_ads: true
+     });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105389858-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-105389858-1');
+</script>
+
+<script async>
+/*百度统计*/
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8f59ea10145df28da8932c8743ec1d60";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+/*百度自动收录*/
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+</head>
+
+<body class="body">
+    <div class="top">
+            
+<style type="text/css" scoped>
+    .innerbanner{
+        background:gray;
+        color:white;
+        padding-right:10px;
+        padding-right:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-top:10px;
+        padding-top:1rem;
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: flex-start;
+        width:100%;
+        font-size:15px;
+        font-size:1.5rem;
+        /*
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        */
+    }
+    .innerbanner a{
+        color:white;
+    }
+    .innerbanner a:hover{
+        color: black;
+        text-decoration: none;
+        font-size:large;
+    }
+    .innerbanner #inner_ul {
+        display:flex;
+        color:white;
+        padding-left:0px;
+        margin:0px;
+        align-items: flex-start;
+    }
+    .innerbanner #inner_li {
+        list-style:none;
+        display:inline-block;
+        line-height:25px;
+        line-height:2.5rem
+    }
+    .topdetails{
+        top:10px;
+        top:1rem;
+        display: inline-block;
+    }
+    .topdetails summary::-webkit-details-marker {
+        display: none;
+    }
+    .topdetails summary:first-of-type {
+        list-style-type: none;
+    }
+    .topdetails ul{
+        padding:0px;
+    }
+    .topdetails li{
+        list-style:none;
+        text-indent:0px;
+    }
+    .topdetails a{
+        display:block;
+        background:gray;
+        color:white;
+        height:30px;
+        height:3rem;
+        padding-top:10px;
+        padding-top:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-right:10px;
+        padding-right:1rem;
+    }
+    .topdetails a:hover{
+        background:darkgray;
+        /*color: white;*/
+        color: black;
+    }
+
+    @media screen and (max-width: 1024px){
+        .innerbanner #inner_ul{
+            list-style:none;
+            display:block;
+        }
+    }
+</style>
+<div class="innerbanner" id="bannerid">
+    <ul id="inner_ul">
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                鼹鼠首页
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                <span style='color:blue'>全球网购></span>
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=WYppWas1DZpVXZmcDOwMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLzYTMuU3b5ZkMlYkMlE0MlAHd0hWP0Zibj9">
+                网易严选
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=j9WYppWas1DZpVXZmczM3ETPklWYmAjMzUjMy0DZp9VZ0l2cmYiJGJTJt92YuEGbvF2auc3d3ZkMlYkMlE0MlAHd0hWP0Zib">
+                考拉海购
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom">
+                无人机
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=lAHd0hWP0Zibj9WYppWas1DZpVXZmQDOzMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiJpFWbvVHZfB3ckR0Ml02byZmeGNTJGJTJt92Yu8Wd69WY6ZkMlYkMlE0M">
+                造作
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=m0DZpVXZmITO5MTPklWYmAjMzUjMy0DZp9VZ0l2cm02bj5CdyF2d55yd3dnRyUiRyUSQzUycwRHdo1Dd">
+                艺网
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=ibj9WYppWas1DZpVXZmMDMxITPklWYmAjMzUjMy0DZp9VZ0l2cmYiJuNmLt92YukHbu9WZz9mcuc3d3ZkMlYkMlE0MlAHd0hWP0Z">
+                RoseOnly.
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="http://g.click.taobao.com/q?ak=24663635&pid=mm_33963329_6520758_142982992&unid=lijiaocn&rf=http%3A%2F%2Fwww.lijiaocn.com%2F%25E5%25A5%25BD%25E8%25B4%25A7%2F2010%2F10%2F10%2Fsites.html&rd=2&et=97775937&pgid=be61cbd8f3af2ff376aa0c1a3103628d&ct=url%3Dhttps%253A%252F%252Fwww.tmall.com%252F&v=1.2&ttype=1&cm=674%2C742%3B654%2C598%3B615%2C639%3B579%2C634%3B597%2C656%3B587%2C667%3B639%2C797%3B777%2C675%3B624%2C701%3B561%2C709&ck=&cw=0">
+                天猫
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?site_id=224482&lid=4193&aid=61&euid=lijiaocn&t=http%3A%2F%2Fwww.360buy.com%2F">
+                京东
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=uN2bhlmapxWPklWdlZSMyYTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLllma1d2bt5yd3dnRyUiRyUSQzUCc0RHa9QnJ">
+                蘑菇街
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://p.gouwuke.com/0Rdyy">
+                益丰药房
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>亚马逊&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHhN7">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2N0KGzS">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRl3e">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zodOgB">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHpfz">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRwvq">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2O4YeyF">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.cn/?tag=znrio-23">中国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xKqLiP">巴西</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2DotW60">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.com.mx/">墨西哥</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 1&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com/">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.uk/">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.de/">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.au/">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.it/">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.fr/">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.es/">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ca/">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ie/">爱尔兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.at/">奥地利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://www.ebay.be/">比利时</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.nl/">荷兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ch/">瑞士</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 2&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.gittigidiyor.com/">土耳其</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.pl/">波兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.hk/">中国香港</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://global.gmarket.co.kr/Home/Main">韩国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.sg/">新加坡</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ph/">菲律宾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.my/">马来西亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.in/">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.cn/">中国大陆</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.jp/">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.th/">泰国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.vn/">越南</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.tw/">台湾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.se/">瑞典</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+    </ul>
+</div>
+
+<p id="hiddenid" style="color:white;position:absolute;right:15px;top:1px;margin:0;padding:0;font-size:1.2rem;" onclick="hiddenBanner()"></p>
+<script>
+    function hiddenBanner() {
+        var b = document.getElementById("bannerid");
+        var p = document.getElementById("hiddenid");
+        if (b.style.display=="none"){
+            b.style.display="flex";
+            p.innerHTML="";
+            p.style.color="white"
+        }else{
+            b.style.display="none";
+            p.innerHTML="";
+            p.style.color="white"
+        }
+    }
+</script>
+
+    </div>
+    <div class="center">
+        <div class="leftbar">
+            <nav id="nav" class="nav" >
+            
+
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<!--details class="menu"-->
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<details class="menu" open>
+    <summary>鼹鼠看看</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/news" >全站最新</a>
+        </li>
+        <li>
+            
+            <a href="/wechat/about" >本站服务</a>
+        </li>
+        <li>
+            
+            <a href="/wechat">鼹鼠首页</a>
+        </li>
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>精彩连载</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/specialserial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/gh_4c12eeda5979" >灼识新维度</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/flashsky" >我的安全之路</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>政经启蒙</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/finacial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/worldofboss" >饭统戴老板</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-net" >水库论坛</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/wm221x" >猛哥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-Off" >水库线下</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WatcherCommander" >守夜人总司令</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>互联网</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/internet" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/z7z8day" >观点推荐</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/caozsay"  style="color:white;" >caoz的梦呓</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/TOMsInsight" >TOMsInsight</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/tencent_fsq" >腾讯防水墙</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WebNotes" >小道消息</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/ColinHuangZheng" >黄峥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/vc-ziliu" >投资人子柳</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/yirensay" >亦无所知</a>
+        </li>
+        
+    </ul>
+</details>
+
+
+            </nav>
+        </div>
+        <div class="workspace">
+            <style>
+    .logo {
+        width: 391px;
+        width: 39.1rem;
+        height: 70px;
+        height: 7rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .logo .logo-font{
+        width: 150px;
+        width: 15rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        background: white;
+        font-size: 37px;
+        font-size: 3.7rem;
+        font-family: "楷体";
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .logo .logo-text{
+        width: 200px;
+        width: 20rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+    }
+    .source {
+        width: 351px;
+        width: 35.1rem;
+        height: 50px;
+        height: 5rem;
+        background: lightgray;
+        display:flex;
+        flex-direction: row;
+    }
+    .source .photo{
+        width: 48px;
+        width: 4.8rem;
+        height: 48px;
+        height: 4.8rem;
+        padding: 1px;
+    }
+    .source .detail{
+        width: 295px;
+        width: 29.5rem;
+        padding-left: 5px;
+        padding-left: 0.5rem;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .desc{
+        font-size:12px;
+        font-size:1.2rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .nick{
+        font-size:15px;
+        font-size:1.5rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .workspace_top{
+        display: flex;
+        height: auto;
+        padding-top: 10px;
+        padding-top: 1rem;
+        padding-bottom: 10px;
+        padding-bottom: 1rem;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        background: darkblue;
+    }
+    @media screen and (max-width: 1020px){
+        .source{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 750px){
+        .workspace_top{
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .source{
+            display: none;
+        }
+    }
+    @media screen and (max-width: 391px){
+        .logo {
+            width: 100%;
+            padding:0px;
+        }
+        .logo .logo-font{
+            padding:0px;
+            font-size: 10vw;
+            width: 50%;
+        }
+        .logo .logo-text{
+            padding:0px;
+            font-size: 4vw;
+            width: 50%;
+        }
+        .source {
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+            display:none;
+        }
+        .source .photo{
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail{
+            width: 80%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .desc{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .nick{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+    }
+
+</style>
+<div style="width: 100%">
+ <div class="workspace_top">
+     <div class="logo">
+        <div class="logo-font">
+            <div><a href="/wechat" style="color:black">文章精选</a></div>
+        </div>
+        <div class="logo-text">
+            <div>微信公众号文章精选</div>
+            <div><a href="/wechat/">https://www.lijiaocn.com</a></div>
+        </div>
+     </div>
+
+
+     <div class="source">
+         
+         <div class="photo"><a href="/wechat/img/caozsay.photo.png"><img width=100% height=100% src="/wechat/img/caozsay.photo.png"></a></div>
+         <div class="detail">
+            <div class="nick"><a href="/wechat/categories/caozsay.html"><span>caoz的梦呓/caozsay</span></a></div>
+            <div class="desc"><span>caoz的心得与分享,只此一家,别无分号.</span></div>
+         </div>
+     </div>
+
+
+
+ </div>
+</div>
+
+
+<div style="width: 100%; text-align: center">
+    <h1 style="text-align: center">深度学习并非最优方案</h1>
+    <p style="text-align: center"><span>发布日期：2016-03-14 11:15:33 +0000</span></p>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- kankan_post_top -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="8060913530"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="article">
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+        
+        <li class="previous">
+            <a href="/caozsay/2016/03/16/caozsay-482/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/caozsay">caoz的梦呓</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/caozsay/2016/03/13/caozsay-484/">后一篇</a>
+        </li>
+        
+
+    </div>
+
+    <div><div class="rich_media_content" id="js_content">
+<p>
+         随便写个标题吧。
+        </p>
+<p>
+         今天写点技术，因为发现虽然科普技术的文章很多，但是各种误解还是蛮多的，甚至我自己都不能说可以完全置身事外。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         打别人脸的同时，就要做好被别人打脸的准备。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         于是，昨天这篇，我自己也暴露了对其他领域的傲慢和无知，谢谢各位粉丝的提醒，指出我的问题，今天第一个指出问题的是我的资深女粉丝，南洋理工大学物理专业的某萱博士，她给的链接里提到，电子竞技属于不完全信息博弈，和围棋这样的完全信息博弈是有区别的，目前不能认为人类已经完全攻克。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         嗯，是的，相当部分竞技，和棋牌类项目，都属于不完全信息博弈，所以，这是另一个领域的事情，相信谷歌未来也会投入探索。实话说，我真心不认为，这个领域有多难，只是边界条件和判断规则有所不同罢了，但在这个领域被攻破之前，我还必须要提醒自己，不能过于傲慢，暴露无知。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         那么，网上有一种言论，把深度学习当做包治百病的技术，这就不对了。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         其实，正如我的另一个资深女粉丝，数学达人某迪女研究僧所言，围棋是一个NP项目，好吧，其实我也不懂NP是个啥东西，但是这里有个重要概念是，围棋是不能靠穷举，遍历，暴力计算来解决的数学问题，目前也不存在一步寻求最优解的可能性，所以通过机器自学习，总结特征规律，然后，给出局势判断，基于概率进行走子。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         知乎大V云天外在分析alphago的时候有一个特别重要的观点值得分享一下，alphago最可怕的不是怎么找到下一步，而是怎么判断当前的局势，基于对局势的判断才能提到如何选择招数，实际上从前三盘看，alphago对局势的判断和人类完全不同；当然，人类本身也完全不同，在第一盘，第二盘，都暴露出一个明显的问题，在收官之前，各个职业棋手主播对局势判断的差异简直是天壤之别，只有柯洁展露了惊人的实力，能正确判断出局面优劣，其他很多老九段简直如在梦中。第三盘，人类和alphago在形势判断上难得达成一致，因为李世石实在被欺负的太惨了；而第四盘，alphago为什么突然进入崩盘模式，deepmind专家的解读是，在78手之后，alphago对局势的判断突然出了问题，直到87手才反应过来。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         所以，关于昨天的那盘棋，各种阴谋论的背后，都是盲目认为围棋不会判断错误，这个逻辑是不通的，深度学习从来不是最优解，从来都会存在盲区和判断错误，如果不存在这些问题，机器就不用再学习，再提高了，人类也不用跟机器比赛了，直接观摩围棋的终点在哪里好了。 深度学习之所以能自我提升，能自我发展，就是因为有缺陷，有误区，才会不断提升，并逐渐逼近最优。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         但，并不是所有的项目，都需要深度学习的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         很多项目，是可以暴力破解，直接靠强大的计算力找到最优路线。
+        </p>
+<p>
+         比如，最简单的，井字棋。
+        </p>
+<p>
+         比如，跳棋。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         你真的没必要在这个领域搞深度学习，一步到达终点的项目有啥可学习的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         比如，不完全信息的例子，21点，基于概率的最优打法早就在网上公开了，随便搜搜都有，当然你按照最优打法也赢不了庄家，这是规则设计决定的。当然这里也有例外，就是纯随机发牌的最优解和获胜概率固然已有定论，但是如果基于系统有多少套牌和发牌记录去计算，又会存在新的动态最优解和动态获胜概率！ 但这也是完全！可以！用！概率！算出来的！根本！不需要！深度！的！学习！ 我的资深男粉丝，MIT博士后赖某，就精于此道。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         在不完全信息的博弈项目里，必须承认存在这样一个局面，就是概率最优解不等于必胜解，甚至不等于胜率过半解，比如，在高明的赌场的规则设置里，你即便真的拿出了概率最优的打法，从统计规律来说也赢不了庄家的21点，人家的规则也是数学家设计的。在这种情况下，谈深度学习，谈挑战赌场，都是儿戏。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         下面说说麻将。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         麻将是个典型的不完全信息的游戏，那么，基于概率统计，是否存在最优解路线呢，我们先简化问题，如果只考虑个人的手牌和明面的牌（已经打出的牌和对方吃、碰的牌），系统完全可以算出最高概率的几种胡牌可能，并将对胡牌影响概率最低的手牌打出。这种计算对于学过概率统计的大学生而言，并不是很高深的课题，作为应届本科生的毕业课题，都显得有些简单。 但这不是最终解。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         引入第二个边界条件，赢牌番数，如果你可以有较高概率赢一把小牌，和相对较低概率赢一把大牌，就要计算风险收益比，选择综合风险收益比最高的路线，对胡牌概率的数据加上番数修正，这事其实也不难，你很容易得到一个修正后的最优解方案，这也并不是很高深的课题。但这仍然不是最终解。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         第三个边界条件，出牌风险，所谓点炮。麻将复杂的地方在于，你不能只按照个人最佳胡牌概率打牌，必须通过观察注意到别人胡牌的可能和机会，并避免成为点炮的那个，（简单举个例子，如果上一个玩家出了一张二条没有玩家要，那么理论上你出二条应该是非常安全的。）而此时，就存在信息不完整的问题了。基于对方明面的牌和打过的牌以及打出的顺序，计算对方可能的胡牌范围，每张的胡牌概率，并自动修正你打出每张牌的风险值，和你胡牌概率再做修正，是追求自己胡牌，还是规避点炮风险。 实际上，由于玩家存在一定的自摸概率，所以即便自己胡牌概率不高，彻底选择规避风险也并不是一条可取的路线。 但这里就存在了一个致命问题，如果每个玩家，都是按照最优概率出牌，虽然这个模型复杂，但是系统理论上还是可以根据出牌记录和明牌记录计算出别人的胡牌概率和风险指数，而事实上是，人类并不会按照最优概率出牌，而且有可能打出从概率上讲不该打出的牌，而此时就会导致计算机造成严重的误判，这就是不完全信息所带来的特有的问题，而完全信息的博弈场面里，是不存在这种局面的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         所以，麻将这个问题，我认为是属于可以直接寻求概率最优解，但是受制于不完全信息的局限，概率最优解很可能遭遇对局者误导的一种竞技项目，在这个领域，深度学习未必能带来提升，而遭遇误导的风险依然存在。我的理解是，麻将完全可以做出概率最优的系统，但不代表概率最优就一定胜率最大，这是没有办法的事情，偶然性因素影响非常大，如果是很多人类和一台智能麻将计算机比赛，即便麻将计算机拥有最优概率，拿不到冠军的概率也是大于拿到冠军的概率，你只能说它拿冠军的概率在所有人中最高，但不代表这个概率会超过50%。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         德州扑克同理，你完全可以设计系统按照概率最大化进行博弈，但受制于不完全信息，人类选手可以通过诈牌，或拿着大牌却故意装怂等手段误导机器，导致机器误判，在这种信息博弈层面，机器想要学习人类，还有极为漫长的路径。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         在相当比例的不完全信息的博弈项目里，均存在确定的概率计算方法，在这样的领域，可以一步寻求概率最优解，压根用不到深度学习模式；而在相当比例的完全信息博弈项目里，也可以使用穷举，暴力计算来破解，比如国象残局，计算机已经进入上帝模式，这更不是深度学习可以达到的境界。只有进入到 不可穷举，不可计算的领域，比如围棋，才涉及深度学习的话题。所以，用深度学习包治百病，什么炸金花，斗地主，都是胡扯。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         下面再说一下电子竞技，深度学习是如何进行电子竞技的学习的。
+        </p>
+<p>
+         其实，一个通用的深度学习系统，你甚至不需要让深度学习系统了解游戏的设计理念，游戏的数值，是的，这都是他可以自学的范畴。让算法完全以一个玩家的角度，在对游戏的观察中学习和成长，我简述一下这里的逻辑。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         第一步是，标注游戏的成分，这个还是要做的，相当于制定规则的边界。
+        </p>
+<p>
+         首先让深度学习系统能标注和识别不同的建筑，兵种，操作，以及对应的资源的产出和消耗。这是一个基本模型，你必须让他知道游戏的基本构成和基本规则。
+        </p>
+<p>
+<span style="font-size: 16px; line-height: 1.6;">
+          第二步是，设定胜利条件，让机器学习知道胜利的目标是什么。
+         </span>
+</p>
+<p>
+         第三步是，训练集，大量的训练集，也就是对战记录。
+        </p>
+<p>
+         第四步是，基于海量训练集，总结特征和策略，用于实战，并重复三，不断提升。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这里可能存在很多思维上的误区，
+        </p>
+<p>
+         你说每个局面都是独一无二，计算机如何思考？这其实和围棋是一样的，正因为不能遍历，才需要机器自己总结规律，寻找规则。围棋实际上二十手以后，最多三十手以后，基本上机器面对的局面就没有棋谱里可以借鉴的案例了，计算机如何思考的，这就是基于大量训练集总结出的规律，那这个规律是什么，连设计师都不知道，这才是深度学习神奇的地方，计算机会找到它认为适合的规律，并在不断的大量训练集中调整和优化。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         你说计算机不知道人类的策略和计谋，这其实也不重要，计算机只是基于局面和特征，进行局势判断和价值判断，选择下一步的操作策略，在局面判断中，计算机有自己的简化策略，你看上去界面有很多目标，很多建筑，很多兵种，很多数值，但计算机可以按照它认为合适的方式简化为几个重要指标，并针对性选择最佳的后续操作策略，当然，这中间可能有错误，但最后比拼的就是他的错误比你的少，比你的小，以及，他犯了错会总结，会提高。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         深度学习总结的规律是否一定正确呢？实话说，真不一定，比如让深度学习去理解香港股市和所有市场信息的关系，也许他会得到一个丁蟹效应并作为重要策略，我们人类知道，丁蟹效应只是一个巧合梗，并不具备科学性，但深度学习，很可能会认为这是一条重要的价值判定策略。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         在不完全信息的博弈中，往往存在一些偶然性的因素，深度学习的表现只能通过概率来说话，而看上去不具备碾压实力。但对技能和策略要求越高的领域，深度学习所可能达到的成果将越能体现出优势，这一点是毋庸置疑的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         希望此文，能澄清一些概念，别什么玩意都深度学习。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         总结一下
+        </p>
+<p>
+         1、深度学习不是最优路线，只是通过大量训练集，使自己趋近于最优路线。在这个过程中，误判和缺陷一定是不可避免的。过于神话深度学习没有意义。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         2、对于可穷举，可暴力计算的博弈问题，以及可确定概率最优的博弈问题，使用深度学习属于典型的画蛇添足，脱裤子放屁。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         3、在不完全信息的局面下，人类存在的一些狡黠特性是深度学习暂时无法攻克的（典型如德州扑克，下注本身的谋略），但不代表说这类问题是彻底无解的，如果深度学习掌握了更高层次的规律和特征，可以完全无视你的狡黠和计谋。（我个人认为电子竞技深度学习是可以到这个境界的，但需要谷歌或谁来证明。）
+        </p>
+<p>
+<br />
+</p>
+<p>
+         4、如果你数学足够好，不用深度学习也可以试着去研究赌场的漏洞； 如果你数学不够好，用了深度学习你也玩不过赌场请的数学家，洗洗睡吧。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         5、我承认我昨天对不完全信息的博弈问题过于轻视了，谢谢粉丝们指正批评。
+        </p>
+<p>
+<br />
+</p>
+<p>
+<br />
+</p>
+</div>
+</div>
+
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+
+        
+        <li class="previous">
+            <a href="/caozsay/2016/03/16/caozsay-482/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/caozsay">caoz的梦呓</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/caozsay/2016/03/13/caozsay-484/">后一篇</a>
+        </li>
+        
+
+    </div>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- 匹配内容-lijiaocn -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="autorelaxed"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="6443696990"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+        </div>
+    </div>
+    <!--div class="bottom">
+            <p style="color:white">Thanks for use. Remember us.</p>
+    </div-->
+    <script src="/wechat/assets/js/js.js" charset="utf-8"></script>
+    
+
+    
+</body>
+</html>

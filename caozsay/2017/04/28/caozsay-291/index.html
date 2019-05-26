@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="chinese">
+<head>
+<meta charset="utf-8" content="text/html">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>谈谈编程 之 滥用内存的现象|caoz的梦呓|微信公众号文章合集|鼹鼠看看</title>
+<meta name="description" content="好久没看代码了，用上古的技术思路跟年轻人挑毛病，不知道对不对。" />
+<meta name="keywords" content="caoz的梦呓,caozsay,微信公众号,公众号文章导出"/>
+<link rel="shortcut icon" href="/wechat/favicon.ico"/>
+<link rel="bookmark" href="/wechat/favicon.ico"/>
+<link rel="stylesheet" href="/wechat/assets/css/style.css">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- google ad -->
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8176866190626448",
+          enable_page_level_ads: true
+     });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105389858-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-105389858-1');
+</script>
+
+<script async>
+/*百度统计*/
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8f59ea10145df28da8932c8743ec1d60";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+/*百度自动收录*/
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+</head>
+
+<body class="body">
+    <div class="top">
+            
+<style type="text/css" scoped>
+    .innerbanner{
+        background:gray;
+        color:white;
+        padding-right:10px;
+        padding-right:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-top:10px;
+        padding-top:1rem;
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: flex-start;
+        width:100%;
+        font-size:15px;
+        font-size:1.5rem;
+        /*
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        */
+    }
+    .innerbanner a{
+        color:white;
+    }
+    .innerbanner a:hover{
+        color: black;
+        text-decoration: none;
+        font-size:large;
+    }
+    .innerbanner #inner_ul {
+        display:flex;
+        color:white;
+        padding-left:0px;
+        margin:0px;
+        align-items: flex-start;
+    }
+    .innerbanner #inner_li {
+        list-style:none;
+        display:inline-block;
+        line-height:25px;
+        line-height:2.5rem
+    }
+    .topdetails{
+        top:10px;
+        top:1rem;
+        display: inline-block;
+    }
+    .topdetails summary::-webkit-details-marker {
+        display: none;
+    }
+    .topdetails summary:first-of-type {
+        list-style-type: none;
+    }
+    .topdetails ul{
+        padding:0px;
+    }
+    .topdetails li{
+        list-style:none;
+        text-indent:0px;
+    }
+    .topdetails a{
+        display:block;
+        background:gray;
+        color:white;
+        height:30px;
+        height:3rem;
+        padding-top:10px;
+        padding-top:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-right:10px;
+        padding-right:1rem;
+    }
+    .topdetails a:hover{
+        background:darkgray;
+        /*color: white;*/
+        color: black;
+    }
+
+    @media screen and (max-width: 1024px){
+        .innerbanner #inner_ul{
+            list-style:none;
+            display:block;
+        }
+    }
+</style>
+<div class="innerbanner" id="bannerid">
+    <ul id="inner_ul">
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                鼹鼠首页
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                <span style='color:blue'>全球网购></span>
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=WYppWas1DZpVXZmcDOwMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLzYTMuU3b5ZkMlYkMlE0MlAHd0hWP0Zibj9">
+                网易严选
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=j9WYppWas1DZpVXZmczM3ETPklWYmAjMzUjMy0DZp9VZ0l2cmYiJGJTJt92YuEGbvF2auc3d3ZkMlYkMlE0MlAHd0hWP0Zib">
+                考拉海购
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom">
+                无人机
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=lAHd0hWP0Zibj9WYppWas1DZpVXZmQDOzMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiJpFWbvVHZfB3ckR0Ml02byZmeGNTJGJTJt92Yu8Wd69WY6ZkMlYkMlE0M">
+                造作
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=m0DZpVXZmITO5MTPklWYmAjMzUjMy0DZp9VZ0l2cm02bj5CdyF2d55yd3dnRyUiRyUSQzUycwRHdo1Dd">
+                艺网
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=ibj9WYppWas1DZpVXZmMDMxITPklWYmAjMzUjMy0DZp9VZ0l2cmYiJuNmLt92YukHbu9WZz9mcuc3d3ZkMlYkMlE0MlAHd0hWP0Z">
+                RoseOnly.
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="http://g.click.taobao.com/q?ak=24663635&pid=mm_33963329_6520758_142982992&unid=lijiaocn&rf=http%3A%2F%2Fwww.lijiaocn.com%2F%25E5%25A5%25BD%25E8%25B4%25A7%2F2010%2F10%2F10%2Fsites.html&rd=2&et=97775937&pgid=be61cbd8f3af2ff376aa0c1a3103628d&ct=url%3Dhttps%253A%252F%252Fwww.tmall.com%252F&v=1.2&ttype=1&cm=674%2C742%3B654%2C598%3B615%2C639%3B579%2C634%3B597%2C656%3B587%2C667%3B639%2C797%3B777%2C675%3B624%2C701%3B561%2C709&ck=&cw=0">
+                天猫
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?site_id=224482&lid=4193&aid=61&euid=lijiaocn&t=http%3A%2F%2Fwww.360buy.com%2F">
+                京东
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=uN2bhlmapxWPklWdlZSMyYTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLllma1d2bt5yd3dnRyUiRyUSQzUCc0RHa9QnJ">
+                蘑菇街
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://p.gouwuke.com/0Rdyy">
+                益丰药房
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>亚马逊&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHhN7">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2N0KGzS">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRl3e">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zodOgB">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHpfz">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRwvq">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2O4YeyF">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.cn/?tag=znrio-23">中国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xKqLiP">巴西</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2DotW60">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.com.mx/">墨西哥</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 1&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com/">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.uk/">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.de/">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.au/">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.it/">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.fr/">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.es/">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ca/">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ie/">爱尔兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.at/">奥地利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://www.ebay.be/">比利时</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.nl/">荷兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ch/">瑞士</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 2&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.gittigidiyor.com/">土耳其</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.pl/">波兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.hk/">中国香港</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://global.gmarket.co.kr/Home/Main">韩国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.sg/">新加坡</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ph/">菲律宾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.my/">马来西亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.in/">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.cn/">中国大陆</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.jp/">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.th/">泰国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.vn/">越南</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.tw/">台湾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.se/">瑞典</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+    </ul>
+</div>
+
+<p id="hiddenid" style="color:white;position:absolute;right:15px;top:1px;margin:0;padding:0;font-size:1.2rem;" onclick="hiddenBanner()"></p>
+<script>
+    function hiddenBanner() {
+        var b = document.getElementById("bannerid");
+        var p = document.getElementById("hiddenid");
+        if (b.style.display=="none"){
+            b.style.display="flex";
+            p.innerHTML="";
+            p.style.color="white"
+        }else{
+            b.style.display="none";
+            p.innerHTML="";
+            p.style.color="white"
+        }
+    }
+</script>
+
+    </div>
+    <div class="center">
+        <div class="leftbar">
+            <nav id="nav" class="nav" >
+            
+
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<!--details class="menu"-->
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<details class="menu" open>
+    <summary>鼹鼠看看</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/news" >全站最新</a>
+        </li>
+        <li>
+            
+            <a href="/wechat/about" >本站服务</a>
+        </li>
+        <li>
+            
+            <a href="/wechat">鼹鼠首页</a>
+        </li>
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>精彩连载</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/specialserial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/gh_4c12eeda5979" >灼识新维度</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/flashsky" >我的安全之路</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>政经启蒙</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/finacial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/worldofboss" >饭统戴老板</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-net" >水库论坛</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/wm221x" >猛哥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-Off" >水库线下</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WatcherCommander" >守夜人总司令</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>互联网</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/internet" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/z7z8day" >观点推荐</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/caozsay"  style="color:white;" >caoz的梦呓</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/TOMsInsight" >TOMsInsight</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/tencent_fsq" >腾讯防水墙</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WebNotes" >小道消息</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/ColinHuangZheng" >黄峥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/vc-ziliu" >投资人子柳</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/yirensay" >亦无所知</a>
+        </li>
+        
+    </ul>
+</details>
+
+
+            </nav>
+        </div>
+        <div class="workspace">
+            <style>
+    .logo {
+        width: 391px;
+        width: 39.1rem;
+        height: 70px;
+        height: 7rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .logo .logo-font{
+        width: 150px;
+        width: 15rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        background: white;
+        font-size: 37px;
+        font-size: 3.7rem;
+        font-family: "楷体";
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .logo .logo-text{
+        width: 200px;
+        width: 20rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+    }
+    .source {
+        width: 351px;
+        width: 35.1rem;
+        height: 50px;
+        height: 5rem;
+        background: lightgray;
+        display:flex;
+        flex-direction: row;
+    }
+    .source .photo{
+        width: 48px;
+        width: 4.8rem;
+        height: 48px;
+        height: 4.8rem;
+        padding: 1px;
+    }
+    .source .detail{
+        width: 295px;
+        width: 29.5rem;
+        padding-left: 5px;
+        padding-left: 0.5rem;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .desc{
+        font-size:12px;
+        font-size:1.2rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .nick{
+        font-size:15px;
+        font-size:1.5rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .workspace_top{
+        display: flex;
+        height: auto;
+        padding-top: 10px;
+        padding-top: 1rem;
+        padding-bottom: 10px;
+        padding-bottom: 1rem;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        background: darkblue;
+    }
+    @media screen and (max-width: 1020px){
+        .source{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 750px){
+        .workspace_top{
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .source{
+            display: none;
+        }
+    }
+    @media screen and (max-width: 391px){
+        .logo {
+            width: 100%;
+            padding:0px;
+        }
+        .logo .logo-font{
+            padding:0px;
+            font-size: 10vw;
+            width: 50%;
+        }
+        .logo .logo-text{
+            padding:0px;
+            font-size: 4vw;
+            width: 50%;
+        }
+        .source {
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+            display:none;
+        }
+        .source .photo{
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail{
+            width: 80%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .desc{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .nick{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+    }
+
+</style>
+<div style="width: 100%">
+ <div class="workspace_top">
+     <div class="logo">
+        <div class="logo-font">
+            <div><a href="/wechat" style="color:black">文章精选</a></div>
+        </div>
+        <div class="logo-text">
+            <div>微信公众号文章精选</div>
+            <div><a href="/wechat/">https://www.lijiaocn.com</a></div>
+        </div>
+     </div>
+
+
+     <div class="source">
+         
+         <div class="photo"><a href="/wechat/img/caozsay.photo.png"><img width=100% height=100% src="/wechat/img/caozsay.photo.png"></a></div>
+         <div class="detail">
+            <div class="nick"><a href="/wechat/categories/caozsay.html"><span>caoz的梦呓/caozsay</span></a></div>
+            <div class="desc"><span>caoz的心得与分享,只此一家,别无分号.</span></div>
+         </div>
+     </div>
+
+
+
+ </div>
+</div>
+
+
+<div style="width: 100%; text-align: center">
+    <h1 style="text-align: center">谈谈编程 之 滥用内存的现象</h1>
+    <p style="text-align: center"><span>发布日期：2017-04-28 15:41:00 +0000</span></p>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- kankan_post_top -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="8060913530"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="article">
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+        
+        <li class="previous">
+            <a href="/caozsay/2017/04/30/caozsay-290/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/caozsay">caoz的梦呓</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/caozsay/2017/04/25/caozsay-292/">后一篇</a>
+        </li>
+        
+
+    </div>
+
+    <div><div class="rich_media_content" id="js_content">
+<p>
+         好吧，今天又双叒叕要提小密圈，不过这次真的不是为了拉粉，而是因为恰好这个场景，在技术设计上很典型。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         小密圈春节后爆发很快，那么技术上就遇到了一些瓶颈和问题，吴总就拉了几个好朋友做技术顾问，帮他们参谋一下，有幸我就成了其中之一。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         先处理了两个数据库慢查询的问题，证明了我对数据库的索引理解依然还能用的上，不过这不是什么关键问题，因为系统负载和瓶颈不在这里。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         那么，在对方的配合下，我们就对程序负载做了抽样的分析，并将一些执行开销略大的脚本负载，通过性能分析工具做了一下拆解，然后注意到，绝大部分开销较大的请求，是用户进入特定圈子首页的脚本，而这里开销最大的部分，是内存的频繁请求。限于信息安全的考虑，对过于细节的技术描述，很抱歉，我不会展开，我只基于这个案例，展开说一下关于比较常见的设计思路误区，和一些设计的思考方法。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         通过这个案例我意识到一个现象，其实很多小创业公司都可能遇到的现象，一些技术人员，对系统开销的理解不够彻底，不够扎实，会有一些简单的标签化思维，比如说，数据库往往是性能负载的瓶颈，而使用内存数据存储，可以避开数据库的瓶颈，从而实现性能和响应能力的提升。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这个想法，不能说是错的，因为我们遇到数据库瓶颈的时候，也是通过内存数据存储来优化的，但不能简单化这个问题。并不是说，所有场合，内存存储都比数据库更优越。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         以前我举过一个我们自己的案例，我们存储用户session的时候，用了mysql 的heap类型数据表，这是内存表，这个表的存取频率是极高的，但因为写入过于频繁，结果，锁表严重，经常卡死，导致系统因数据库等待被整个卡掉，当然，这可以认为是一个经验不足的菜鸟问题，结果换为innodb，行级锁，问题就解决了。 那么，从内存表换成物理表，看上去是性能下降的，但因为行级锁比表级锁更可靠，在频繁写入的情况下，如果i/o撑得住（请注意这个前提哦），那么实际上可靠性是更优的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         那么回来说，关系型数据库，我们常用的数据库结构，其索引类型，差不多是btree相关的，具体呢，我也不是很精通，在索引优化到位的情况下呢，其查询效率呢，趋近于log2(N)。而一些内存表结构，哈希索引，其查询效率，通常趋近于1，也就是寻址搜索，这个针对你明确的key- value查询，绝对是有优势的，（当然，根据一些信息安全测试的披露，在特殊情况下，可能查询效率会直线下降，但这个不是今天要谈论的重点，就列在这里，以免有人挑错。）
+        </p>
+<p>
+<br />
+</p>
+<p>
+         但这里有两个延伸问题
+        </p>
+<p>
+<br />
+</p>
+<p>
+         问题1：哈希索引只适用于key - value这样的简单查询，而关系型数据库可以适合较多的条件查询。 也就是哈希索引实际上适用空间是极为有限的。而且也不支持排序等操作。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         问题2：并不是所有内存数据表结构都是哈希索引，比如前面提到的mysql 的heap表结构，其实也是关系型数据库，btree类型的索引。那么另一个特别要提到的，是redis有个常见结构，有序集合，因为这个结构支持排序，支持快速的排名统计，所以应用范畴也很广，但是要特别说明，这个表结构，存取的开销是远大于哈希结构的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         有序集合有一个极佳的替代关系型数据库的应用场景，就是积分排名的场景，以前技术大牛云风提到过一个经典案例，某友商的游戏，积分排名挂死数据库，这是很常见的一个问题。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         一般使用数据库做积分排名，随便写一个，懂SQL的都能看懂。 select count(*) from gamepoints where points&gt;$mypoints  。得到的统计数据+1，就是我的排名。但这个SQL的开销怎么计算，这是一个很经典的数据库负载测试题，在你使用points作为索引的前提下，其负载开销与你的排名线型相关，也就是，你要是排名靠前，负载几乎可以忽略，你要是排名靠后，负载直线上升。无论任何数据引擎，无论myisam，还是innodb，无论mysql还是sql server。如果不动技术架构，不改产品设计，纯SQL优化，两个字，没戏。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这个场景，使用redis 的zrank来处理，爽爽的解决，毫无压力。这是这个结构最有价值的地方。但一切都是有条件的，其插入，更新，删改的系统开销，要远高于redis的其他数据结构。 而其价值，仅仅在这个场合，是具有绝对优势的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         说了这些铺垫，回到今天的场景，小密圈的圈子首页，究竟出了什么问题。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         小密圈的研发，我估计是对数据库的使用不够自信，大量使用了内存来做数据存储和加载，而且，为了一些排序的需求，还大量使用的是有序集合类型，实话说，这样的内存处理，跟数据库处理，就同样的请求而言，性能上已经基本没有优势了。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         但问题还不在这里，而是他们可能没有意识到，请求频次的问题。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         打开一个小密圈的首页，先去内存读取这个圈子最新的帖子，这是一个常见的请求，可以理解；然后就可怕了，基于每个帖子循环，去查询该帖所有的评论，所有的赞，所有的赞赏，所有的文件，所有的图片；然后，基于每个评论，再去查询相关的图片，文件。。。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         简单说就是，打开一个页面，要进行几十次乃至上百次的内存查询请求，而这些开销，用我的理解，是毫无意义的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         如果我写数据库查询，第一条SQL查询帖子，后面的用 where postid in (...)，最多四条SQL (查询评论，查询附件，查询图片) 即可。 这种循环体内的重复查询，是非常要不得的，其系统负载开销是无谓的，毫无价值的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         那么，这里暴露的问题是什么呢？其实，系统设计的时候，应该有一个基本概念，就是如何尽可能减少不必要的请求，减少无谓的开销。用数据库也好，用内存也好，并无绝对对错之分，但应该基于一个原则，就是如何让系统更有效率的运行。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         以前很多程序员面向对象编程，经常不注意这些开销和细节，用数据库查询，也经常有类似的问题，比如说，我读取一个图书列表，先通过某个搜索条件去搜索出所有图书id，按理说到这一步已经足够了，但因为面向对象啊，通过图书id去获得图书的名字，作者名字，页数，简介，是对象里的一个方法，然后就变成一个循环内不断去数据库请求，其实这些请求都是毫无意义的，第一个查询完全可以全部获取，逐一请求完全是多余的，但这样的案例数不胜数，几乎每次带技术新人，都会犯一遍这样的错误。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         回到上面的问题，什么时候用内存，什么时候用数据库，我们对用内存的场合，是有一些自己的原则的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         第一，内存使用，是基于你的业务场景，而不是基于数据结构。
+        </p>
+<p>
+         这是什么概念呢，内存是为了提速的对不对，是为了降低负载的对不对，所以内存的设计，是基于我业务场景的请求诉求设计，而不是把内存当数据库用。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         以小密圈案例来说，如果我要用内存，我极端一点，这个圈子首页我要用内存处理，应该出现的东西，对不起，以圈子id为key，以其首页应该出现的内容为value。也就是一次请求，全部获取。（这不是最终方案，下面会继续说）
+        </p>
+<p>
+<br />
+</p>
+<p>
+         那么有数据变更怎么办，全部清空。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         基本逻辑是这样（非最终逻辑），所有数据变更，都是变更数据库，并自动清掉相应的内存。
+        </p>
+<p>
+         前端请求先看内存有没有这部分信息，有的话，直接展现，没有的话，从数据库生成这块内容并写入内存，展现。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         第二，读写频率比非常关键
+        </p>
+<p>
+<br />
+</p>
+<p>
+         如上的设计逻辑，是基于读取频率远高于写入频率，但如果写入频率很高，甚至和读取频率接近，那么，这个逻辑，就无意义了。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         所以使用内存的时候，对读写频率要有清醒的认识，否则很可能用了内存反而效率下降。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         第三，基于写入频率做忙闲拆分
+        </p>
+<p>
+<br />
+</p>
+<p>
+         什么意思呢，比如上面，我说都堆一个value里，其实在这个场景，是不对的，只是说明，针对业务请求去设计的概念，为什么不对呢。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         帖子的发布，一般而言，不会很多，很频繁对不对。
+        </p>
+<p>
+         评论，图片这些还好，都不多。
+        </p>
+<p>
+         点赞是个很频繁的操作对不对。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         刚才提到，写入频率过高，那么就会带来这个内存生成的额外开销很大，又是不必要的，这时候怎么处理呢。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         点赞单独拎出来。每个帖子的点赞，可以单独做个key ,value的哈希内存表。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         那么这时候，首页是这样的，先通过内存获取一个大数组，包括所有首页的帖子，评论，图片链接，作者信息，附件等等。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         然后，循环获取每个帖子的点赞信息。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         等等，刚才不是说不要循环获取么？
+        </p>
+<p>
+         那，这就是你看两害取其轻的问题了，而且这里的点赞数据，是哈希索引，查询开销远低于有序集合类型。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         所以，点赞这个频繁操作，就不涉及首页其他数据的更新，忙闲拆分，把负载高的请求尽可能降下去。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         第四，请求合并，异步处理
+        </p>
+<p>
+<br />
+</p>
+<p>
+         上面提到的
+        </p>
+<p>
+<br />
+</p>
+<p>
+         “
+         <span style="line-height: 28.4444px;">
+          基本逻辑是这样（非最终逻辑），所有数据变更，都是变更数据库，并自动清掉相应的内存。
+         </span>
+         ”
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这里还有一个坑，如果这个数据变更的写入规模特别频繁，数据库依然撑不住怎么办。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         请求合并，异步处理，比如说，点赞操作特别频繁，那么，这个请求，可以扔到一个内存队列里，同时变更对应的key-value 缓存，呐，队列结构，这又是一个特定的数据结构。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         然后，定时在后台cron，读取内存数据队列，这时候，很多请求是可以合并的，本来很多条SQL的可能可以并为一条SQL。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         我以前有个习惯，在cron会计算一下写入的合并率，这个指标也很重要。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         比较典型的是那种统计性的东西，比如帖子访问了多少次，如果不做合并的话每次执行一个 帖子阅读数+1操作，但放到队列里，定时后台合并，效果是非常显著的，合并率往往可以超过70%。（热门贴占据大部分访问量）
+        </p>
+<p>
+<br />
+</p>
+<p>
+         以上一些思考方式和原则，是我们之前使用内存经常用到的，那么核心还是那句话，要对负载，对系统开销有清醒的认识，对无谓的请求，不必要的请求要敏感，以上没有什么特别难懂或高深的技巧，都是基于一些朴素的系统理解，做出的判断和选择。我常说我是经济适用架构师，其实我也不是科班出身，也没什么算法基础，和angela zhu这样的算法大牛比，真的没有一点可比性，但面对很多很基础的技术场景，其实就是用最朴素的思想去思考，先搞明白，系统的开销集中在哪里，都用到哪里去了，这些开销都是必须的么，然后思考一下，如何减少请求，减少不必要的开销，实在无法减少的，如何实现分布，实现扩展。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         养成这样的思考习惯和分析习惯，很多常见的性能问题，其实都是可以解决的。
+        </p>
+<p>
+<br />
+</p>
+<hr />
+<p>
+<br />
+</p>
+<p>
+         你看，我没打什么广告吧。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         我发现我也是有毛病，有人送钱都不要，
+         <span style="line-height: 28.4444px;">
+          又双叒叕
+         </span>
+         推掉了一个广告，价格也公道，产品也说的过去，纠结了半天还是没接，真不是清高，真没救了。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         再说个没救的，小密圈今天做第八期推荐，昨天他们编辑问我怎么介绍自己的圈子合适，我的回复是，你们不要推荐我。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         今天下午咖啡厅跟人聊天，我总恍惚觉得，如果我是旁边桌的人，对我一无所知，听我那么喷，一定觉得我是吹牛逼，各种不要脸，幸亏今天是跟男人聊天，否则一定会觉得我是吹牛逼骗妹纸。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         我说的都是
+        </p>
+<p>
+<br />
+</p>
+<p>
+         说句不夸张的，我要是玩命薅搞付费社群，一年薅个一两百万很容易啊，有啥意思；
+        </p>
+<p>
+         投的那点钱赔了就陪了，脸我可丢不起；
+        </p>
+<p>
+         我身边那帮老朋友好多个身价几十亿，几个亿的；
+        </p>
+<p>
+         我要融资的话，找几个老朋友说一声就行了。
+        </p>
+<p>
+         好多朋友劝我做基金啊，lp多的是啊，我自己不愿意做，怕搞砸了对不起人家。
+        </p>
+<p>
+         我真想回去找份工作的话，年薪200万打底的机会肯定有的，但伺候不了人了啊。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         听上去总觉得自己就是特么的一骗子呢，最关键的是我还真没啥钱。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         就酱吧。
+         <br />
+</p>
+</div>
+</div>
+
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+
+        
+        <li class="previous">
+            <a href="/caozsay/2017/04/30/caozsay-290/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/caozsay">caoz的梦呓</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/caozsay/2017/04/25/caozsay-292/">后一篇</a>
+        </li>
+        
+
+    </div>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- 匹配内容-lijiaocn -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="autorelaxed"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="6443696990"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+        </div>
+    </div>
+    <!--div class="bottom">
+            <p style="color:white">Thanks for use. Remember us.</p>
+    </div-->
+    <script src="/wechat/assets/js/js.js" charset="utf-8"></script>
+    
+
+    
+</body>
+</html>

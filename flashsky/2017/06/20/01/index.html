@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="chinese">
+<head>
+<meta charset="utf-8" content="text/html">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我的安全之路11-安全研究生涯之转折-2002|我的安全之路|微信公众号文章合集|鼹鼠看看</title>
+<meta name="description" content="端口到进程的映射关系，当时微软并没有公开的技术文档来说明。但是国外的一个软件FPORT却实现了这个功能。于是FPORT成为我第一个逆向研究的程序，花了大半个月，通过汇编代码分析逆向" />
+<meta name="keywords" content="方兴,flashsky,我的安全之路,微信公众号,公众号文章导出"/>
+<link rel="shortcut icon" href="/wechat/favicon.ico"/>
+<link rel="bookmark" href="/wechat/favicon.ico"/>
+<link rel="stylesheet" href="/wechat/assets/css/style.css">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- google ad -->
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8176866190626448",
+          enable_page_level_ads: true
+     });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105389858-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-105389858-1');
+</script>
+
+<script async>
+/*百度统计*/
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8f59ea10145df28da8932c8743ec1d60";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+/*百度自动收录*/
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+</head>
+
+<body class="body">
+    <div class="top">
+            
+<style type="text/css" scoped>
+    .innerbanner{
+        background:gray;
+        color:white;
+        padding-right:10px;
+        padding-right:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-top:10px;
+        padding-top:1rem;
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: flex-start;
+        width:100%;
+        font-size:15px;
+        font-size:1.5rem;
+        /*
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        */
+    }
+    .innerbanner a{
+        color:white;
+    }
+    .innerbanner a:hover{
+        color: black;
+        text-decoration: none;
+        font-size:large;
+    }
+    .innerbanner #inner_ul {
+        display:flex;
+        color:white;
+        padding-left:0px;
+        margin:0px;
+        align-items: flex-start;
+    }
+    .innerbanner #inner_li {
+        list-style:none;
+        display:inline-block;
+        line-height:25px;
+        line-height:2.5rem
+    }
+    .topdetails{
+        top:10px;
+        top:1rem;
+        display: inline-block;
+    }
+    .topdetails summary::-webkit-details-marker {
+        display: none;
+    }
+    .topdetails summary:first-of-type {
+        list-style-type: none;
+    }
+    .topdetails ul{
+        padding:0px;
+    }
+    .topdetails li{
+        list-style:none;
+        text-indent:0px;
+    }
+    .topdetails a{
+        display:block;
+        background:gray;
+        color:white;
+        height:30px;
+        height:3rem;
+        padding-top:10px;
+        padding-top:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-right:10px;
+        padding-right:1rem;
+    }
+    .topdetails a:hover{
+        background:darkgray;
+        /*color: white;*/
+        color: black;
+    }
+
+    @media screen and (max-width: 1024px){
+        .innerbanner #inner_ul{
+            list-style:none;
+            display:block;
+        }
+    }
+</style>
+<div class="innerbanner" id="bannerid">
+    <ul id="inner_ul">
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                鼹鼠首页
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                <span style='color:blue'>全球网购></span>
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=WYppWas1DZpVXZmcDOwMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLzYTMuU3b5ZkMlYkMlE0MlAHd0hWP0Zibj9">
+                网易严选
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=j9WYppWas1DZpVXZmczM3ETPklWYmAjMzUjMy0DZp9VZ0l2cmYiJGJTJt92YuEGbvF2auc3d3ZkMlYkMlE0MlAHd0hWP0Zib">
+                考拉海购
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom">
+                无人机
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=lAHd0hWP0Zibj9WYppWas1DZpVXZmQDOzMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiJpFWbvVHZfB3ckR0Ml02byZmeGNTJGJTJt92Yu8Wd69WY6ZkMlYkMlE0M">
+                造作
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=m0DZpVXZmITO5MTPklWYmAjMzUjMy0DZp9VZ0l2cm02bj5CdyF2d55yd3dnRyUiRyUSQzUycwRHdo1Dd">
+                艺网
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=ibj9WYppWas1DZpVXZmMDMxITPklWYmAjMzUjMy0DZp9VZ0l2cmYiJuNmLt92YukHbu9WZz9mcuc3d3ZkMlYkMlE0MlAHd0hWP0Z">
+                RoseOnly.
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="http://g.click.taobao.com/q?ak=24663635&pid=mm_33963329_6520758_142982992&unid=lijiaocn&rf=http%3A%2F%2Fwww.lijiaocn.com%2F%25E5%25A5%25BD%25E8%25B4%25A7%2F2010%2F10%2F10%2Fsites.html&rd=2&et=97775937&pgid=be61cbd8f3af2ff376aa0c1a3103628d&ct=url%3Dhttps%253A%252F%252Fwww.tmall.com%252F&v=1.2&ttype=1&cm=674%2C742%3B654%2C598%3B615%2C639%3B579%2C634%3B597%2C656%3B587%2C667%3B639%2C797%3B777%2C675%3B624%2C701%3B561%2C709&ck=&cw=0">
+                天猫
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?site_id=224482&lid=4193&aid=61&euid=lijiaocn&t=http%3A%2F%2Fwww.360buy.com%2F">
+                京东
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=uN2bhlmapxWPklWdlZSMyYTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLllma1d2bt5yd3dnRyUiRyUSQzUCc0RHa9QnJ">
+                蘑菇街
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://p.gouwuke.com/0Rdyy">
+                益丰药房
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>亚马逊&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHhN7">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2N0KGzS">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRl3e">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zodOgB">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHpfz">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRwvq">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2O4YeyF">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.cn/?tag=znrio-23">中国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xKqLiP">巴西</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2DotW60">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.com.mx/">墨西哥</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 1&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com/">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.uk/">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.de/">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.au/">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.it/">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.fr/">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.es/">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ca/">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ie/">爱尔兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.at/">奥地利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://www.ebay.be/">比利时</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.nl/">荷兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ch/">瑞士</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 2&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.gittigidiyor.com/">土耳其</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.pl/">波兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.hk/">中国香港</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://global.gmarket.co.kr/Home/Main">韩国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.sg/">新加坡</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ph/">菲律宾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.my/">马来西亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.in/">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.cn/">中国大陆</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.jp/">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.th/">泰国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.vn/">越南</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.tw/">台湾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.se/">瑞典</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+    </ul>
+</div>
+
+<p id="hiddenid" style="color:white;position:absolute;right:15px;top:1px;margin:0;padding:0;font-size:1.2rem;" onclick="hiddenBanner()"></p>
+<script>
+    function hiddenBanner() {
+        var b = document.getElementById("bannerid");
+        var p = document.getElementById("hiddenid");
+        if (b.style.display=="none"){
+            b.style.display="flex";
+            p.innerHTML="";
+            p.style.color="white"
+        }else{
+            b.style.display="none";
+            p.innerHTML="";
+            p.style.color="white"
+        }
+    }
+</script>
+
+    </div>
+    <div class="center">
+        <div class="leftbar">
+            <nav id="nav" class="nav" >
+            
+
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<!--details class="menu"-->
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<details class="menu" open>
+    <summary>鼹鼠看看</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/news" >全站最新</a>
+        </li>
+        <li>
+            
+            <a href="/wechat/about" >本站服务</a>
+        </li>
+        <li>
+            
+            <a href="/wechat">鼹鼠首页</a>
+        </li>
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>精彩连载</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/specialserial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/gh_4c12eeda5979" >灼识新维度</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/flashsky"  style="color:white;" >我的安全之路</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>政经启蒙</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/finacial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/worldofboss" >饭统戴老板</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-net" >水库论坛</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/wm221x" >猛哥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-Off" >水库线下</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WatcherCommander" >守夜人总司令</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>互联网</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/internet" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/z7z8day" >观点推荐</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/caozsay" >caoz的梦呓</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/TOMsInsight" >TOMsInsight</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/tencent_fsq" >腾讯防水墙</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WebNotes" >小道消息</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/ColinHuangZheng" >黄峥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/vc-ziliu" >投资人子柳</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/yirensay" >亦无所知</a>
+        </li>
+        
+    </ul>
+</details>
+
+
+            </nav>
+        </div>
+        <div class="workspace">
+            <style>
+    .logo {
+        width: 391px;
+        width: 39.1rem;
+        height: 70px;
+        height: 7rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .logo .logo-font{
+        width: 150px;
+        width: 15rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        background: white;
+        font-size: 37px;
+        font-size: 3.7rem;
+        font-family: "楷体";
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .logo .logo-text{
+        width: 200px;
+        width: 20rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+    }
+    .source {
+        width: 351px;
+        width: 35.1rem;
+        height: 50px;
+        height: 5rem;
+        background: lightgray;
+        display:flex;
+        flex-direction: row;
+    }
+    .source .photo{
+        width: 48px;
+        width: 4.8rem;
+        height: 48px;
+        height: 4.8rem;
+        padding: 1px;
+    }
+    .source .detail{
+        width: 295px;
+        width: 29.5rem;
+        padding-left: 5px;
+        padding-left: 0.5rem;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .desc{
+        font-size:12px;
+        font-size:1.2rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .nick{
+        font-size:15px;
+        font-size:1.5rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .workspace_top{
+        display: flex;
+        height: auto;
+        padding-top: 10px;
+        padding-top: 1rem;
+        padding-bottom: 10px;
+        padding-bottom: 1rem;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        background: darkblue;
+    }
+    @media screen and (max-width: 1020px){
+        .source{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 750px){
+        .workspace_top{
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .source{
+            display: none;
+        }
+    }
+    @media screen and (max-width: 391px){
+        .logo {
+            width: 100%;
+            padding:0px;
+        }
+        .logo .logo-font{
+            padding:0px;
+            font-size: 10vw;
+            width: 50%;
+        }
+        .logo .logo-text{
+            padding:0px;
+            font-size: 4vw;
+            width: 50%;
+        }
+        .source {
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+            display:none;
+        }
+        .source .photo{
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail{
+            width: 80%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .desc{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .nick{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+    }
+
+</style>
+<div style="width: 100%">
+ <div class="workspace_top">
+     <div class="logo">
+        <div class="logo-font">
+            <div><a href="/wechat" style="color:black">文章精选</a></div>
+        </div>
+        <div class="logo-text">
+            <div>微信公众号文章精选</div>
+            <div><a href="/wechat/">https://www.lijiaocn.com</a></div>
+        </div>
+     </div>
+
+
+     <div class="source">
+         
+         <div class="photo"><a href="/wechat/img/add-flashsky.photo.png"><img width=100% height=100% src="/wechat/img/add-flashsky.photo.png"></a></div>
+         <div class="detail">
+            <div class="nick"><a href="/wechat/categories/flashsky.html"><span>我的安全之路/flashsky</span></a></div>
+            <div class="desc"><span>Flashky，真名方兴，windows漏洞挖掘骨灰级专家</span></div>
+         </div>
+     </div>
+
+
+
+ </div>
+</div>
+
+
+<div style="width: 100%; text-align: center">
+    <h1 style="text-align: center">我的安全之路11-安全研究生涯之转折-2002</h1>
+    <p style="text-align: center"><span>发布日期：2017-06-20 13:22:51 +0000</span></p>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- kankan_post_top -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="8060913530"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="article">
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+        
+        <li class="previous">
+            <a href="/flashsky/2017/06/21/01/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/specialserial">specialserial</a> / <a href="/wechatcategories/flashsky">我的安全之路</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/flashsky/2017/06/19/01/">后一篇</a>
+        </li>
+        
+
+    </div>
+
+    <div><p>给这个软件完成了SNMP功能后，接着就是实现端口到进程的映射研究，让我和安全圈的朋友不打不相识。</p>
+
+<p>端口到进程的映射关系，当时微软并没有公开的技术文档来说明。但是国外的一个软件FPORT却实现了这个功能。于是FPORT成为我第一个逆向研究的程序，花了大半个月，通过汇编代码分析逆向成伪代码，终于把整个FPORT的过程机制分析清楚了。那个时候经常去SHOTGUN当斑竹的西祠黑客也是侠的版面，看到很多人也在讨论这个问题，于是发布了我写的这个工具。哪里知道却引起了一场风波，很多人上来骂我用别人的工具说成自己的工具，让我莫名其妙，最后才知道，原来白细胞的ilsy也写了个同样的工具发布了，而我消息比较闭塞，并不知道他的工作，所以大家都认为我是偷盗了他的成果忽悠成自己的东西。我自然不服气，于是把我写的源代码，FPORT机理的分析，以及我逆向分析了ilsy的工具之后得出的我们之间技术的区别贴在了论坛上。于是指责停止了，这让我感觉到，安全技术圈子的人还是很实在的，只要你能拿出证据来，人家就服你。也是从这次风波中，知道了XFOCUS站点，以前虽然认识BENJURRY和冰河，但不知道他们是XFOCUS的人。去XFOCUS上看安全技术相关的文章让我收益匪浅，于是觉得自己也可以通过研究，写出一些文章来，于是就把自己对安全的一些研究心得和成果，写出来发布在XFOCUS上，以此认识了更多XFOCUS的核心成员，小呆、ISNO等，其中ISNO还给我了 UNICODE SHELL编码的例子，让我更深入理解了SHELLCODE的一些原理和技巧。</p>
+
+<p>XFOCUS上发布的文章多了，自然也和XFOCUS的兄弟熟悉了，然后由BENJURRY和冰河做介绍人，我也就加入了XFOCUS，感觉安全给我打开了另外一扇窗户，而且这期间也发现了一些微软的安全漏洞，如管道匿名劫持，ODBC查找SQL SERVER存在堆栈溢出等，虽然将这些信息发给了微软也石沉大海，但对安全的研究兴趣也越来越浓。于是开始考虑是不是要转入安全领域，这一年我已经29 岁了，即将而立。比我小很多的人，早已是安全领域知名的人物了。我擅长的应用开发系统分析，都将随这一选择全部被抛弃，进入一个陌生的领域，我能行吗？但我已深深被研究安全的乐趣所吸引。于是给几家大的安全公司，包括启明和绿盟都投过简历，但估计我以前没有安全行业经验，年纪也偏大，学历也不符合，所以基本没消息。</p>
+
+<p>随着基金系统市场这块蛋糕减少，M公司内部也出现了很多分歧，当年老板找K总来成立研发中心是看中软件这块高利润蛋糕的，前面上千万的项目规模也让他对现在在竞争中开发式基金系统的价格如此跌价难以接受，软件开发这一块现在近4，50号人，但是收入却比以前要大幅萎缩。K总性格比较强势，以前软件业务很赚钱的时候，W老板能忍，但现在业务不好，W老板肯定希望做出很多调整，自然和K总的强势性格形成冲突。我预感到风雨既来，离开吧。正好冰河对我说北京LX安全事业部在招安全人员，他可以介绍我去，小榕也在那里。于是29岁生日那天，我正式向K总提出辞职，晚上和开发部门的兄弟告别，我喝了不少酒，就要离开自己一同成长起来的团队，心里也很难受。</p>
+
+<p>说下K总，我一直很感激K总，他虽然性格比较强势，但确实是想做事也有能力做事的一个人，对我也很赏识，后来虽然和我意见不合，但基本都是明对明的。后来我还留在M公司的同事告诉我，K总最后和W老板闹翻，先是降级成部门经理，最后走人，而他一直器重的质检部经理。先后成了总监和总裁助理。03年底我接到过K总的电话问我怎样，听得出是想拉我再起炉灶，我当时在安全行业已经做出了些成绩站稳了脚跟，自然不会再折腾那个我已经放弃了的行业了。于是告诉他我很好。之后听说他做过很多行当，包括租虚拟办公室，再之后我在他BLOG上看到，全都是他拍摄的很专业的摄影照片，不知是他转成专职的摄影师还是就有爱好（这个爱好以前我没听说过）。后来，M公司软件部门大裁员，很多人都在公司红黑榜站点上大骂W老板心黑，没能力。我回复了一条：“我算是老一批的M员工了，在M公司当开放式基金项目的项目经理以及以后的研究策划部的经理，2002年底觉得公司在软件上的发展存在问题，就离开了M，做安全去了。公正的讲，M存在很多问题，比如家族企业，内部互斗，但是这些问题在其他企业的身上也一样存在。我在M学到了很多东西（虽然这些随着我行业的转向现在完全没用了），或许我离开的时机还不错，离开半年后，我的股份后来还是给我兑成钱了。漫骂是没多少用的，企业的问题不能靠漫骂解决，如果看不上这个企业，就离开他好了。我还是很佩服W的，白手起家能折腾到这个规模还是非常不容易的。”</p>
+
+<p>从M公司走时，我历年来的积蓄是5万，化了1万多买了个笔记本，来到北京，又租了个在LX安全事业部附近的房子，又花了几千买了西服等行头，准备去LX安全事业部应聘。但从应聘反馈回来的信息是：技术上我虽然没问题，但是学历是个麻烦，非计算机专业的专科，在LX这样的大公司里，必须要总裁特批才能进去。我问这个总裁特批需要多久呢，对方说，至少3个月以上吧。我看了看荷包里剩余不多的钞票，想想至少3个月，没准是半年一年呢，我这荷包可等不起，而且春节要来了，好歹要赚点车票钱和回家给小辈的压岁钱，看来只能另谋出路了。</p>
+
+<hr />
+
+<p>方兴，原翰海源创始人，现任阿里巴巴资深安全专家，作为国内漏洞挖掘领域最顶尖的黑客，他被更多人所熟知的则是他的别号：flashsky（闪空）。他是数百个高危级安全漏洞的发现者，而关于他的故事，最著名的莫过于2003年由他发布的微软史上最为严重的LSD PRC DCOM漏洞，后者直接导致之后“冲击波”病毒在全球范围内疯狂肆虐。</p>
+
+<hr />
+
+<p>鼹鼠看看推荐语:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>兴趣是最好的老师。闲来无事多落子，无心插柳柳成荫。
+</code></pre></div></div>
+</div>
+
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+
+        
+        <li class="previous">
+            <a href="/flashsky/2017/06/21/01/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/specialserial">specialserial</a> / <a href="/wechatcategories/flashsky">我的安全之路</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/flashsky/2017/06/19/01/">后一篇</a>
+        </li>
+        
+
+    </div>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- 匹配内容-lijiaocn -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="autorelaxed"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="6443696990"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+        </div>
+    </div>
+    <!--div class="bottom">
+            <p style="color:white">Thanks for use. Remember us.</p>
+    </div-->
+    <script src="/wechat/assets/js/js.js" charset="utf-8"></script>
+    
+
+    
+</body>
+</html>

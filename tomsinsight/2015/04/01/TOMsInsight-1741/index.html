@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="chinese">
+<head>
+<meta charset="utf-8" content="text/html">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>试错与优化：是成本还是方法论|TOMsInsight|微信公众号文章合集|鼹鼠看看</title>
+<meta name="description" content="很多事情一旦变成了约定俗成，就很少有人再去深入思考其中包含的意义或本质，而只会在表面做文章。但是这种约定的规则却不见得是真理，而且大多数时候都是站在真理的反面，只是人云亦云或者在特定的阶段符合特定的利益阶层而已。" />
+<meta name="keywords" content="TOMsInsight,TOMsInsight,微信公众号,公众号文章导出"/>
+<link rel="shortcut icon" href="/wechat/favicon.ico"/>
+<link rel="bookmark" href="/wechat/favicon.ico"/>
+<link rel="stylesheet" href="/wechat/assets/css/style.css">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- google ad -->
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8176866190626448",
+          enable_page_level_ads: true
+     });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105389858-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-105389858-1');
+</script>
+
+<script async>
+/*百度统计*/
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8f59ea10145df28da8932c8743ec1d60";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+/*百度自动收录*/
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+</head>
+
+<body class="body">
+    <div class="top">
+            
+<style type="text/css" scoped>
+    .innerbanner{
+        background:gray;
+        color:white;
+        padding-right:10px;
+        padding-right:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-top:10px;
+        padding-top:1rem;
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: flex-start;
+        width:100%;
+        font-size:15px;
+        font-size:1.5rem;
+        /*
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        */
+    }
+    .innerbanner a{
+        color:white;
+    }
+    .innerbanner a:hover{
+        color: black;
+        text-decoration: none;
+        font-size:large;
+    }
+    .innerbanner #inner_ul {
+        display:flex;
+        color:white;
+        padding-left:0px;
+        margin:0px;
+        align-items: flex-start;
+    }
+    .innerbanner #inner_li {
+        list-style:none;
+        display:inline-block;
+        line-height:25px;
+        line-height:2.5rem
+    }
+    .topdetails{
+        top:10px;
+        top:1rem;
+        display: inline-block;
+    }
+    .topdetails summary::-webkit-details-marker {
+        display: none;
+    }
+    .topdetails summary:first-of-type {
+        list-style-type: none;
+    }
+    .topdetails ul{
+        padding:0px;
+    }
+    .topdetails li{
+        list-style:none;
+        text-indent:0px;
+    }
+    .topdetails a{
+        display:block;
+        background:gray;
+        color:white;
+        height:30px;
+        height:3rem;
+        padding-top:10px;
+        padding-top:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-right:10px;
+        padding-right:1rem;
+    }
+    .topdetails a:hover{
+        background:darkgray;
+        /*color: white;*/
+        color: black;
+    }
+
+    @media screen and (max-width: 1024px){
+        .innerbanner #inner_ul{
+            list-style:none;
+            display:block;
+        }
+    }
+</style>
+<div class="innerbanner" id="bannerid">
+    <ul id="inner_ul">
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                鼹鼠首页
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                <span style='color:blue'>全球网购></span>
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=WYppWas1DZpVXZmcDOwMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLzYTMuU3b5ZkMlYkMlE0MlAHd0hWP0Zibj9">
+                网易严选
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=j9WYppWas1DZpVXZmczM3ETPklWYmAjMzUjMy0DZp9VZ0l2cmYiJGJTJt92YuEGbvF2auc3d3ZkMlYkMlE0MlAHd0hWP0Zib">
+                考拉海购
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom">
+                无人机
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=lAHd0hWP0Zibj9WYppWas1DZpVXZmQDOzMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiJpFWbvVHZfB3ckR0Ml02byZmeGNTJGJTJt92Yu8Wd69WY6ZkMlYkMlE0M">
+                造作
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=m0DZpVXZmITO5MTPklWYmAjMzUjMy0DZp9VZ0l2cm02bj5CdyF2d55yd3dnRyUiRyUSQzUycwRHdo1Dd">
+                艺网
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=ibj9WYppWas1DZpVXZmMDMxITPklWYmAjMzUjMy0DZp9VZ0l2cmYiJuNmLt92YukHbu9WZz9mcuc3d3ZkMlYkMlE0MlAHd0hWP0Z">
+                RoseOnly.
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="http://g.click.taobao.com/q?ak=24663635&pid=mm_33963329_6520758_142982992&unid=lijiaocn&rf=http%3A%2F%2Fwww.lijiaocn.com%2F%25E5%25A5%25BD%25E8%25B4%25A7%2F2010%2F10%2F10%2Fsites.html&rd=2&et=97775937&pgid=be61cbd8f3af2ff376aa0c1a3103628d&ct=url%3Dhttps%253A%252F%252Fwww.tmall.com%252F&v=1.2&ttype=1&cm=674%2C742%3B654%2C598%3B615%2C639%3B579%2C634%3B597%2C656%3B587%2C667%3B639%2C797%3B777%2C675%3B624%2C701%3B561%2C709&ck=&cw=0">
+                天猫
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?site_id=224482&lid=4193&aid=61&euid=lijiaocn&t=http%3A%2F%2Fwww.360buy.com%2F">
+                京东
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=uN2bhlmapxWPklWdlZSMyYTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLllma1d2bt5yd3dnRyUiRyUSQzUCc0RHa9QnJ">
+                蘑菇街
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://p.gouwuke.com/0Rdyy">
+                益丰药房
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>亚马逊&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHhN7">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2N0KGzS">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRl3e">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zodOgB">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHpfz">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRwvq">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2O4YeyF">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.cn/?tag=znrio-23">中国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xKqLiP">巴西</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2DotW60">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.com.mx/">墨西哥</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 1&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com/">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.uk/">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.de/">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.au/">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.it/">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.fr/">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.es/">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ca/">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ie/">爱尔兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.at/">奥地利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://www.ebay.be/">比利时</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.nl/">荷兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ch/">瑞士</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 2&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.gittigidiyor.com/">土耳其</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.pl/">波兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.hk/">中国香港</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://global.gmarket.co.kr/Home/Main">韩国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.sg/">新加坡</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ph/">菲律宾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.my/">马来西亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.in/">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.cn/">中国大陆</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.jp/">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.th/">泰国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.vn/">越南</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.tw/">台湾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.se/">瑞典</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+    </ul>
+</div>
+
+<p id="hiddenid" style="color:white;position:absolute;right:15px;top:1px;margin:0;padding:0;font-size:1.2rem;" onclick="hiddenBanner()"></p>
+<script>
+    function hiddenBanner() {
+        var b = document.getElementById("bannerid");
+        var p = document.getElementById("hiddenid");
+        if (b.style.display=="none"){
+            b.style.display="flex";
+            p.innerHTML="";
+            p.style.color="white"
+        }else{
+            b.style.display="none";
+            p.innerHTML="";
+            p.style.color="white"
+        }
+    }
+</script>
+
+    </div>
+    <div class="center">
+        <div class="leftbar">
+            <nav id="nav" class="nav" >
+            
+
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<!--details class="menu"-->
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<details class="menu" open>
+    <summary>鼹鼠看看</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/news" >全站最新</a>
+        </li>
+        <li>
+            
+            <a href="/wechat/about" >本站服务</a>
+        </li>
+        <li>
+            
+            <a href="/wechat">鼹鼠首页</a>
+        </li>
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>精彩连载</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/specialserial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/gh_4c12eeda5979" >灼识新维度</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/flashsky" >我的安全之路</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>政经启蒙</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/finacial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/worldofboss" >饭统戴老板</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-net" >水库论坛</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/wm221x" >猛哥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-Off" >水库线下</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WatcherCommander" >守夜人总司令</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>互联网</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/internet" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/z7z8day" >观点推荐</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/caozsay" >caoz的梦呓</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/TOMsInsight"  style="color:white;" >TOMsInsight</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/tencent_fsq" >腾讯防水墙</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WebNotes" >小道消息</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/ColinHuangZheng" >黄峥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/vc-ziliu" >投资人子柳</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/yirensay" >亦无所知</a>
+        </li>
+        
+    </ul>
+</details>
+
+
+            </nav>
+        </div>
+        <div class="workspace">
+            <style>
+    .logo {
+        width: 391px;
+        width: 39.1rem;
+        height: 70px;
+        height: 7rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .logo .logo-font{
+        width: 150px;
+        width: 15rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        background: white;
+        font-size: 37px;
+        font-size: 3.7rem;
+        font-family: "楷体";
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .logo .logo-text{
+        width: 200px;
+        width: 20rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+    }
+    .source {
+        width: 351px;
+        width: 35.1rem;
+        height: 50px;
+        height: 5rem;
+        background: lightgray;
+        display:flex;
+        flex-direction: row;
+    }
+    .source .photo{
+        width: 48px;
+        width: 4.8rem;
+        height: 48px;
+        height: 4.8rem;
+        padding: 1px;
+    }
+    .source .detail{
+        width: 295px;
+        width: 29.5rem;
+        padding-left: 5px;
+        padding-left: 0.5rem;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .desc{
+        font-size:12px;
+        font-size:1.2rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .nick{
+        font-size:15px;
+        font-size:1.5rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .workspace_top{
+        display: flex;
+        height: auto;
+        padding-top: 10px;
+        padding-top: 1rem;
+        padding-bottom: 10px;
+        padding-bottom: 1rem;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        background: darkblue;
+    }
+    @media screen and (max-width: 1020px){
+        .source{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 750px){
+        .workspace_top{
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .source{
+            display: none;
+        }
+    }
+    @media screen and (max-width: 391px){
+        .logo {
+            width: 100%;
+            padding:0px;
+        }
+        .logo .logo-font{
+            padding:0px;
+            font-size: 10vw;
+            width: 50%;
+        }
+        .logo .logo-text{
+            padding:0px;
+            font-size: 4vw;
+            width: 50%;
+        }
+        .source {
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+            display:none;
+        }
+        .source .photo{
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail{
+            width: 80%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .desc{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .nick{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+    }
+
+</style>
+<div style="width: 100%">
+ <div class="workspace_top">
+     <div class="logo">
+        <div class="logo-font">
+            <div><a href="/wechat" style="color:black">文章精选</a></div>
+        </div>
+        <div class="logo-text">
+            <div>微信公众号文章精选</div>
+            <div><a href="/wechat/">https://www.lijiaocn.com</a></div>
+        </div>
+     </div>
+
+
+     <div class="source">
+         
+         <div class="photo"><a href="/wechat/img/TOMsInsight.photo.png"><img width=100% height=100% src="/wechat/img/TOMsInsight.photo.png"></a></div>
+         <div class="detail">
+            <div class="nick"><a href="/wechat/categories/TOMsInsight.html"><span>TOMsInsight/TOMsInsight</span></a></div>
+            <div class="desc"><span>专注于中国互联网的深度数据分析洞察,发布独家原创报告</span></div>
+         </div>
+     </div>
+
+
+
+ </div>
+</div>
+
+
+<div style="width: 100%; text-align: center">
+    <h1 style="text-align: center">试错与优化：是成本还是方法论</h1>
+    <p style="text-align: center"><span>发布日期：2015-04-01 10:50:31 +0000</span></p>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- kankan_post_top -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="8060913530"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="article">
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+        
+        <li class="previous">
+            <a href="/tomsinsight/2015/04/25/TOMsInsight-1740/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/TOMsInsight">TOMsInsight</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/tomsinsight/2015/03/06/TOMsInsight-1742/">后一篇</a>
+        </li>
+        
+
+    </div>
+
+    <div><div class="rich_media_content" id="js_content">
+<p>
+         我们古代先人们讲究「朝闻道夕死可矣」，不论各行各业贫贱富贵，一辈子追逐的是每个人心中的道，这个道可大可小，却是一种神圣的约定。不论儒家思想整体优劣，但这个价值观却让古代社会秩序平稳，人人各司其职，终极一生追究职业上的极限，让我们成为文明大国，也给后人留下极多匪夷所思的遗产。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这种追逐极致的精神，也被现在我们称之为「匠人精神」，终极一生的时间去打造专业技能、师徒传承、侍奉各行祖师、规则丝毫不乱、宁金不典等。甚至哪怕是盗墓，都有鸡鸣不摸金，一墓走一次，一次只一件的严格行规，出于对墓主人的尊重，也同行和后代留口饭，也给自己留有余地和少许体面。归根结底，这是一种对大自然的敬畏心和对真理的追求，以及对人类社会发展所需要的知识传承的奉献。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         时光流逝，沧海桑田。我们先人们没有想到的是，这种「匠人精神」到了今天反而需要我们从日本、德国去学习，并且成为一些产品的包装炒作噱头，现实中真正追逐真理的人少之又少，而且反而被习惯性痴笑为不现实、不上道或者理想主义。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         社会变迁，价值流转。我们变得自私了，开始不断透支文明传承的红利：我们更多的只是看到眼前，快速的发展，迅速的成功，努力的逆袭。而真正去做可以奉献给人类知识传承的却少之又少，科技的发展更多的是被商业推动，甚至为了商业利益可以去隐藏和扭曲真理。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         国内互联网行业就是一个纯粹的典型。这是一个飞速发展的行业，我们却很少站在一个大的格局上去思考，看到的仅仅是眼前商业目标：概念、包装、融资、用户数、上市。很客观的说，大多数国内的所谓互联网创新，都是商业行为，本质上并不是什么伟大的事情，但是却自嗨到一个好像是改变世界的阶段，并且约定俗成了一些荒唐的规则，今天TOMsInsight的报告就针对这一现象进行深度分析并探索本质，主题是：「试错与优化，是成本还是方法论」。
+        </p>
+<p>
+<br />
+</p>
+<p>
+<span style="text-decoration: underline; color: rgb(192, 0, 0);">
+<strong>
+           试错与优化的由来
+          </strong>
+</span>
+</p>
+<p>
+<br />
+</p>
+<p>
+         每一个互联网人，特别创业者、产品设计人员，都会把「试错」和「优化」挂在嘴边，也成为了互联网行业的普遍的产品设计理念和创新的准则。我们很少会思考「试错」和「优化」背后的逻辑以及由来，好像这些是互联网的基本做法和规范，如果你去质疑，回复的就是占据行业道德制高点的那句「你到底懂不懂互联网？」。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         但是如果我们较真的去考究为什么要去试错优化，却很少有人能回答。那么到底背后有什么逻辑呢，试错和优化解决的到底是什么问题呢，我们抽象出来一个简洁的故事模型来看：
+        </p>
+<p>
+<br />
+</p>
+<p>
+         很久以前，随便哪个年代，中原一个村里面有两个年轻人，花开两朵各表一枝：小a家传手艺炸油条，老实务实，10岁起就开始跟着父母学和面、发面、加料、热油锅，手法、水温、油温、学到可以自己亲自上案炸油条，也已经到了20出头了。十多年的技艺磨练，让小a完全传承了家族手艺，炸出来的油条酥脆香实，入口即化，配合免费的豆浆，经济实惠。小a家的早点摊成为了村里人的少有的美好事物，十里八乡都早起老远来小a家的早点摊买油条。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         小m是另外的节奏：从小不务正业游手好闲，但也生得聪明伶俐，村里什么事情都天逃不过他的眼睛，哪家的寡妇半年亮了油灯、谁家的鸡下了初蛋、哪个放羊的娃不识数好欺负可以偷个羊、哪个树下面的蜂巢养的可以吃了。从10岁起就开始不断的自己找口饭吃，到了20出头，还是到处的混饭但凭着聪明伶俐，日子过的也不错。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这一年，由于运河改道、官船漕运，新建码头，这个村忽然成为南北交通枢纽，人来人往，熙熙攘攘，形成了一个非常大的码头集市。这个利好让村里人都非常高兴，孩子看个热闹买点货，老人打听点外面世界的消息。而作为接近而立之年的小a和小m，自然有一番考虑。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         小a理所当然的在码头集市上支起来了油条摊，人流量大，凌晨就开始和面，热锅。早点一直卖到中午，生意越来越红火。小m呢，也开始开动了脑筋：自己也没什么手艺，凭着这么多年的市井经验，在码头集市上讨口饭吃也不难。但是做什么呢？不知道，这个得「一切以用户为中心」，并有「合理的商业模式」还得利润足够大，像小a似的起早贪黑的也不是个办法。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         小m就开始了摸索，最暴利的是妓院、鸦片、赌博，但是这些服务业有太大的风险，不是被官府查就是压不住场子，小m尝试了几次就作罢了。开个茶水摊弄几副牌收个摊位费还是不错的，但是这些漕丁漕夫们脾气太爆，动不动就砸了场子。尝试来尝试去，还是得卖货。但是卖什么呢又是一个问题？不像小a似的有手艺，那就只能继续试了。好在客流量大，开个杂货摊，不论什么稀奇古怪的玩意，也都能卖出去一点。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         但是好景不长，由于市场的繁荣，导致码头集市的摊位费成本越来越高（流量成本），看起来还是那些熙熙攘攘的人群，但是不是谁都能在码头集市上混得起的。不久，小a就发现自己已经很难赚钱了，离开了码头集市从新回到村里去卖油条，这段时间大客流和新客变化更积累了小a的手艺，创新改良了一些制作细节，凭着过硬的手艺和口碑，生意越来越好。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         但是小m不一样，小m没有什么手艺和生存技能，只能靠自己的「创新意识」来吃饭，于是小m继续开始自己的试错：一文钱的点心印上诗词歌赋卖十文、归乡概念让漕丁们喝上杭州茶等等，十次尝试里面有一次能赚钱就不错了，好在小m的成本低，每次尝试都点到为止，快速迭代，见错就收，再加上都是过水人流量，一年漕运一次没回头客，没有机会成本。终于，功夫不负有心人，小m发现了介绍漕丁认识本村寡妇这条擦边球的路子。但是这条路子虽然赚钱，也不是暴利啊，漕丁何等多，寡妇就那几个。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         小m开始了自己的优化：让妓女充当寡妇，解决快速扩展问题，也避开和传统行业竞争，并引入新的概念。小m的生意越做越大，甚至一些乡绅都开始投资入股，并带动了周边各种「漕运」经济概念的火爆。小m也成为了「漕运创新新贵」的代表，完成逆袭，也实现了天天早晨去小a的早点摊吃油条的梦想。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         ----------------
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这个故事模型其实大家仔细想一想，好像并不罕见。归根到底，两个年轻人的思路截然不同，是「手艺人」和「生意人」的区别，没有优劣。但是「创新」在这两种思路上的实现确实完全不同，前者的试错和优化更多的是一种成本，而后者，更多的是一种方法论。
+        </p>
+<p>
+<br />
+</p>
+<p>
+<span style="text-decoration: underline; color: rgb(192, 0, 0);">
+<strong>
+           试错与优化的本质
+          </strong>
+</span>
+</p>
+<p>
+<br />
+</p>
+<p>
+         互联网发展之前的软件行业，对产品的设计要求是非常之高，主要原因是产品迭代成本。比如微软的操作系统或办公软件，每一个版本的设计研发都要历经几年的时间，产品迭代速度慢，一旦有重大的设计失败，会严重影响品牌形象和用户。在这种传统软件开发中，对设计规范、整体流传和设计者的要求非常高，比如一些流传的微软一个关机界面要设计半年的例子。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这种例子到了互联网时代完全变成了笑话和反面教材，由于互联网产品的体量轻，相对分发成本极低，再加上不需要部署在客户端，让灰度发布（选取部分用户发布，仅仅部分用户看的新版本）成为可能，于是这种优化-&gt;灰度发布-&gt;试错-&gt;优化-&gt;发布的循环升级模型，也成为互联网的升级的标准。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这种试错和优化都是避免影响更多用户的方式，就如软件产品分发内测版、预览版的道理一样，仅仅是降低成本的一种方式：缩小潜在的风险的波及范围，尽早的获取用户反馈，提高产品的最终质量水平。在国内的有些互联网公司会称之为小流量测试或者灰度放量，都是一种意思。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这种通过灰度发布进行试错与优化是非常科学的方法，在这种方法下的「试错」中的错误，是属于风险成本的，说白了这也是一种很丢人的事情：升级的新版本效果不如老版本，这个升级工作等于是失败的。如果在传统软件行业，这是需要有人负责任，要「死人」的事情。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         但是到了互联网行业，由于试错的成本非常低，甚至对于一些大的互联网公司来说可以到了忽略不计的地步，所以在这件事情上也没必要那么认真了。和培养一个优秀的产品设计者的成本比起来，还不如找一批各种背景的新人，不断地尝试，总有一些可以成功。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这也导致了绝大多数的灰度发布后效果对比，并不比之前更好，或者说更差。这是意味着大多数的互联网产品的内部升级，最终都是以失败告终的，仅仅少数能获得成功。但是这种情况对大型互联网公司来说，在战术层面上，并不是坏事。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         「试错，就是因为不知道怎么做才试」国内最大三家互联网公司其中一名产品总监在和我们TOMsInsight分析师聊天时这样说道：「互联网产品设计要求其实非常高，但是整体行业太浮躁，很少有人能去精心磨练技能，高手又太贵，万一被挖走了风险太大，我团队100多名产品经理平均年龄才25岁，那些不靠谱的奇思妙想碰撞下来，一年总会有几个成功的升级，如果再赶上一款成功新产品，那就和中彩票一样高兴了。但是对我来说，反而是成本最低的做法。」
+        </p>
+<p>
+<br />
+</p>
+<p>
+         「最早的时候我们只是对着国外的产品抄，抄完了开始抄国内的优秀产品，改改算是优化，但是一旦到了一定的程度，谁也不知道接下来怎么走，只能是摸着石头过，一点点的试吧，时间久了，总有一种优化方法。小流量测试，数据说话，其实只是验证方法，因为谁都没把握」这位产品总监对此也很无奈。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         如果「试错」与「优化」仅仅被大公司这样利用，还是很科学的做法。但并不是所有人都可以看清楚，一些「生下来就要改变世界」的产品经理，离开了大公司，带着这两件觉得理所当然的法宝，开始病毒性的复制。
+        </p>
+<p>
+<br />
+</p>
+<p>
+<span style="text-decoration: underline; color: rgb(192, 0, 0);">
+<strong>
+           试错与优化的泛滥
+          </strong>
+</span>
+</p>
+<p>
+<br />
+</p>
+<p>
+         对于大公司来说，试错和优化仅仅是战术层面的手段。但是这种风气在不断的传播，慢慢的大家都觉得理所当然，甚至约定俗成：「互联网就必须试错」，这让我们想起来那种「中国男人平均时间只有37秒的」类似的论调的群体性自我安慰。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         大多数国内互联网的创业创新者，都是从想法而不是积累开始，大多数想法仅仅是为了直接间接赚钱，而用快速的试错来评估赚钱的可能，快速的优化来满足用户获取更多的直接间接利润。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         目的性极强的创业就像之前故事里面的小m，创新变成了投机，试错和优化变成了方法论而不是成本问题，这种背后的逻辑就是：如何通过快速的尝试，找到可以一夜暴富的机会。我们也很心痛的看到大量的年轻人前仆后继的进入这个行业，做着毫无意义的事情，扰乱着市场，骚扰着用户，而最终造成了极大的社会和行业的资源浪费。
+        </p>
+<p>
+<br />
+</p>
+<p>
+<img data-ratio="0.5592885375494071" data-s="300,640" data-src="" data-type="png" data-w="" src="/wechat/img/9xK6bCZTSjrj4CVyODEECCHyicI1AjwXRmrIyuia1CDupxHeNLenBEweyGp661Yw9CViaic3eyWjMOt5E8AQ4WFC5Q..png" />
+<br />
+</p>
+<p>
+<br />
+</p>
+<p>
+         这种风气下的创业者，甚至夸张的打着「颠覆传统行业」的旗号，粗暴的利用流量优势和资本的推力，在各种传统行业进行「试错性创新」，过度的关注「用户需求」但是却又不深入需求，浅尝辄止，去试探，直到找到一种利润极高的模式。作为商业行为，以赚钱为目的创业创新本身并没有错，问题是如果整体行业都在这样的气氛下，会形成一些很习以为常的约定俗成的奇怪现象：
+        </p>
+<p>
+<br />
+</p>
+<p>
+         比如：我们的大量的医院在研究怎么在CPA几百元的网络推广费下提高客单价；我们的大量的K12在线教育在研究如何留存用户并消费（这种教育和游戏有什么区别？）；我们的媒体习惯通过噱头标题八卦爆料美女等来获取关注；廉价的中国制造包装下概念就变成了智能硬件；只要能带来用户量不管是约炮还是私照还是匿名八卦都是极好的创新；我们的互联网上充斥上营销信息和伪科学，几乎看不到任何有价值内容，等等。下限一次次的刷低。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         慢慢的，这种约定俗成逐步升级：对创新者来说一切都以用户为中心，用户觉得爽的那就是好的，有了用户量就可以包装概念，去拿投资，有了投资就有钱了，有了钱就是成功；对于投资人来说，投资回报率才是关键，对此也全盘接受并助推。在彼此的推动下，国内的互联网创新开始变得短视且现实，而创新者也从「手艺人」变成了「投机生意人」。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         恶性循环，我们也并不是什么在改变世界，我们这群聪明人只是做着毫无意义的事情，变成创新的长尾，在充分的竞争中分着有限的用户，帮着传统制造业增加了一个销售渠道（电商）、哄骗着青少年（游戏）、贴贴牛皮癣（广告），而这些，反而包装成国内互联网行业的各种概念，激励着更多的聪明人进入，等待着比中彩票更低的人生逆袭机会。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         在某种意义上讲，我们站在更大的维度上来观测，这种行业内打着「创新」旗号来疯狂竞争寻找利益最大化的模式，早晚会由市场调节。但是这种模式下产生的荒唐的「试错」「优化」等各种方法论，反而会影响的更久一些，也让我们行业的发展走更多的弯路，甚至在历史上留下如那些著名活动一样的笑料罢了。
+        </p>
+<p>
+<br />
+</p>
+<p>
+<span style="text-decoration: underline; color: rgb(192, 0, 0);">
+<strong>
+           给我们的启示
+          </strong>
+</span>
+</p>
+<p>
+<br />
+</p>
+<p>
+         很多事情一旦变成了约定俗成，或是游戏规则，就很少有人再去深入思考其中包含的意义或本质，而只会在表面做文章。但是这种约定的规则却不见得是真理，而且大多数时候都是站在真理的反面，只是人云亦云或者在特定的阶段符合特定的利益阶层而已。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这是一个最好的时代，也是最坏的时代。在历史的长河里面，我们又有多在乎真理呢，大多时候仅仅考虑是不是符合自己的利益而已。这种短视的做法乍一看好像没有问题，甚至契合目前社会重商的价值观。但是毕竟最终，人类社会发展需要的是积累和传承。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         而我们的人生并不会用来试错，只是选择的唯一优化方案而已。
+        </p>
+<p>
+<br />
+</p>
+<blockquote style="white-space: normal;">
+<p>
+<span style="color: rgb(255, 0, 0);">
+<strong>
+<span style="font-size: 12px;">
+             ( TOMsInsight仅发布独家原创报告，拥有全部内容及数据版权。
+            </span>
+</strong>
+</span>
+<strong style="color: rgb(255, 0, 0);">
+<span style="font-size: 12px;">
+            欢迎个人分享，但媒体或商业转载必须联系我们并获取
+           </span>
+</strong>
+<span style="text-decoration: underline;">
+<strong style="color: rgb(255, 0, 0);">
+<span style="text-decoration: underline; font-size: 12px;">
+             邮件授权
+            </span>
+</strong>
+</span>
+<strong style="color: rgb(255, 0, 0);">
+<span style="font-size: 12px;">
+            ，违者必追究法律责任。 )
+           </span>
+</strong>
+</p>
+</blockquote>
+<p style="white-space: normal;">
+<img data-ratio="0.01383399209486166" data-s="300,640" data-src="" data-w="" src="/wechat/img/9xK6bCZTSjpZxhicu4pHEJia2NKUAC0WSE2m6l2uiao6UiavoQEzSOsbw6niaEpvnFGkAp8IsVibfV3WDg0GJEG1jRyg..png" />
+</p>
+<p style="white-space: normal;">
+<br />
+</p>
+<p style="white-space: normal; text-align: center;">
+<span style="color: rgb(31, 73, 125);">
+<strong>
+           这是TOMsInsight报告
+          </strong>
+</span>
+<br />
+</p>
+<p style="white-space: normal;">
+<br />
+</p>
+<p style="white-space: normal; text-align: center;">
+<strong>
+<span style="font-size: 14px;">
+           专注于中国互联网的深度数据分析洞察
+          </span>
+</strong>
+</p>
+<p style="white-space: normal; text-align: center;">
+<strong style="font-size: 14px;">
+          微信号：
+          <span style="color: rgb(31, 73, 125);">
+           tomsinsight
+          </span>
+</strong>
+</p>
+<p>
+<br />
+</p>
+</div>
+</div>
+
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+
+        
+        <li class="previous">
+            <a href="/tomsinsight/2015/04/25/TOMsInsight-1740/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/TOMsInsight">TOMsInsight</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/tomsinsight/2015/03/06/TOMsInsight-1742/">后一篇</a>
+        </li>
+        
+
+    </div>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- 匹配内容-lijiaocn -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="autorelaxed"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="6443696990"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+        </div>
+    </div>
+    <!--div class="bottom">
+            <p style="color:white">Thanks for use. Remember us.</p>
+    </div-->
+    <script src="/wechat/assets/js/js.js" charset="utf-8"></script>
+    
+
+    
+</body>
+</html>

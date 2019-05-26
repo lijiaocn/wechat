@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="chinese">
+<head>
+<meta charset="utf-8" content="text/html">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>以变制变 - 前端动态化代码保护方案探索|腾讯防水墙|微信公众号文章合集|鼹鼠看看</title>
+<meta name="description" content="本文分享了腾讯防水墙团队关于机器对抗的动态化思路，希望能抛砖引玉，给现在正在做人机对抗的团队一些启发，帮助更多中小型公司的业务摆脱机器和爬虫之痛。" />
+<meta name="keywords" content="腾讯防水墙,tencent_fsq,微信公众号,公众号文章导出"/>
+<link rel="shortcut icon" href="/wechat/favicon.ico"/>
+<link rel="bookmark" href="/wechat/favicon.ico"/>
+<link rel="stylesheet" href="/wechat/assets/css/style.css">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- google ad -->
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8176866190626448",
+          enable_page_level_ads: true
+     });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105389858-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-105389858-1');
+</script>
+
+<script async>
+/*百度统计*/
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8f59ea10145df28da8932c8743ec1d60";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+/*百度自动收录*/
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+</head>
+
+<body class="body">
+    <div class="top">
+            
+<style type="text/css" scoped>
+    .innerbanner{
+        background:gray;
+        color:white;
+        padding-right:10px;
+        padding-right:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-top:10px;
+        padding-top:1rem;
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: flex-start;
+        width:100%;
+        font-size:15px;
+        font-size:1.5rem;
+        /*
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        */
+    }
+    .innerbanner a{
+        color:white;
+    }
+    .innerbanner a:hover{
+        color: black;
+        text-decoration: none;
+        font-size:large;
+    }
+    .innerbanner #inner_ul {
+        display:flex;
+        color:white;
+        padding-left:0px;
+        margin:0px;
+        align-items: flex-start;
+    }
+    .innerbanner #inner_li {
+        list-style:none;
+        display:inline-block;
+        line-height:25px;
+        line-height:2.5rem
+    }
+    .topdetails{
+        top:10px;
+        top:1rem;
+        display: inline-block;
+    }
+    .topdetails summary::-webkit-details-marker {
+        display: none;
+    }
+    .topdetails summary:first-of-type {
+        list-style-type: none;
+    }
+    .topdetails ul{
+        padding:0px;
+    }
+    .topdetails li{
+        list-style:none;
+        text-indent:0px;
+    }
+    .topdetails a{
+        display:block;
+        background:gray;
+        color:white;
+        height:30px;
+        height:3rem;
+        padding-top:10px;
+        padding-top:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-right:10px;
+        padding-right:1rem;
+    }
+    .topdetails a:hover{
+        background:darkgray;
+        /*color: white;*/
+        color: black;
+    }
+
+    @media screen and (max-width: 1024px){
+        .innerbanner #inner_ul{
+            list-style:none;
+            display:block;
+        }
+    }
+</style>
+<div class="innerbanner" id="bannerid">
+    <ul id="inner_ul">
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                鼹鼠首页
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                <span style='color:blue'>全球网购></span>
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=WYppWas1DZpVXZmcDOwMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLzYTMuU3b5ZkMlYkMlE0MlAHd0hWP0Zibj9">
+                网易严选
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=j9WYppWas1DZpVXZmczM3ETPklWYmAjMzUjMy0DZp9VZ0l2cmYiJGJTJt92YuEGbvF2auc3d3ZkMlYkMlE0MlAHd0hWP0Zib">
+                考拉海购
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom">
+                无人机
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=lAHd0hWP0Zibj9WYppWas1DZpVXZmQDOzMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiJpFWbvVHZfB3ckR0Ml02byZmeGNTJGJTJt92Yu8Wd69WY6ZkMlYkMlE0M">
+                造作
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=m0DZpVXZmITO5MTPklWYmAjMzUjMy0DZp9VZ0l2cm02bj5CdyF2d55yd3dnRyUiRyUSQzUycwRHdo1Dd">
+                艺网
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=ibj9WYppWas1DZpVXZmMDMxITPklWYmAjMzUjMy0DZp9VZ0l2cmYiJuNmLt92YukHbu9WZz9mcuc3d3ZkMlYkMlE0MlAHd0hWP0Z">
+                RoseOnly.
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="http://g.click.taobao.com/q?ak=24663635&pid=mm_33963329_6520758_142982992&unid=lijiaocn&rf=http%3A%2F%2Fwww.lijiaocn.com%2F%25E5%25A5%25BD%25E8%25B4%25A7%2F2010%2F10%2F10%2Fsites.html&rd=2&et=97775937&pgid=be61cbd8f3af2ff376aa0c1a3103628d&ct=url%3Dhttps%253A%252F%252Fwww.tmall.com%252F&v=1.2&ttype=1&cm=674%2C742%3B654%2C598%3B615%2C639%3B579%2C634%3B597%2C656%3B587%2C667%3B639%2C797%3B777%2C675%3B624%2C701%3B561%2C709&ck=&cw=0">
+                天猫
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?site_id=224482&lid=4193&aid=61&euid=lijiaocn&t=http%3A%2F%2Fwww.360buy.com%2F">
+                京东
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=uN2bhlmapxWPklWdlZSMyYTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLllma1d2bt5yd3dnRyUiRyUSQzUCc0RHa9QnJ">
+                蘑菇街
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://p.gouwuke.com/0Rdyy">
+                益丰药房
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>亚马逊&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHhN7">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2N0KGzS">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRl3e">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zodOgB">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHpfz">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRwvq">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2O4YeyF">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.cn/?tag=znrio-23">中国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xKqLiP">巴西</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2DotW60">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.com.mx/">墨西哥</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 1&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com/">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.uk/">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.de/">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.au/">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.it/">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.fr/">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.es/">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ca/">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ie/">爱尔兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.at/">奥地利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://www.ebay.be/">比利时</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.nl/">荷兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ch/">瑞士</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 2&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.gittigidiyor.com/">土耳其</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.pl/">波兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.hk/">中国香港</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://global.gmarket.co.kr/Home/Main">韩国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.sg/">新加坡</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ph/">菲律宾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.my/">马来西亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.in/">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.cn/">中国大陆</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.jp/">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.th/">泰国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.vn/">越南</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.tw/">台湾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.se/">瑞典</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+    </ul>
+</div>
+
+<p id="hiddenid" style="color:white;position:absolute;right:15px;top:1px;margin:0;padding:0;font-size:1.2rem;" onclick="hiddenBanner()"></p>
+<script>
+    function hiddenBanner() {
+        var b = document.getElementById("bannerid");
+        var p = document.getElementById("hiddenid");
+        if (b.style.display=="none"){
+            b.style.display="flex";
+            p.innerHTML="";
+            p.style.color="white"
+        }else{
+            b.style.display="none";
+            p.innerHTML="";
+            p.style.color="white"
+        }
+    }
+</script>
+
+    </div>
+    <div class="center">
+        <div class="leftbar">
+            <nav id="nav" class="nav" >
+            
+
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<!--details class="menu"-->
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<details class="menu" open>
+    <summary>鼹鼠看看</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/news" >全站最新</a>
+        </li>
+        <li>
+            
+            <a href="/wechat/about" >本站服务</a>
+        </li>
+        <li>
+            
+            <a href="/wechat">鼹鼠首页</a>
+        </li>
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>精彩连载</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/specialserial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/gh_4c12eeda5979" >灼识新维度</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/flashsky" >我的安全之路</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>政经启蒙</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/finacial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/worldofboss" >饭统戴老板</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-net" >水库论坛</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/wm221x" >猛哥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-Off" >水库线下</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WatcherCommander" >守夜人总司令</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>互联网</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/internet" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/z7z8day" >观点推荐</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/caozsay" >caoz的梦呓</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/TOMsInsight" >TOMsInsight</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/tencent_fsq"  style="color:white;" >腾讯防水墙</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WebNotes" >小道消息</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/ColinHuangZheng" >黄峥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/vc-ziliu" >投资人子柳</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/yirensay" >亦无所知</a>
+        </li>
+        
+    </ul>
+</details>
+
+
+            </nav>
+        </div>
+        <div class="workspace">
+            <style>
+    .logo {
+        width: 391px;
+        width: 39.1rem;
+        height: 70px;
+        height: 7rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .logo .logo-font{
+        width: 150px;
+        width: 15rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        background: white;
+        font-size: 37px;
+        font-size: 3.7rem;
+        font-family: "楷体";
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .logo .logo-text{
+        width: 200px;
+        width: 20rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+    }
+    .source {
+        width: 351px;
+        width: 35.1rem;
+        height: 50px;
+        height: 5rem;
+        background: lightgray;
+        display:flex;
+        flex-direction: row;
+    }
+    .source .photo{
+        width: 48px;
+        width: 4.8rem;
+        height: 48px;
+        height: 4.8rem;
+        padding: 1px;
+    }
+    .source .detail{
+        width: 295px;
+        width: 29.5rem;
+        padding-left: 5px;
+        padding-left: 0.5rem;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .desc{
+        font-size:12px;
+        font-size:1.2rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .nick{
+        font-size:15px;
+        font-size:1.5rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .workspace_top{
+        display: flex;
+        height: auto;
+        padding-top: 10px;
+        padding-top: 1rem;
+        padding-bottom: 10px;
+        padding-bottom: 1rem;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        background: darkblue;
+    }
+    @media screen and (max-width: 1020px){
+        .source{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 750px){
+        .workspace_top{
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .source{
+            display: none;
+        }
+    }
+    @media screen and (max-width: 391px){
+        .logo {
+            width: 100%;
+            padding:0px;
+        }
+        .logo .logo-font{
+            padding:0px;
+            font-size: 10vw;
+            width: 50%;
+        }
+        .logo .logo-text{
+            padding:0px;
+            font-size: 4vw;
+            width: 50%;
+        }
+        .source {
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+            display:none;
+        }
+        .source .photo{
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail{
+            width: 80%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .desc{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .nick{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+    }
+
+</style>
+<div style="width: 100%">
+ <div class="workspace_top">
+     <div class="logo">
+        <div class="logo-font">
+            <div><a href="/wechat" style="color:black">文章精选</a></div>
+        </div>
+        <div class="logo-text">
+            <div>微信公众号文章精选</div>
+            <div><a href="/wechat/">https://www.lijiaocn.com</a></div>
+        </div>
+     </div>
+
+
+     <div class="source">
+         
+         <div class="photo"><a href="/wechat/img/tencent_fsq.photo.png"><img width=100% height=100% src="/wechat/img/tencent_fsq.photo.png"></a></div>
+         <div class="detail">
+            <div class="nick"><a href="/wechat/categories/tencent_fsq.html"><span>腾讯防水墙/tencent_fsq</span></a></div>
+            <div class="desc"><span>腾讯防水墙为您提供专业的业务安全资讯与服务,用领先的技术解决欺诈、薅羊毛、刷单、爬虫、撞库、人机对抗等问题,守护您的业务安全</span></div>
+         </div>
+     </div>
+
+
+
+ </div>
+</div>
+
+
+<div style="width: 100%; text-align: center">
+    <h1 style="text-align: center">以变制变 - 前端动态化代码保护方案探索</h1>
+    <p style="text-align: center"><span>发布日期：2018-06-06 12:36:59 +0000</span></p>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- kankan_post_top -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="8060913530"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="article">
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+        
+        <li class="previous">
+            <a href="/tencent_fsq/2018/06/13/tencent_fsq-2264/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/tencent_fsq">腾讯防水墙</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/tencent_fsq/2018/05/30/tencent_fsq-2266/">后一篇</a>
+        </li>
+        
+
+    </div>
+
+    <div><div class="rich_media_content" id="js_content">
+<section class="xmteditor" data-label="powered by xmt.cn" data-tools="新媒体管家" style="display:none;">
+</section>
+<article class="yead_editor" data-author="Wxeditor" style="max-width: 100%;padding: 5px;">
+<section style="max-width: 100%;border-width: 0px;border-style: none;border-color: initial;margin-right: auto;margin-left: auto;box-sizing: border-box !important;word-wrap: break-word !important;">
+<section style="max-width: 100%;color: rgb(51, 51, 51);line-height: 30px;text-align: justify;box-sizing: border-box !important;word-wrap: break-word !important;">
+<section class="xmt-style-block" data-id="8356" data-style-type="2" data-tools="新媒体排版">
+<blockquote style="white-space: normal;margin: 5px 0px 0px;padding: 10px;max-width: 100%;border-left-width: 5px;border-left-style: solid;border-left-color: rgb(157, 180, 194);line-height: 25px;color: rgb(102, 102, 102);">
+<p>
+<span style="background-color: rgb(255, 255, 255);color: rgb(68, 68, 68);font-family: 微软雅黑, sans-serif;font-size: 15px;">
+               本文分享了腾讯防水墙团队关于机器对抗的动态化思路，希望能抛砖引玉，给现在正在做人机对抗的团队一些启发，帮助更多中小型公司的业务摆脱机器和爬虫之痛。
+              </span>
+<br />
+</p>
+</blockquote>
+</section>
+<p style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br />
+</p>
+</section>
+</section>
+</article>
+<h2 style="margin: 1.02em 8px 1.3em;font-size: 24px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+         0x00 前言
+        </h2>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          浏览器作为当今互联网的一大流量入口，正在变得越来越强大。为了有更好的Web体验，各类新的标准被制定并实施。PWA的出现，更是把移动端H5的体验推向了另一个极致。越来越多业务使用H5作为主要入口的同时，也带来了另一个问题：机器行为泛滥。
+         </span>
+<span style="font-weight: bolder;font-size: 15px;color: rgb(0, 0, 0);">
+          只要有利益的地方就会有恶意
+         </span>
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          ，登录注册、投票领券等页面很容易成为机器刷量的重灾区，如今写一个普通刷投票脚本的难度基本就跟写一个“Hello World!”的难度差不多。在与机器对抗的历程中，Web前端一直是非常薄弱的一环。浏览器毫无保留地把所有前端代码拉取到本地并执行、所有前端代码均透明可见，拿什么拯救前端代码安全？
+         </span>
+</p>
+<h2 style="margin: 1.02em 8px 1.3em;font-size: 24px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         0x01 名词解释
+        </h2>
+<h3 style="margin: 1.1em 8px 1.3em;font-size: 19px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         代码安全
+        </h3>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          本文中所提及的代码安全，是指前端JavaScript代码的安全。通常，如果一段JavaScript代码只能在正常的浏览器中运行，无法或尚未在非正常浏览器的运行环境执行得到结果、无法被等价翻译成其他编程语言的代码，则认为这段代码是安全的。
+         </span>
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          一段重要
+         </span>
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          的JavaScript逻辑被置于其他环境以高于正常浏览器几个数量级的效率运行并得到正确的结果，对于服务端及后面的业务来说，几乎是一个灾难。
+         </span>
+</p>
+<h3 style="margin: 1.1em 8px 1.3em;font-size: 19px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         数据保护
+        </h3>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          本文说的数据保护是指对HTTP/HTTPS协议上承载内容(如POST的body)的保护。HTTP协议是一个文本的协议，所有传输的内容从客户端(即浏览器)的角度看都是可见且富有语义的，这意味着内容如果不加以保护，恶意用户只需要理解内容中的各项参数，即可模拟相应的请求而无需阅读或逆向前端JavaScript代码的逻辑。注意，这里说的保护不是指TLS等传输过程的保护，而是指HTTP协议上层承载的具体数据内容的保护。
+         </span>
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          比如，正常一个查询请求的URL形如
+         </span>
+<code style="margin-right: 4px;padding: 3px;border-width: 1px;border-style: solid;border-color: rgb(221, 221, 221);background: rgb(246, 246, 246);border-radius: 3px;font-size: 14px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+           https://example.com/query?from=shenzhen&amp;destination=beijing
+          </span>
+</code>
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          ，爬虫开发者无需阅读JavaScript便可知道参数要如何构造。而如果请求形如
+         </span>
+<code style="margin-right: 4px;padding: 3px;border-width: 1px;border-style: solid;border-color: rgb(221, 221, 221);background: rgb(246, 246, 246);border-radius: 3px;font-size: 14px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+           https://example.com/query?params=ZnJvbT1zaGVuemhlbiZkZXN0aW5hdGlvbj1iZWlqaW5n
+          </span>
+</code>
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          ，恶意用户在无法通过观察立即知道参数构造方法的前提下，只能阅读或需要先逆向JavaScript代码，才能知道构造参数方法。这样就达到了对数据进行保护的目的。
+         </span>
+</p>
+<h3 style="margin: 1.1em 8px 1.3em;font-size: 19px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         混淆
+        </h3>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          通过一些
+          <em>
+           字符串替换规则
+          </em>
+          或者
+          <em>
+           抽象语法树变换规则
+          </em>
+          ，将一段代码等价替换成另一段可读性很差的代码，从而达到保护原有代码安全。这个过程通常是不可逆的。
+         </span>
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;line-height: 29px;min-height: 1.8em;color: rgb(68, 68, 68);margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          如:
+         </span>
+</p>
+<pre style="margin-top: 0px;margin-bottom: 0px;padding: 0px;unicode-bidi: embed;white-space: pre-wrap;color: rgb(68, 68, 68);font-size: 16px;background-color: rgb(255, 255, 255);z-index: 2;"><p style="margin-bottom: 16px;padding: 14px;border-top: 1px solid rgb(221, 221, 221);border-right: 1px solid rgb(221, 221, 221);border-bottom: 1px solid rgb(221, 221, 221);background: rgb(35, 36, 31);border-radius: 3px;font-size: 14px;font-family: Consolas, Monaco, monospace;display: block;white-space: pre;word-wrap: break-word;overflow-x: auto;color: rgb(248, 248, 242);margin-left: 8px;margin-right: 8px;border-left: none !important;"><span class="hljs-function"><span class="hljs-keyword" style="color: rgb(249, 38, 114);">function</span><span class="hljs-function"> </span><span class="hljs-title" style="color: rgb(166, 226, 46);">foo</span><span class="hljs-function">(<span class="hljs-params"></span>) </span></span>{    <span class="hljs-built_in" style="color: rgb(230, 219, 116);">console</span>.log(<span class="hljs-string" style="color: rgb(230, 219, 116);">'hello world!'</span>);
+}
+foo();</p></pre>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;line-height: 29px;min-height: 1.8em;color: rgb(68, 68, 68);margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          被变换成:
+         </span>
+</p>
+<pre style="margin-top: 0px;margin-bottom: 0px;padding: 0px;unicode-bidi: embed;white-space: pre-wrap;color: rgb(68, 68, 68);font-size: 16px;background-color: rgb(255, 255, 255);z-index: 2;"><p style="margin-bottom: 16px;padding: 14px;border-top: 1px solid rgb(221, 221, 221);border-right: 1px solid rgb(221, 221, 221);border-bottom: 1px solid rgb(221, 221, 221);background: rgb(35, 36, 31);border-radius: 3px;font-size: 14px;font-family: Consolas, Monaco, monospace;display: block;white-space: pre;word-wrap: break-word;overflow-x: auto;color: rgb(248, 248, 242);margin-left: 8px;margin-right: 8px;border-left: none !important;"><span class="hljs-keyword" style="color: rgb(249, 38, 114);">var</span> a = <span class="hljs-string" style="color: rgb(230, 219, 116);">'console'</span>, b = <span class="hljs-string" style="color: rgb(230, 219, 116);">'log'</span>, c = <span class="hljs-string" style="color: rgb(230, 219, 116);">'hello'</span>, d = <span class="hljs-string" style="color: rgb(230, 219, 116);">' world!'</span>;<span class="hljs-function"><span class="hljs-keyword" style="color: rgb(249, 38, 114);">function</span><span class="hljs-function"> </span><span class="hljs-title" style="color: rgb(166, 226, 46);">e</span><span class="hljs-function">(<span class="hljs-params"></span>) </span></span>{  <span class="hljs-built_in" style="color: rgb(230, 219, 116);">window</span>[a][b](c + d);
+}
+e();</p></pre>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          此时代码的可读性被降低了，这是一种很简单的混淆方式。
+         </span>
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          一些能被搜索引擎搜索到的文章会将代码压缩与混淆混为一谈，类似Uglify的工具能把代码压缩成可读性很低的代码，如下图：
+         </span>
+</p>
+<p style="text-align: center;margin-left: 8px;margin-right: 8px;">
+<img class="" data-copyright="0" data-ratio="0.3459715639810427" data-s="300,640" data-src="" data-type="jpeg" data-w="1266" src="/wechat/img/kEQaY0b2qU2hQeMhr65BML484RlGeyHWNNclUfgaRRxlHITuSvKBMeCWnTax0u3sztktnX4TT10licdtNCBEeWw.jpeg" style="" />
+</p>
+<p style="margin: 10px 8px 1.4em;unicode-bidi: embed;line-height: 29px;min-height: 1.8em;color: rgb(68, 68, 68);">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          但被浏览器强大的格式化功能格式化之后，各种逻辑仍然一览无余。
+         </span>
+</p>
+<p style="text-align: center;margin-left: 8px;margin-right: 8px;">
+<img class="" data-copyright="0" data-ratio="0.34548335974643424" data-s="300,640" data-src="" data-type="jpeg" data-w="1262" src="/wechat/img/kEQaY0b2qU2hQeMhr65BML484RlGeyHWGnDriarFicrxjDDoSZkBdk8PGhMs1Y1DX3r28TDeuuWXJenY73UsibyYA.jpeg" style="" />
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;line-height: 29px;min-height: 1.8em;color: rgb(68, 68, 68);margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;">
+<br />
+</span>
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;line-height: 29px;min-height: 1.8em;color: rgb(68, 68, 68);margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          代码压缩工具并不会对代码起到太多的保护作用，其作用只是缩短变量名、删减空格以及删除未被使用的代码，这些工具的目的是优化而非保护，只能“防君子而不防小人”。为了进一步保护前端代码，需要使用一些代码混淆工具。
+         </span>
+<span style="color: rgb(68, 68, 68);">
+</span>
+</p>
+<h2 style="margin: 1.02em 8px 1.3em;font-size: 24px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         0x02 常规化方案及缺陷
+        </h2>
+<h3 style="margin: 1.1em 8px 1.3em;font-size: 19px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         1. 可逆变换保护数据
+        </h3>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          常规的数据保护方式是设计一个可逆变换函数f对数据进行变换，浏览器端提交给服务端的数据 d 经过该可逆变换函数 f 处理后得到变换后的数据 d′
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;font-family: 微软雅黑, sans-serif;color: rgb(81, 81, 81);">
+          d′=f(d)
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;font-family: 微软雅黑, sans-serif;color: rgb(81, 81, 81);">
+          d′ 提交到服务端后使用反函数 f−1 即可得到原数据d。
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          d=f−1(d)
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+</span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          如果恶意用户不知道f的运算步骤，则无法构造出合法的d′。其中 f 可以是一种数据处理算法，也可以是一种加密算法。但是，由于 f 的运算步骤是固定的，且算法最终执行在浏览器中，即使 f 是一种私有的数据处理算法，也终究会被逆向得到其运算步骤。如今nodejs已经相当成熟，在未使用任何混淆工具对 f 进行保护的前提下，恶意用户可直接从前端JavaScript代码中截取出核心逻辑，不需要太多成本便可编写出能在nodejs上运行的破解工具。
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+</span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          特别的，如果函数 f 中含有额外的参数 p ，运算步骤形如 d′=f(d,p) ，此时变换 p 并不能增加 f 的安全性。恶意用户在截取变换函数f的同时可以一并得到参数p，并且在未经混淆的代码里，p是很容易使用工具提取的。
+         </span>
+</p>
+<p style="margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+</span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;margin-bottom: 15px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          因此，只有数据变换是很难很好保护数据的。那么再对代码进行混淆是否可以有效保护数据呢？
+         </span>
+</p>
+<h3 style="margin: 1.1em 8px 1.3em;font-size: 19px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         2. 对代码进行混淆保护
+        </h3>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="color: rgb(81, 81, 81);font-size: 15px;">
+          目前能找到的公开混淆工具并不多，常见的有：
+         </span>
+</p>
+<ul class="list-paddingleft-2" style="list-style-type: disc;margin-left: 8px;margin-right: 8px;">
+<li>
+<p style="line-height: 1.75em;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+            jscrambler(商业)
+           </span>
+</p>
+</li>
+<li>
+<p style="line-height: 1.75em;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+            JavaScript-Obfuscator(开源)
+           </span>
+</p>
+</li>
+</ul>
+<p style="margin: 10px 8px 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;">
+<span style="color: rgb(81, 81, 81);font-size: 15px;">
+          jscrambler作为一款商业软件，混淆效果好，但其付费计划较为昂贵。JavaScript-Obfuscator是目前比较热门的一款开源混淆器，但混淆效果不尽人意。为了验证JavaScript-Obfuscator混淆效果，本文以字符串混淆为例，编写了一个简单的脚本对经过JavaScript-Obfuscator混淆后的字符串进行自动化还原，代码开源请戳：https://github.com/conanliu/de-js-obfuscator
+         </span>
+<br />
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          有了这个工具，逆向出字符串的成本几乎为0。其实逆向字符串相对比较简单，但这已经是个开始，逆向出逻辑是迟早的事。
+         </span>
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+<span style="font-size: 15px;font-family: 微软雅黑, sans-serif;">
+           普通强度的混淆可以在一段时间内保护业务逻辑
+          </span>
+          ，
+         </span>
+<span style="color: rgb(81, 81, 81);font-size: 15px;">
+          一段时间以后，代码便没那么安全了。以JavaScript-Obfuscator的混淆强度，「一段时间」通常不会超过一周
+         </span>
+<span style="color: rgb(81, 81, 81);font-size: 15px;">
+          。如果页面承载的是一个高收益多恶意的业务，即使页面的JavaScript代码被JavaScript-Obfuscator混淆过，上线一周时间后，大部分关键逻辑也可能已经被逆向出来了。关键逻辑被逆向意味着刷量工具很快会被编写出来，该业务将面临被刷的风险。
+         </span>
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          对于一个正常的业务来说，JavaScript中数据保护相关的逻辑一个月变化一次已经相当频繁了。如果为了达到较好的抗破解需要在一周改变一次逻辑，这种对抗成本是很高的。那么有没有一种长效的机制，既能保证前端代码的安全，而又不需要付出过量的成本呢？本文后面试图从动态化的角度，探索一种新的人机对抗方式。
+         </span>
+</p>
+<h2 style="margin: 1.02em 8px 1.3em;font-size: 24px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         0x03 动态化方案介绍
+        </h2>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          如果我们有5个数据变换函数 f1,f2,f3,f4,f5，针对每次请求，我们随机挑选2个变换函数 fx 和 fy，并随机挑选一个分隔符 s ，真实数据 d 被随机拆分成 d1和 d2 ，最终数据为
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+</span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;font-family: 微软雅黑, sans-serif;color: rgb(81, 81, 81);">
+          d′=combine(fx(d1),s,fy(d2))
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;font-family: 微软雅黑, sans-serif;color: rgb(81, 81, 81);">
+          d′提交到服务端后，服务端进行切分操作得到一个二元组
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;font-family: 微软雅黑, sans-serif;color: rgb(81, 81, 81);">
+          (d′1,d′2)=split(d′,s)
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          再用fx和fy的反函数处理d′1和d′2，最终得到原始数据：
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family:微软雅黑,sans-serif;">
+</span>
+<span style="color: rgb(81, 81, 81);font-family: 微软雅黑, sans-serif;font-size: 15px;">
+          d1=f−1x(d′1)
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          d2=f−1y(d′2)
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          d=d1+d2
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+</span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          虽然单次破解的难度仍为t≈1week，但由于每次请求对应的算法组合均不同，单次破解后并不适用与后面的请求。因此理论上需要逆向并脚本化该逻辑的时间代价是指数级增长的，最终恶意用户因为逆向成本太高，而转向了使用起来更简单的模拟器。至于模拟器的对抗不在本文的讨论中。但可以明确的是，模拟器的对抗比自动脚本的对抗要容易一些。同时由于执行模拟器比执行自动脚本需要更多的资源，这也无形中增加的恶意的作恶成本，最终导致恶意在投入和产出中失衡。
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+<br />
+</span>
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          该动态化方案虽然听起来可行，但在实际工程化中会遇到很多问题：
+         </span>
+</p>
+<ol class="list-paddingleft-2" style="margin-left: 8px;margin-right: 8px;">
+<li>
+<p style="line-height: 1.75em;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+            如何标识某次请求的函数组合？
+           </span>
+</p>
+</li>
+<li>
+<p style="line-height: 1.75em;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+            如何权衡页面性能？
+           </span>
+</p>
+</li>
+<li>
+<p style="line-height: 1.75em;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+            如何解决js编译速度太慢的问题？
+           </span>
+</p>
+</li>
+<li>
+<p style="line-height: 1.75em;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+            是否需要混淆？
+           </span>
+</p>
+<p style="line-height: 1.75em;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+</span>
+</p>
+<p style="line-height: 1.75em;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+</span>
+</p>
+</li>
+</ol>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          接下来将针对以上问题，探索如何在工程上一一解决。
+         </span>
+</p>
+<h2 style="margin: 1.02em 8px 1.3em;font-size: 24px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         0x04 工程化问题探索
+        </h2>
+<h3 style="margin: 1.1em 8px 1.3em;font-size: 19px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         1. 如何标识某次请求的函数组合？
+        </h3>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          经过随机组合后用户每次得到的js均可能不同，此时需要有一个标识告知服务端 fx 和 fy 分别是哪两个。一种可行的方案是将 x 和 y 的内容连同变换函数 fx 和 fy一起，直接明文编码到js中，提交数据时将x和y跟随d′一起提交。但这种标识容易被某些正则规则直接从js文件中提取，恶意用户可遍历出所有变换函数及其对应的逻辑，再根据匹配出的标识进行组合。
+         </span>
+</p>
+<p style="margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+</span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          更严谨的做法是编译js文件时生成一个签名串signature，将该signature作为变量编译到js文件中。最后signature连同生成的数据d′一起提交到服务端，服务端使用f−1sig(signature)得到解密d′的关键参数，进而对d′进行解密。签名的生成算法可表示成如下形式：
+         </span>
+</p>
+<p style="margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+</span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          signature=fsig(x,y,s,random,timestamp)
+         </span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+<br />
+</span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;margin-bottom: 15px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          其中x为第一个变换函数的标识，y为第二个变换函数的标识，s为分隔符，random为一个随机数，timestamp为生成签名的时间戳。设计随机数的目的是让每次生成的签名均不同，而时间戳可以感知签名对应js文件的新鲜度，并且一定程度上能对重放攻击进行聚集。
+         </span>
+</p>
+<h3 style="margin: 1.1em 8px 1.3em;font-size: 19px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         2. 如何权衡页面性能？
+        </h3>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          前端页面性能是一个Web应用必然会关注的问题，一种通用而有效的性能优化方式是合理地为页面中的资源文件设置缓存。通常对于一个模块化良好且使用成熟打包工具打包的项目，入口html的缓存策略会被配置为
+         </span>
+<code style="margin-right: 4px;padding: 3px;border-width: 1px;border-style: solid;border-color: rgb(221, 221, 221);background: rgb(246, 246, 246);border-radius: 3px;font-size: 14px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+           Cache-Control: no-cache
+          </span>
+</code>
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          ，而js/css/image等资源文件会设置一个比较长的缓存时间。但负责数据保护的js文件如果含有动态生成的逻辑，该js文件将不能再使用缓存，否则一旦缓存时间控制不当，将会引发各类数据解密失败的问题。
+         </span>
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          正常情况下在人机对抗的场景中，页面并不需要对所有的请求均做人机验证，也就是说，负责人机验证的JavaScript代码并不会被正常用户访问多次，所以在人机验证的环节，部分基于缓存的优化是可以省略的。理想情况下，用户在一段时间内仅会访问一次人机验证的逻辑。此时要做好的是保证用户首次加载的体验，而二次访问的体验可以暂且不予考虑。
+         </span>
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          建议的方案是将数据保护相关的逻辑从整个工程的JavaScript代码中剥离出来，直接inline编译到html页面中，或者编译到一个独立的js文件中，为该js文件单独设置
+         </span>
+<code style="margin-right: 4px;padding: 3px;border-width: 1px;border-style: solid;border-color: rgb(221, 221, 221);background: rgb(246, 246, 246);border-radius: 3px;font-size: 14px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+           Cache-Control: no-cache
+          </span>
+</code>
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          的response头部。该js与其他js之间可以使用全局变量、
+         </span>
+<code style="margin-right: 4px;padding: 3px;border-width: 1px;border-style: solid;border-color: rgb(221, 221, 221);background: rgb(246, 246, 246);border-radius: 3px;font-size: 14px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+           postMessage
+          </span>
+</code>
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          等方式通信。
+         </span>
+</p>
+<h3 style="margin: 15px 8px 1.3em;font-size: 19px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         3. 如何解决js编译速度太慢的问题？
+        </h3>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          前端的打包工具有很多，如gulp、webpack、Rollup等，这些工具各有长处，也有很多针对编译过程的优化，但目前都无法在需要毫秒级响应的场景完成一次打包，因此编译打包需要异步完成。那么如何生成出足够数量的js满足正常访问和对抗场景的需求？比较简单的方案是循环跑编译脚本，编译好一个替换一次，短时间内用户可能会访问到同一个js，随着旧js被新编译出来的js替换，一段时间内用户访问的js可以认为是随机的，此时js的变换间隔取决于编译速度。
+         </span>
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          除了简单方案外，这里介绍一种更灵活的方案，即将编译产物缓存并提供随机访问。首先，把安全相关的js文件从静态服务中剥离出来，由一个后端的web server输出js内容。该server上维护着一个长度一定的数组，构建工具编译好一个js文件后，将该文件的内容发送给web server，web server将接收到的内容顺序填充到数组中；当有用户页面时，浏览器向web server请求该js内容，web server从数组中随机挑选一个，返回给浏览器。
+         </span>
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          这种服务方式有很多好处，除了可以保证安全js的随机性，还能将signature的生成放到web server中完成。构建工具在编译js时将编译的元信息发送给web server，此时并不生成出signature。用户需要请求该js时再根据元信息实时生成一个signature，填充到js文件内容中。这样生成的signature每次都是独立的，通过检测signature的使用次数，可以很容易标识并拦截重放的请求。
+         </span>
+</p>
+<p style="text-align: center;margin-left: 8px;margin-right: 8px;">
+<img class="" data-copyright="0" data-ratio="0.3043827905106554" data-s="300,640" data-src="" data-type="png" data-w="2487" src="/wechat/img/kEQaY0b2qU2hQeMhr65BML484RlGeyHWBhSo7xDfuGTn8SVyGg9wdVnvKGU12icaE1dQohgtYS2icq1KBlIxnFqA.png" style="" />
+</p>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;line-height: 29px;min-height: 1.8em;color: rgb(68, 68, 68);">
+<br />
+</p>
+<h3 style="margin: 1.1em 8px 1.3em;font-size: 19px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         4. 是否需要混淆？
+        </h3>
+<p style="line-height: 1.75em;margin-bottom: 15px;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          既然有了随机的动态，是否还需要混淆？答案是肯定的。虽然fx和fy每次都不一样，但两个不同的变化函数，一定会有其独有的特征。例如fx和fy在JavaScript中的算法实现如下：
+         </span>
+</p>
+<pre style="margin-top: 0px;margin-bottom: 0px;padding: 0px;unicode-bidi: embed;white-space: pre-wrap;color: rgb(68, 68, 68);font-size: 16px;background-color: rgb(255, 255, 255);z-index: 2;"><p style="margin-bottom: 16px;padding: 14px;border-top: 1px solid rgb(221, 221, 221);border-right: 1px solid rgb(221, 221, 221);border-bottom: 1px solid rgb(221, 221, 221);background: rgb(35, 36, 31);border-radius: 3px;font-size: 14px;font-family: Consolas, Monaco, monospace;display: block;white-space: pre;word-wrap: break-word;overflow-x: auto;color: rgb(248, 248, 242);margin-left: 8px;margin-right: 8px;border-left: none !important;"><span class="hljs-function"><span class="hljs-keyword" style="color: rgb(249, 38, 114);">function</span><span class="hljs-function"> </span><span class="hljs-title" style="color: rgb(166, 226, 46);">foo</span><span class="hljs-function">(<span class="hljs-function" style="">x</span>) </span></span>{
+  x = <span class="hljs-built_in" style="color: rgb(230, 219, 116);">String</span>.fromCharCode.apply(<span class="hljs-literal" style="color: rgb(174, 129, 255);">null</span>, x.split(<span class="hljs-string" style="color: rgb(230, 219, 116);">''</span>).map(<span class="hljs-function" style=""><span class="hljs-function" style="">i</span> =&gt;</span> i.charCodeAt(<span class="hljs-number" style="color: rgb(174, 129, 255);">0</span>) + <span class="hljs-number" style="color: rgb(174, 129, 255);">23</span>);  <span class="hljs-keyword" style="color: rgb(249, 38, 114);">return</span> btoa(x)
+}<span class="hljs-function"><span class="hljs-keyword" style="color: rgb(249, 38, 114);">function</span><span class="hljs-function"> </span><span class="hljs-title" style="color: rgb(166, 226, 46);">bar</span><span class="hljs-function">(<span class="hljs-function" style="">y</span>) </span></span>{
+  y = <span class="hljs-built_in" style="color: rgb(230, 219, 116);">String</span>.fromCharCode.apply(<span class="hljs-literal" style="color: rgb(174, 129, 255);">null</span>, y.split(<span class="hljs-string" style="color: rgb(230, 219, 116);">''</span>).reverse().map(<span class="hljs-function" style=""><span class="hljs-function" style="">i</span> =&gt;</span> i.charCodeAt(<span class="hljs-number" style="color: rgb(174, 129, 255);">0</span>) + <span class="hljs-number" style="color: rgb(174, 129, 255);">13</span>);  <span class="hljs-keyword" style="color: rgb(249, 38, 114);">return</span> btoa(y);
+}</p></pre>
+<p style="margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+<br />
+</span>
+</p>
+<p style="line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-family: 微软雅黑, sans-serif;font-size: 15px;color: rgb(81, 81, 81);">
+          本例中23、reverse、13便是fx和fy的特征，如果某次请求的js文件中包含reverse和13，则很大可能是使用了bar变换，如果包含23，则很大可能使用了foo变换。通过这种特征检测，可以轻松得到请求的js中使用了何种变换组合。而检测方法并不会很复杂，只需要一些简单正则表达式即可。
+         </span>
+</p>
+<h2 style="margin: 1.02em 8px 1.3em;font-size: 24px;unicode-bidi: embed;font-weight: bolder;color: rgb(68, 68, 68);">
+<span class="header-link octicon octicon-link">
+</span>
+         0x05 总结
+        </h2>
+<p style="margin-bottom: 1.4em;unicode-bidi: embed;min-height: 1.8em;color: rgb(68, 68, 68);line-height: 1.75em;margin-left: 8px;margin-right: 8px;">
+<span style="font-size: 15px;color: rgb(81, 81, 81);">
+          本文分析了常规数据保护及混淆的短板，并从动态的角度，给出了一种对抗机器行为的方式，同时在工程化上有一些思考。人机对抗之路艰辛且漫长，是在未来很长时间内都会存在的业务安全问题。希望动态化思路能给现在正在做人机对抗的团队一些启发，帮助更多中小型公司的业务摆脱机器和爬虫之痛。另外，腾讯防水墙团队在机器对抗上有较深的积累，
+         </span>
+<span style="font-size: 15px;color: rgb(0, 0, 0);">
+<strong>
+           如果想直接体验成果可以点击：https://007.qq.com
+          </strong>
+</span>
+</p>
+<p style="text-align: center;margin-left: 8px;margin-right: 8px;">
+<img class="" data-copyright="0" data-ratio="1.3" data-s="300,640" data-src="" data-type="png" data-w="500" src="/wechat/img/kEQaY0b2qU0ibb1bKNBD6bwFe1w9YRlfWTqf3qWFgONGvrnEAH0aAI8gtEMW3r6cGjP7MnlRgf8dxJTG9RpvFcQ.png" style="width:70%;height:auto;" />
+</p>
+</div>
+</div>
+
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+
+        
+        <li class="previous">
+            <a href="/tencent_fsq/2018/06/13/tencent_fsq-2264/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/tencent_fsq">腾讯防水墙</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/tencent_fsq/2018/05/30/tencent_fsq-2266/">后一篇</a>
+        </li>
+        
+
+    </div>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- 匹配内容-lijiaocn -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="autorelaxed"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="6443696990"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+        </div>
+    </div>
+    <!--div class="bottom">
+            <p style="color:white">Thanks for use. Remember us.</p>
+    </div-->
+    <script src="/wechat/assets/js/js.js" charset="utf-8"></script>
+    
+
+    
+</body>
+</html>

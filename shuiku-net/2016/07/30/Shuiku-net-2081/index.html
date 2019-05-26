@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="chinese">
+<head>
+<meta charset="utf-8" content="text/html">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>利率与房价的精算法 #2270|水库论坛|微信公众号文章合集|鼹鼠看看</title>
+<meta name="description" content="利率每加息0.25%，房价下跌1%\n没错，就是1%" />
+<meta name="keywords" content="水库论坛,Shuiku-net,微信公众号,公众号文章导出"/>
+<link rel="shortcut icon" href="/wechat/favicon.ico"/>
+<link rel="bookmark" href="/wechat/favicon.ico"/>
+<link rel="stylesheet" href="/wechat/assets/css/style.css">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- google ad -->
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8176866190626448",
+          enable_page_level_ads: true
+     });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105389858-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-105389858-1');
+</script>
+
+<script async>
+/*百度统计*/
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8f59ea10145df28da8932c8743ec1d60";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+/*百度自动收录*/
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+</head>
+
+<body class="body">
+    <div class="top">
+            
+<style type="text/css" scoped>
+    .innerbanner{
+        background:gray;
+        color:white;
+        padding-right:10px;
+        padding-right:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-top:10px;
+        padding-top:1rem;
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: flex-start;
+        width:100%;
+        font-size:15px;
+        font-size:1.5rem;
+        /*
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        */
+    }
+    .innerbanner a{
+        color:white;
+    }
+    .innerbanner a:hover{
+        color: black;
+        text-decoration: none;
+        font-size:large;
+    }
+    .innerbanner #inner_ul {
+        display:flex;
+        color:white;
+        padding-left:0px;
+        margin:0px;
+        align-items: flex-start;
+    }
+    .innerbanner #inner_li {
+        list-style:none;
+        display:inline-block;
+        line-height:25px;
+        line-height:2.5rem
+    }
+    .topdetails{
+        top:10px;
+        top:1rem;
+        display: inline-block;
+    }
+    .topdetails summary::-webkit-details-marker {
+        display: none;
+    }
+    .topdetails summary:first-of-type {
+        list-style-type: none;
+    }
+    .topdetails ul{
+        padding:0px;
+    }
+    .topdetails li{
+        list-style:none;
+        text-indent:0px;
+    }
+    .topdetails a{
+        display:block;
+        background:gray;
+        color:white;
+        height:30px;
+        height:3rem;
+        padding-top:10px;
+        padding-top:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-right:10px;
+        padding-right:1rem;
+    }
+    .topdetails a:hover{
+        background:darkgray;
+        /*color: white;*/
+        color: black;
+    }
+
+    @media screen and (max-width: 1024px){
+        .innerbanner #inner_ul{
+            list-style:none;
+            display:block;
+        }
+    }
+</style>
+<div class="innerbanner" id="bannerid">
+    <ul id="inner_ul">
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                鼹鼠首页
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                <span style='color:blue'>全球网购></span>
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=WYppWas1DZpVXZmcDOwMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLzYTMuU3b5ZkMlYkMlE0MlAHd0hWP0Zibj9">
+                网易严选
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=j9WYppWas1DZpVXZmczM3ETPklWYmAjMzUjMy0DZp9VZ0l2cmYiJGJTJt92YuEGbvF2auc3d3ZkMlYkMlE0MlAHd0hWP0Zib">
+                考拉海购
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom">
+                无人机
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=lAHd0hWP0Zibj9WYppWas1DZpVXZmQDOzMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiJpFWbvVHZfB3ckR0Ml02byZmeGNTJGJTJt92Yu8Wd69WY6ZkMlYkMlE0M">
+                造作
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=m0DZpVXZmITO5MTPklWYmAjMzUjMy0DZp9VZ0l2cm02bj5CdyF2d55yd3dnRyUiRyUSQzUycwRHdo1Dd">
+                艺网
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=ibj9WYppWas1DZpVXZmMDMxITPklWYmAjMzUjMy0DZp9VZ0l2cmYiJuNmLt92YukHbu9WZz9mcuc3d3ZkMlYkMlE0MlAHd0hWP0Z">
+                RoseOnly.
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="http://g.click.taobao.com/q?ak=24663635&pid=mm_33963329_6520758_142982992&unid=lijiaocn&rf=http%3A%2F%2Fwww.lijiaocn.com%2F%25E5%25A5%25BD%25E8%25B4%25A7%2F2010%2F10%2F10%2Fsites.html&rd=2&et=97775937&pgid=be61cbd8f3af2ff376aa0c1a3103628d&ct=url%3Dhttps%253A%252F%252Fwww.tmall.com%252F&v=1.2&ttype=1&cm=674%2C742%3B654%2C598%3B615%2C639%3B579%2C634%3B597%2C656%3B587%2C667%3B639%2C797%3B777%2C675%3B624%2C701%3B561%2C709&ck=&cw=0">
+                天猫
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?site_id=224482&lid=4193&aid=61&euid=lijiaocn&t=http%3A%2F%2Fwww.360buy.com%2F">
+                京东
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=uN2bhlmapxWPklWdlZSMyYTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLllma1d2bt5yd3dnRyUiRyUSQzUCc0RHa9QnJ">
+                蘑菇街
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://p.gouwuke.com/0Rdyy">
+                益丰药房
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>亚马逊&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHhN7">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2N0KGzS">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRl3e">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zodOgB">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHpfz">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRwvq">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2O4YeyF">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.cn/?tag=znrio-23">中国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xKqLiP">巴西</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2DotW60">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.com.mx/">墨西哥</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 1&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com/">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.uk/">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.de/">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.au/">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.it/">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.fr/">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.es/">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ca/">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ie/">爱尔兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.at/">奥地利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://www.ebay.be/">比利时</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.nl/">荷兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ch/">瑞士</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 2&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.gittigidiyor.com/">土耳其</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.pl/">波兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.hk/">中国香港</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://global.gmarket.co.kr/Home/Main">韩国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.sg/">新加坡</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ph/">菲律宾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.my/">马来西亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.in/">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.cn/">中国大陆</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.jp/">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.th/">泰国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.vn/">越南</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.tw/">台湾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.se/">瑞典</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+    </ul>
+</div>
+
+<p id="hiddenid" style="color:white;position:absolute;right:15px;top:1px;margin:0;padding:0;font-size:1.2rem;" onclick="hiddenBanner()"></p>
+<script>
+    function hiddenBanner() {
+        var b = document.getElementById("bannerid");
+        var p = document.getElementById("hiddenid");
+        if (b.style.display=="none"){
+            b.style.display="flex";
+            p.innerHTML="";
+            p.style.color="white"
+        }else{
+            b.style.display="none";
+            p.innerHTML="";
+            p.style.color="white"
+        }
+    }
+</script>
+
+    </div>
+    <div class="center">
+        <div class="leftbar">
+            <nav id="nav" class="nav" >
+            
+
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<!--details class="menu"-->
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<details class="menu" open>
+    <summary>鼹鼠看看</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/news" >全站最新</a>
+        </li>
+        <li>
+            
+            <a href="/wechat/about" >本站服务</a>
+        </li>
+        <li>
+            
+            <a href="/wechat">鼹鼠首页</a>
+        </li>
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>精彩连载</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/specialserial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/gh_4c12eeda5979" >灼识新维度</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/flashsky" >我的安全之路</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>政经启蒙</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/finacial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/worldofboss" >饭统戴老板</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-net"  style="color:white;" >水库论坛</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/wm221x" >猛哥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-Off" >水库线下</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WatcherCommander" >守夜人总司令</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>互联网</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/internet" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/z7z8day" >观点推荐</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/caozsay" >caoz的梦呓</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/TOMsInsight" >TOMsInsight</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/tencent_fsq" >腾讯防水墙</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WebNotes" >小道消息</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/ColinHuangZheng" >黄峥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/vc-ziliu" >投资人子柳</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/yirensay" >亦无所知</a>
+        </li>
+        
+    </ul>
+</details>
+
+
+            </nav>
+        </div>
+        <div class="workspace">
+            <style>
+    .logo {
+        width: 391px;
+        width: 39.1rem;
+        height: 70px;
+        height: 7rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .logo .logo-font{
+        width: 150px;
+        width: 15rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        background: white;
+        font-size: 37px;
+        font-size: 3.7rem;
+        font-family: "楷体";
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .logo .logo-text{
+        width: 200px;
+        width: 20rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+    }
+    .source {
+        width: 351px;
+        width: 35.1rem;
+        height: 50px;
+        height: 5rem;
+        background: lightgray;
+        display:flex;
+        flex-direction: row;
+    }
+    .source .photo{
+        width: 48px;
+        width: 4.8rem;
+        height: 48px;
+        height: 4.8rem;
+        padding: 1px;
+    }
+    .source .detail{
+        width: 295px;
+        width: 29.5rem;
+        padding-left: 5px;
+        padding-left: 0.5rem;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .desc{
+        font-size:12px;
+        font-size:1.2rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .nick{
+        font-size:15px;
+        font-size:1.5rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .workspace_top{
+        display: flex;
+        height: auto;
+        padding-top: 10px;
+        padding-top: 1rem;
+        padding-bottom: 10px;
+        padding-bottom: 1rem;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        background: darkblue;
+    }
+    @media screen and (max-width: 1020px){
+        .source{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 750px){
+        .workspace_top{
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .source{
+            display: none;
+        }
+    }
+    @media screen and (max-width: 391px){
+        .logo {
+            width: 100%;
+            padding:0px;
+        }
+        .logo .logo-font{
+            padding:0px;
+            font-size: 10vw;
+            width: 50%;
+        }
+        .logo .logo-text{
+            padding:0px;
+            font-size: 4vw;
+            width: 50%;
+        }
+        .source {
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+            display:none;
+        }
+        .source .photo{
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail{
+            width: 80%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .desc{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .nick{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+    }
+
+</style>
+<div style="width: 100%">
+ <div class="workspace_top">
+     <div class="logo">
+        <div class="logo-font">
+            <div><a href="/wechat" style="color:black">文章精选</a></div>
+        </div>
+        <div class="logo-text">
+            <div>微信公众号文章精选</div>
+            <div><a href="/wechat/">https://www.lijiaocn.com</a></div>
+        </div>
+     </div>
+
+
+     <div class="source">
+         
+         <div class="photo"><a href="/wechat/img/Shuiku-net.photo.png"><img width=100% height=100% src="/wechat/img/Shuiku-net.photo.png"></a></div>
+         <div class="detail">
+            <div class="nick"><a href="/wechat/categories/Shuiku-net.html"><span>水库论坛/Shuiku-net</span></a></div>
+            <div class="desc"><span>科学尚未普及</span></div>
+         </div>
+     </div>
+
+
+
+ </div>
+</div>
+
+
+<div style="width: 100%; text-align: center">
+    <h1 style="text-align: center">利率与房价的精算法 #2270</h1>
+    <p style="text-align: center"><span>发布日期：2016-07-30 07:00:06 +0000</span></p>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- kankan_post_top -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="8060913530"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="article">
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+        
+        <li class="previous">
+            <a href="/shuiku-net/2016/07/31/Shuiku-net-2080/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/finacial">finacial</a> / <a href="/wechatcategories/Shuiku-net">水库论坛</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/shuiku-net/2016/07/29/Shuiku-net-2082/">后一篇</a>
+        </li>
+        
+
+    </div>
+
+    <div><div class="rich_media_content" id="js_content">
+<h1>
+<span style="font-family:宋体;color:#E46C0A">
+          利率与房价的精算法
+         </span>
+<span style="font-size:7px;line-height:240%;color:#E46C0A">
+          #2270
+         </span>
+</h1>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          利率每加息0.25%，房价下跌1%
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          不是30%，不是50%，是精确的1%哦。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          一）
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          学院派
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          学院派和实战派的区别是什么：学院派全部都是猪。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          就学术文章而言，我最钦佩的是谢国忠。他的套路通常是这样的：“美国经济不振，连累到欧洲出口，欧洲导致油价上涨。中国政府为了抑制通胀，有可能加息。加息要跌多少呢，跌50%”。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          然后我不再钦佩Andy Xie了，转为钦佩采访他的媒体人。这得有多大的勇气，才敢刊谢国忠专访呀。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          学院派的文章，有一定的套路共性。其一个潜规则，是绝不可批评政府的经济政策。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          而另一方面，下里巴人的“房型，交通，采光”，那群家伙又不懂。肥肠满脑百无一用书生。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          所以，学院派的文章，基本集中在“利率，汇率，宏观财政政策”。这样，既显得高大上，又指点江山高屋建瓯。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:11px;line-height:150%;font-family:楷体">
+          示例一篇，最近水库上转载的文章。《
+         </span>
+<span style="font-size:9px;line-height:150%">
+<strong>
+<span style="font-family:宋体;color:#333333;background:white">
+            星展银行柯大任：亚洲房价将持续增长
+           </span>
+</strong>
+</span>
+<span style="font-size:11px;line-height:150%;font-family:楷体">
+          》
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+<span style="font-size: 16px">
+           [1]
+          </span>
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          二）
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          利率
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          对于学院派的分析文章，“利率”是一个至关重要的变量。一般来说，
+          <span style="text-decoration:underline;">
+           利率上升，房价下跌。利率下降，房价上升
+          </span>
+          。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          这个道理，简直就和“加息抑制通胀”“加息祸害股市”一样
+          <em>
+           金科玉律
+          </em>
+          ，一样蔚为
+          <em>
+           主流
+          </em>
+          。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          甚至有一个“共识”的观点，香港1997年房地产市场泡沫“破裂”，是因为利率变化，联系汇率导致的香港宏观经济失衡。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          我们为什么看不起学院派“经济学家”，因为他们一方面狗屁不懂，一方面却出奇地懒。懒到不愿意思考，不愿意计算。简直就是政府眷养的一条狗。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          为什么呢，因为
+          <span style="color:blue">
+           有实战经验的炒楼客都知道，利率是根本不敏感的
+          </span>
+          。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          让我们来看一个例子。假设某人贷款了70万元，时限二十年，享受九折利率。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          则在2015年3月1日降息之前，他的利率是5.4%，月还款=PMT（5.4%÷12，240，-700000）=4775.76元。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          降息之后，他的月还款额是4687.63元。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          在学院派经济学家中，他们会先给你列一个20页的报告，让手下的研究生花数十个ManHour搜集数据。最后得出结论:
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          “
+         </span>
+<em>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+           在收入比重中，房贷占比例下降，有利于内需类股票，以及房地产价格上扬
+          </span>
+</em>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          ”
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          这个幅度是多少呢，谢国忠一开口就是50%
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          泡沫全是丫吹出来的。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          三）
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          利率影响图表
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<img data-ratio="0.658273381294964" data-s="300,640" data-src="" data-type="png" data-w="" src="/wechat/img/Ok4hZ0tV6r6Vykl1icBmJQw4rOx5E5LJPKNbt6iarq184QQn96M6NAcFtzLOziakHCa0rxTicPyCniaENWIwPHJFAyw..png" />
+<br />
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          我们来看一个算法。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          Case A
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          ，某人买了一套100W的房子，首付30W，贷款700000元，时限二十年，利率5.4%。月供4775.76元。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          Case B
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          ，某人买了一套101.316W的房子，首付30W，贷款713160元，时限二十年，利率5.175%，月供4775.76元。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体;color:red">
+          这二者是完全等价的！！
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          二者是完全一模一样的，都是月供四千七，都是二十年，都是每月按时供楼。如果一个家庭是丈夫负责月供的话，妻子甚至都不会知道他们的利率！
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          这意味着什么呢，意味着
+          <span style="color:blue">
+           “更高的利率”和“更高的房价”是可以互换的
+          </span>
+          。你发现加息后，每个月的月供增加了。但其实也可以理解成你买了一套更贵的房子，比例大概是101.3%
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          在2005年时，市场上“房价压力”的情绪达到了顶峰。一群傻空天天在诅咒发梦房价立即崩盘。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          当时的指望，就是“只要……就会……”，其心态和今天期盼不动产登记差不多。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          当2005年十年周期第一次“加息”时，网络上一篇欢腾。典型舆论是“今天阁楼打了二两酒，热泪盈眶，想想HW政府还是关心我们的。心里面有老百姓”。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          学过真正的“经济学”，学过奥派经济学，而不是马路上大卡谢安迪的我们，不由得大跌眼镜。拿出来Excel表格算一算，数据其实很简单的就在这里。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          影响不到1%
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          基本被市场忽略。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          “利率”是几乎每一篇学院派房地产分析文章必然涉及的。但他们关于“利率”的分析全部都是错的。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          利率是可以定量计算的。只要你知道几个简单的算法，便可以将利率换算成房价。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          上表我们贴了一张图。贴了6%附近的利率换算变化。我们可以得出：
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          1）
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          这基本是条直线
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          2）
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          每加息1%，十年期月供增加约4%。二十年期7%，三十年期10%
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          3
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          ）拉到极限，也就一次年轻人加薪。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          你即使把利率拉到9%，这是不可思议几十年未遇一次，而且要花好几年时间慢慢地加上去。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          但月供幅度也就+15%，小年轻一年的加薪幅度就补回来了。房贷总是越还越轻的。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          另外还有一张大图。利率范围从0%~20%的。更大尺度中，依然是近直线关系。
+         </span>
+</p>
+<p style="line-height:150%">
+<img data-ratio="0.658273381294964" data-s="300,640" data-src="" data-type="png" data-w="" src="/wechat/img/Ok4hZ0tV6r6Vykl1icBmJQw4rOx5E5LJPlzMicx4fD0D6ibPCGrwxsvl5CG3HN9icDkTvjicVia5ib2tC0f8iaaKSF2BSQ..png" />
+<br />
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          四)利率的分析
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          目前市场上的利率分析，他至少有几点是错的。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          1）
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          夸大了利率的影响
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          2）
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          混淆了“平均利率”和“一年期利率”的概念。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          3）
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          忽略了首付
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          在我们的分析中，利率对房价的影响，大约局限在±5%之内，但到了媒体的嘴里，却成了±50%
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          很多订阅财经杂志，但事实上什么也不懂的白骨精，于是就阵亡在媒体的“引领”之中。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          在这里，奥地利学派经济学，和主流洗脑经济学，又一次拉开了差距。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          首先，即使不考虑定量计算，纯理论学术，“学院派”也是错的。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          学院派混淆的第一个错误，是长期利率与短期利率。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          2003
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          年巴曙松大谈“加息降房价”，引人侧目。在他的头像旁偷偷加上注解。后来这家伙果然去翻译《21世纪经济学》了。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          因为2003年时，其实是减息。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          人的一生，房贷漫长达十几几十年，往往会经历二至三个“加息”“减息”周期。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          如果简单的讲央行今天加息，今天减息，并没有太多的意义。因为今天减了，明天就会加。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          真正有意义的，是“二十年期平均利率”。又或者是市面上十年期国债曲线。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          在美国，则是固定利率贷款。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          通常这个利率波动幅度，要比“一年期”利率变化缓慢得多。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          其次，即使考虑“十年期国债利率”，他仍然有价格波幅。其震动幅度，会有上下二个点。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          但这±2%的幅度，并不足以引起房地产市场±50%的波动。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          如我们图中表格换算，如果取二十年期贷款为主流，则口诀是“1：7”。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          ±2%的利率波动，最多会引起14%的房价波幅。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          但是这个14%，仍然不是最终的输出。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          房贷有首付，假设我首付三成，贷款部分只剩70%，则贷款的受影响幅度，就要打七折了。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          而中国的首付是多少呢。在上海北京这样的大城市，大约是58%。以全国范围，则是65%。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          也就是说，售楼处打开大门，六成人是付全款的。想不到吧！所谓“房地产影响金融安全”，纯属捏造与谎言。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          当买100W的房子，65W是首付，35W是贷款。则贷款的波动，对全局的影响，要进一步缩小。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          最终结果是14% * 35% = 5%
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          利率对房价的影响最大上限不超过5%，这就是我们的结论。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          四）   社会资金成本和心理影响
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          有人或许还会说，利率的调整，还会影响到社会资金成本供需关系。至少，KFS的成本就上升了。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          其实，央行对于利率的调整，应该是“零效应”。他不改变任何生产关系。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          因为我们把所有学术的东西都抽走了本账号不讲，所以你只要记住这个结论就可以了。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          还有人说，即使哪怕你书呆子坐家里铅笔纸计算出来，加息对于房价的影响微乎其微。可是我们还有CCAV，还有舆论媒体啊。通过在市场上造势，煽动恐吓民众的心理。也可以让他大跌个三五成。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          你要硬扯到群众心理学上，那话题真是没底了。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          我们只想回答说，“心理影响”从根本上说，他是为零的。从哪里赚来，到哪里回去。有恐慌下跌，就有恐慌上涨。决定事物价格的，归根到底还是供求关系。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          我们对利率的评价，科学态度是“影响轻微”。而不是鼓吹房价永远涨。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          当加息周期时，利率不会使得房价下跌。影响轻微。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          同样道理，目前的几次降息，也不会使房价上涨。
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          (yevon_ou@163.com,2015年3月8
+         </span>
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+          日午)
+         </span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p style="line-height:150%">
+<span style="font-size:16px;line-height:150%;font-family:楷体">
+</span>
+</p>
+<p>
+<br clear="all" />
+</p>
+<hr size="1" width="33%" />
+<p>
+<span style="font-size:12px;font-family:Calibri,sans-serif">
+          [1]
+         </span>
+<span style="font-size:7px;font-family:楷体">
+          《
+         </span>
+<span style="font-size:7px">
+<strong>
+<span style="font-family:宋体;color:#333333;background:white">
+            星展银行柯大任：亚洲房价将持续增长
+           </span>
+</strong>
+</span>
+<span style="font-size:7px;font-family:楷体">
+          》
+         </span>
+<span style="font-size:7px">
+          http://www.shuiku.net/forum.php?mod=viewthread&amp;tid=11396
+         </span>
+</p>
+<p>
+<br />
+</p>
+</div>
+</div>
+
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+
+        
+        <li class="previous">
+            <a href="/shuiku-net/2016/07/31/Shuiku-net-2080/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/finacial">finacial</a> / <a href="/wechatcategories/Shuiku-net">水库论坛</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/shuiku-net/2016/07/29/Shuiku-net-2082/">后一篇</a>
+        </li>
+        
+
+    </div>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- 匹配内容-lijiaocn -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="autorelaxed"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="6443696990"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+        </div>
+    </div>
+    <!--div class="bottom">
+            <p style="color:white">Thanks for use. Remember us.</p>
+    </div-->
+    <script src="/wechat/assets/js/js.js" charset="utf-8"></script>
+    
+
+    
+</body>
+</html>

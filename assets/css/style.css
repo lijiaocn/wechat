@@ -1,0 +1,233 @@
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+html{
+	font-size: 62.5%; /* 10 ÷ 16 × 100% = 62.5% */  
+}
+.body{
+	width:100%;
+	padding:0;
+	margin:0;
+	display: flex;
+	-webkit-display: flex;
+	-moz-display: flex;
+	-ms-display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: black;
+	font-size: 16px;
+	font-size: 1.6rem;
+}
+
+.top{
+	width:100%;
+	height:40px;
+	height:4.1rem;
+    position:fixed;
+	z-index:999;
+	top:0px;
+	display: flex;
+	-webkit-display: flex;
+	-moz-display: flex;
+	-ms--display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.center{
+}
+
+.bottom{
+	position: absolute;
+	bottom:0;
+	width: 100%;
+	display: flex;
+	display: -webkit-flex; /* Safari */
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: center;
+	background-color: black;
+}
+
+.nav{
+    width: 250px;
+    width: 25rem;
+	flex-grow:0;
+    padding:15;
+    border: 1px #CCCACC;
+}
+.leftbar{
+	position: absolute;
+	top:40px;
+	top:4rem;
+	left: 0px;
+	bottom: 0px;
+	overflow:auto;
+	background: black;
+}
+.workspace{
+	position: absolute;
+	left:250px;
+	left:25rem;
+	right:0px;
+	top:40px;
+	top:4rem;
+	bottom: 0px;
+	overflow: auto;
+
+	padding:0px;
+	margin:0px;
+	flex-grow:1;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	background: white;
+}
+.article{
+	width: 640px;
+	width: 64rem;
+}
+.article img{
+	max-width: 100%;
+}
+
+.menu{
+	border-left: 0px solid #ccc;
+	border-right: 0px solid #ccc;
+}
+
+.menu:last-child {
+	border-bottom: 1px solid #ccc;
+}
+
+.menu summary{
+	line-height: 30px;
+	line-height: 3rem;
+	text-indent: 10px;
+	text-indent: 1rem;
+	outline: none;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	border-top: 1px solid #ddd;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FEFEFE), color-stop(1, #CCCCCC));
+	cursor: pointer;
+}
+
+.menu summary::-webkit-details-marker {
+	display: none;
+}
+
+/*可用图片或字符,如果使用图片，请把content的值设置成空字符*/
+
+.menu summary:before {
+	content: "+";
+	/*background: url(../Images/right.png) no-repeat center center;*/ /*收起时的图片*/
+	/*vertical-align: middle;*/
+	display: inline-block;
+	width: 16px;
+	width: 1.6rem;
+	height: 16px;
+	height: 1.6rem;
+	margin-right: 10px;
+	margin-right: 1rem;
+	font-size:18px;
+	font-size:1.8rem;
+	font-weight:700;
+}
+
+.menu[open] summary:before {
+	content: "-";
+	/*background: url(../Images/down.png) no-repeat center center;*/ /*展开时的图片*/
+}
+
+.menu ul {
+	padding: 0 0;
+}
+
+.menu li{
+	list-style: none;
+	text-indent: 25px;
+	text-indent: 2.5rem;
+	font-size: 15px;
+	font-size: 1.5rem;
+	height: 30px;
+	height: 3rem;
+	line-height: 30px;
+	line-height: 3rem;
+}
+
+.menu a {
+	display: block;
+	text-decoration: none;
+	color: gray;
+}
+
+.menu ul li a:hover {
+	text-decoration: underline;
+	background: #CCCACC;
+}
+
+.pagebody{
+	padding:10px;
+	padding:1rem;
+}
+
+@media screen and (min-width: 1920px){
+}
+
+@media screen and (min-width: 1024px) and (max-width:1920px){
+}
+
+@media screen and (min-width: 850px) and (max-width:1024px){
+	.article{
+		width: 600px;
+		width: 60rem;
+		margin:5px;
+	}
+}
+
+@media screen and (max-width: 849px){
+	.center{
+		margin-top:0px;
+		margin-top:0rem;
+		width: 100%;
+		display:flex;
+		display:-webkit-flex;
+		flex-direction: column;
+		flex-grow:1;
+	}
+	.leftbar{
+		position: relative;
+		left:auto;
+		top: auto;
+		display:none;
+	}
+	.workspace{
+		width: 100%;
+		position: relative;
+		left:auto;
+		top: auto;
+	}
+	.top{
+		height:auto;
+		position: relative;
+	}
+    .nav{
+		width: 100%;
+		margin:0px;
+		padding:0px;
+	}
+	.article{
+		width: 95%;
+		margin:5px;
+	}
+}

@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="chinese">
+<head>
+<meta charset="utf-8" content="text/html">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>其实，我也是个运维|caoz的梦呓|微信公众号文章合集|鼹鼠看看</title>
+<meta name="description" content="我曾经是一个坑坑绊绊不断在实战中摸索出来的经济适用架构师，所幸的是，时代在发展，也许你不用如此坑坑绊绊，就可以轻松的跨越我的境界。" />
+<meta name="keywords" content="caoz的梦呓,caozsay,微信公众号,公众号文章导出"/>
+<link rel="shortcut icon" href="/wechat/favicon.ico"/>
+<link rel="bookmark" href="/wechat/favicon.ico"/>
+<link rel="stylesheet" href="/wechat/assets/css/style.css">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- google ad -->
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8176866190626448",
+          enable_page_level_ads: true
+     });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105389858-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-105389858-1');
+</script>
+
+<script async>
+/*百度统计*/
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8f59ea10145df28da8932c8743ec1d60";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+/*百度自动收录*/
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+</head>
+
+<body class="body">
+    <div class="top">
+            
+<style type="text/css" scoped>
+    .innerbanner{
+        background:gray;
+        color:white;
+        padding-right:10px;
+        padding-right:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-top:10px;
+        padding-top:1rem;
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: flex-start;
+        width:100%;
+        font-size:15px;
+        font-size:1.5rem;
+        /*
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        */
+    }
+    .innerbanner a{
+        color:white;
+    }
+    .innerbanner a:hover{
+        color: black;
+        text-decoration: none;
+        font-size:large;
+    }
+    .innerbanner #inner_ul {
+        display:flex;
+        color:white;
+        padding-left:0px;
+        margin:0px;
+        align-items: flex-start;
+    }
+    .innerbanner #inner_li {
+        list-style:none;
+        display:inline-block;
+        line-height:25px;
+        line-height:2.5rem
+    }
+    .topdetails{
+        top:10px;
+        top:1rem;
+        display: inline-block;
+    }
+    .topdetails summary::-webkit-details-marker {
+        display: none;
+    }
+    .topdetails summary:first-of-type {
+        list-style-type: none;
+    }
+    .topdetails ul{
+        padding:0px;
+    }
+    .topdetails li{
+        list-style:none;
+        text-indent:0px;
+    }
+    .topdetails a{
+        display:block;
+        background:gray;
+        color:white;
+        height:30px;
+        height:3rem;
+        padding-top:10px;
+        padding-top:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-right:10px;
+        padding-right:1rem;
+    }
+    .topdetails a:hover{
+        background:darkgray;
+        /*color: white;*/
+        color: black;
+    }
+
+    @media screen and (max-width: 1024px){
+        .innerbanner #inner_ul{
+            list-style:none;
+            display:block;
+        }
+    }
+</style>
+<div class="innerbanner" id="bannerid">
+    <ul id="inner_ul">
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                鼹鼠首页
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                <span style='color:blue'>全球网购></span>
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=WYppWas1DZpVXZmcDOwMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLzYTMuU3b5ZkMlYkMlE0MlAHd0hWP0Zibj9">
+                网易严选
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=j9WYppWas1DZpVXZmczM3ETPklWYmAjMzUjMy0DZp9VZ0l2cmYiJGJTJt92YuEGbvF2auc3d3ZkMlYkMlE0MlAHd0hWP0Zib">
+                考拉海购
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom">
+                无人机
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=lAHd0hWP0Zibj9WYppWas1DZpVXZmQDOzMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiJpFWbvVHZfB3ckR0Ml02byZmeGNTJGJTJt92Yu8Wd69WY6ZkMlYkMlE0M">
+                造作
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=m0DZpVXZmITO5MTPklWYmAjMzUjMy0DZp9VZ0l2cm02bj5CdyF2d55yd3dnRyUiRyUSQzUycwRHdo1Dd">
+                艺网
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=ibj9WYppWas1DZpVXZmMDMxITPklWYmAjMzUjMy0DZp9VZ0l2cmYiJuNmLt92YukHbu9WZz9mcuc3d3ZkMlYkMlE0MlAHd0hWP0Z">
+                RoseOnly.
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="http://g.click.taobao.com/q?ak=24663635&pid=mm_33963329_6520758_142982992&unid=lijiaocn&rf=http%3A%2F%2Fwww.lijiaocn.com%2F%25E5%25A5%25BD%25E8%25B4%25A7%2F2010%2F10%2F10%2Fsites.html&rd=2&et=97775937&pgid=be61cbd8f3af2ff376aa0c1a3103628d&ct=url%3Dhttps%253A%252F%252Fwww.tmall.com%252F&v=1.2&ttype=1&cm=674%2C742%3B654%2C598%3B615%2C639%3B579%2C634%3B597%2C656%3B587%2C667%3B639%2C797%3B777%2C675%3B624%2C701%3B561%2C709&ck=&cw=0">
+                天猫
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?site_id=224482&lid=4193&aid=61&euid=lijiaocn&t=http%3A%2F%2Fwww.360buy.com%2F">
+                京东
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=uN2bhlmapxWPklWdlZSMyYTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLllma1d2bt5yd3dnRyUiRyUSQzUCc0RHa9QnJ">
+                蘑菇街
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://p.gouwuke.com/0Rdyy">
+                益丰药房
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>亚马逊&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHhN7">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2N0KGzS">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRl3e">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zodOgB">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHpfz">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRwvq">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2O4YeyF">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.cn/?tag=znrio-23">中国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xKqLiP">巴西</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2DotW60">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.com.mx/">墨西哥</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 1&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com/">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.uk/">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.de/">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.au/">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.it/">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.fr/">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.es/">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ca/">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ie/">爱尔兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.at/">奥地利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://www.ebay.be/">比利时</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.nl/">荷兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ch/">瑞士</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 2&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.gittigidiyor.com/">土耳其</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.pl/">波兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.hk/">中国香港</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://global.gmarket.co.kr/Home/Main">韩国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.sg/">新加坡</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ph/">菲律宾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.my/">马来西亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.in/">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.cn/">中国大陆</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.jp/">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.th/">泰国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.vn/">越南</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.tw/">台湾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.se/">瑞典</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+    </ul>
+</div>
+
+<p id="hiddenid" style="color:white;position:absolute;right:15px;top:1px;margin:0;padding:0;font-size:1.2rem;" onclick="hiddenBanner()"></p>
+<script>
+    function hiddenBanner() {
+        var b = document.getElementById("bannerid");
+        var p = document.getElementById("hiddenid");
+        if (b.style.display=="none"){
+            b.style.display="flex";
+            p.innerHTML="";
+            p.style.color="white"
+        }else{
+            b.style.display="none";
+            p.innerHTML="";
+            p.style.color="white"
+        }
+    }
+</script>
+
+    </div>
+    <div class="center">
+        <div class="leftbar">
+            <nav id="nav" class="nav" >
+            
+
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<!--details class="menu"-->
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<details class="menu" open>
+    <summary>鼹鼠看看</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/news" >全站最新</a>
+        </li>
+        <li>
+            
+            <a href="/wechat/about" >本站服务</a>
+        </li>
+        <li>
+            
+            <a href="/wechat">鼹鼠首页</a>
+        </li>
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>精彩连载</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/specialserial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/gh_4c12eeda5979" >灼识新维度</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/flashsky" >我的安全之路</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>政经启蒙</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/finacial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/worldofboss" >饭统戴老板</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-net" >水库论坛</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/wm221x" >猛哥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-Off" >水库线下</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WatcherCommander" >守夜人总司令</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>互联网</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/internet" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/z7z8day" >观点推荐</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/caozsay"  style="color:white;" >caoz的梦呓</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/TOMsInsight" >TOMsInsight</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/tencent_fsq" >腾讯防水墙</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WebNotes" >小道消息</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/ColinHuangZheng" >黄峥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/vc-ziliu" >投资人子柳</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/yirensay" >亦无所知</a>
+        </li>
+        
+    </ul>
+</details>
+
+
+            </nav>
+        </div>
+        <div class="workspace">
+            <style>
+    .logo {
+        width: 391px;
+        width: 39.1rem;
+        height: 70px;
+        height: 7rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .logo .logo-font{
+        width: 150px;
+        width: 15rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        background: white;
+        font-size: 37px;
+        font-size: 3.7rem;
+        font-family: "楷体";
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .logo .logo-text{
+        width: 200px;
+        width: 20rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+    }
+    .source {
+        width: 351px;
+        width: 35.1rem;
+        height: 50px;
+        height: 5rem;
+        background: lightgray;
+        display:flex;
+        flex-direction: row;
+    }
+    .source .photo{
+        width: 48px;
+        width: 4.8rem;
+        height: 48px;
+        height: 4.8rem;
+        padding: 1px;
+    }
+    .source .detail{
+        width: 295px;
+        width: 29.5rem;
+        padding-left: 5px;
+        padding-left: 0.5rem;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .desc{
+        font-size:12px;
+        font-size:1.2rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .nick{
+        font-size:15px;
+        font-size:1.5rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .workspace_top{
+        display: flex;
+        height: auto;
+        padding-top: 10px;
+        padding-top: 1rem;
+        padding-bottom: 10px;
+        padding-bottom: 1rem;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        background: darkblue;
+    }
+    @media screen and (max-width: 1020px){
+        .source{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 750px){
+        .workspace_top{
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .source{
+            display: none;
+        }
+    }
+    @media screen and (max-width: 391px){
+        .logo {
+            width: 100%;
+            padding:0px;
+        }
+        .logo .logo-font{
+            padding:0px;
+            font-size: 10vw;
+            width: 50%;
+        }
+        .logo .logo-text{
+            padding:0px;
+            font-size: 4vw;
+            width: 50%;
+        }
+        .source {
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+            display:none;
+        }
+        .source .photo{
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail{
+            width: 80%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .desc{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .nick{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+    }
+
+</style>
+<div style="width: 100%">
+ <div class="workspace_top">
+     <div class="logo">
+        <div class="logo-font">
+            <div><a href="/wechat" style="color:black">文章精选</a></div>
+        </div>
+        <div class="logo-text">
+            <div>微信公众号文章精选</div>
+            <div><a href="/wechat/">https://www.lijiaocn.com</a></div>
+        </div>
+     </div>
+
+
+     <div class="source">
+         
+         <div class="photo"><a href="/wechat/img/caozsay.photo.png"><img width=100% height=100% src="/wechat/img/caozsay.photo.png"></a></div>
+         <div class="detail">
+            <div class="nick"><a href="/wechat/categories/caozsay.html"><span>caoz的梦呓/caozsay</span></a></div>
+            <div class="desc"><span>caoz的心得与分享,只此一家,别无分号.</span></div>
+         </div>
+     </div>
+
+
+
+ </div>
+</div>
+
+
+<div style="width: 100%; text-align: center">
+    <h1 style="text-align: center">其实，我也是个运维</h1>
+    <p style="text-align: center"><span>发布日期：2016-08-02 12:46:07 +0000</span></p>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- kankan_post_top -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="8060913530"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="article">
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+        
+        <li class="previous">
+            <a href="/caozsay/2016/08/04/caozsay-418/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/caozsay">caoz的梦呓</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/caozsay/2016/07/31/caozsay-420/">后一篇</a>
+        </li>
+        
+
+    </div>
+
+    <div><div class="rich_media_content" id="js_content">
+<p>
+<span style="font-size: 18px;">
+          友情提醒，本文为软文，如有不适烦请关闭。
+         </span>
+</p>
+<p>
+<span style="font-size: 18px;">
+<br />
+</span>
+</p>
+<p>
+<span style="font-size: 18px;">
+</span>
+</p>
+<hr />
+<p>
+<span style="font-size: 18px;">
+<br />
+</span>
+</p>
+<p>
+<span style="font-size: 18px; line-height: 1.6;">
+          很多人都好奇，我到底以前是做什么的，似乎什么都懂一点，似乎什么都会谈一点。那么，这个历史说来话长，今天只讲一部分吧，我跟系统运维的一些渊源。
+          <br />
+</span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          先从上个世纪说起，1996或1997年，记不清了，还是读书的时候，在清华校园网，无聊翻bbs的各种帖子，找到了台湾黑客coolfire的一本教材（话说15年后在微博看到了他！）照猫画虎的用一个CGI信息泄露漏洞，拿到了清华计算中心某服务器的shadow文档，然后，用一个破解程序去尝试，解开了不少密码，其中就有管理员帐号，并且顺利的完成了登录操作，当然，也没敢做什么事情，但想说一点，即便如此，对shadow文档是什么，系统的文件目录都有什么含义，管理员帐号的权限是怎样的，以及这个cgi漏洞的触发机理是什么，完全的，一窍不通。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          简单说就是无知小白，照本宣科的做了一次自己完全不能理解的操作。但我认为，这是我第一次，去接触和试图了解所谓服务器系统。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          1998年第一份工作是做一些web研发，期间把公司的一个人才网站系统从windows +asp +access 改为linux +php+mysql，我大概是国内最早做php开发的程序员了，这期间还用sniffer在内网嗅探到了经理telnet登录公司服务器的root密码，然后发给经理炫耀，然后对方就没再限制我的root权限。但这个时候，比之前的理解，也多点有限，基本上知道了web服务，数据库服务，动态脚本的协作模式，也知道了所谓系统账号权限，目录权限，passwd文档，shadow文档是怎么回事。除此之外，依然是空白。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          1999年第一次创业，当时跟中公网合作，还是谢文老师给的资源，自己会写一些程序，美术设计找网友外包的还是，放在中公网服务器，运维是对方的人，开始没啥请求量，也没关心运维的事情，后来转做广告交换，突然就爆发了，请求激增，服务器各种撑不住，谢文老师当时也离开了中公网，当时就打算自己拿出来做，找绿盟科技的沈老板借了2万8，买了世纪互联的主机托管，那时候主机托管真的贵啊。然后请之前中公网的运维兼职协助维护服务器。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          后来，毕竟是别人家的工程师，有时候出问题打扰总是不方便，每次自己心急火燎，等对方回复不知道要多久，于是就开始请教各种问题，让对方给一些资料过来，能自己解决就自己解决，然后逐渐学会了装各种系统，优化调整参数，最早还不知道用搜索引擎，后来学会搜索引擎后，掌握的东西就更多了。然后也开始得瑟自己如何一台服务器每天支撑千万次动态脚本请求（十五年前的廉价服务器，在当时而言算很不错了吧），如何的稳定一年不停机。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          到2004年底做统计的时候，又面临新的挑战，系统相对于以前的更复杂，响应请求频次也更高，而且程序和服务层的结合更紧密，包括缓存管理，包括定时任务，包括守护进程，各种诡异的故障也更多，这时候只靠系统参数优化已经解决不了问题了，只好自己去编写更多的针对应用层的监控脚本，试图记录错误信息以及出问题前的系统状态，来回放故障和问题点。不过当时每台统计服务器都是独立支撑业务，虽然服务器很多，但其实并没有集群化，所作的一切还都属于单机优化的范畴。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          然后有几年不太碰运维，直到2009年进入4399，开始搭建社区平台，当时厦门公司刚起步，招到的本地运维人员之前都没有应对并发的概念，而我们也不是大手大脚的那种暴发户，只能回到技术优化的老路上，随着访问量的激增，服务器的扩展，由于业务数据必须保持统一和一致，开始理解集群，中间件，负载均衡，读写分离，分库等各种架构问题，依然是不断摸索不断前进，不断踩坑不断教学费，然后自己写各种监控分析脚本来寻求问题回放和定位，有些经验我以前文章也提到了。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          比如，从这里可以看到整个系列文章。
+         </span>
+</p>
+<p>
+<a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0MjA1Mjg2Ng==&amp;mid=401465959&amp;idx=1&amp;sn=8d2116f8d238ccd208160d23f44dbb2c&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0MjA1Mjg2Ng==&amp;mid=401465959&amp;idx=1&amp;sn=8d2116f8d238ccd208160d23f44dbb2c&amp;scene=21#wechat_redirect" style="text-decoration: underline; font-size: 18px;" target="_blank">
+<span style="font-size: 18px;">
+           如何应对并发(6) - 琐碎的日常
+          </span>
+</a>
+<br />
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          直到后来，我也开始帮很多朋友分析和解决负载优化的问题，也开始挂着架构师的头衔出席于一些架构师大会，并做一些分享，可以说，虽然技术不咋地，但是总算处理过不少中小公司常见的问题，算是坑坑绊绊走出来的经济适用架构师。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          罗嗦这些，想说一点，幸而时代不断进步，先是硬件的提升，解决了大量之前苦恼的单机问题；之后云服务的诞生，每个牛逼的云服务提供商背后都有一堆牛逼的运维工程师和架构师，这不是一般中小型公司可以聘用的起的，什么参数优化，安全优化，各种方案，服务人家都集成好了，而且自由拓展资源，很多之前头疼琐碎的事情现在点点鼠标就搞定了，说真的，真是中小公司的福音，我经历和见证了太多中小创业公司，在业务高速发展的情况下，因为运维乏力而无法持续的案例，我自己也有太多次，为一些很小的，从今天看来很微不足道的一个技术细节冥思苦想，彻夜难眠，很长时间才得以解决。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          我们一直说技术的价值，我们能够自己去理解和领悟核心技术，去把握技术细节，固然很值钱；但是技术的分支和领域数不胜数，有谁可以能面面俱到？有谁又可以把技术的技能树全点满？在这种现实情况下，能够正确的选择合适的技术工具和技术方案，从而极大简化和降低技术成本，本身也是一种技术，也具有极高的价值，特别是对于企业来说，这个价值可能让你节省非常多的研发预算，以及极大提升运营效率。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          那么回过头来说，我们用了云主机，用到了云服务，是不是就可以高枕无忧的专心研发了？很抱歉，并不是。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          很多时候，我们所遇到的系统问题来自于我们自己研发的应用，比如内存泄露，比如数据库的链接未释放，等等等等；这时候，我们需要对我们的应用，做更深入和更定制化的跟踪和分析，从而去定位瓶颈点，或者故障点，这就需要在云服务的基础上，我们还要做定制化的跟踪和分析，也是以前我常做的，写监控脚本，并保存各种对分析有用的信息，然后在遇到故障和问题后，不断的分析日志，定位和调整我们的问题。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          然而，时代依然在发展，所幸的是，这样的工作也被极大改进了，这就是APM技术，（应用性能管理）。我们完全可以未雨绸缪的发现问题点，而不是等着崩溃后去反思，我们完全可以有更宽裕的时间和计划来解决问题，而不是在出现问题后狼狈不堪彻夜通宵的去紧急处理，并祷告在补觉的时候千万不要复发。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          如果你还不知道这些，我觉得你可能要走我以前走过的路，讲真，我实在不想重新再来一次，那半夜服务器崩溃被客服电话叫醒的时刻，我已经经历太多。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+</span>
+</p>
+<p>
+<span style="font-size: 18px;">
+          今年8月18日，APMCon2016,中国第一届应用性能管理
+         </span>
+<wbr />
+<span style="font-size: 18px;">
+          大会将在北京举行，主办方是我们熟知的老朋友，成功主办Q
+          <span style="font-size: 18px; line-height: 1.6;">
+           Con全球软件开发大会，ArchSummit全球架构师峰会的 极客
+          </span>
+</span>
+<wbr style="line-height: 1.6;" />
+<span style="font-size: 18px;">
+<span style="font-size: 18px; line-height: 1.6;">
+           邦科技 和 InfoQ中国，以及在APM技术领域唯一上市的公司
+          </span>
+          听云科技。
+         </span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          整个会议设置包含了：性能可视化、服务端应用监控实践、
+         </span>
+<wbr style="line-height: 1.6;" />
+<span style="font-size: 18px;">
+          运维自动化、CDN加速、数据库性能优化、移动性能优化、
+         </span>
+<wbr style="line-height: 1.6;" />
+<span style="font-size: 18px;">
+          基于云架构的性能优化、HTML5调优最佳实践等8个话题。
+         </span>
+<br />
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 18px;">
+          具有代表性的讲师包括但不限于如下
+         </span>
+</p>
+<p>
+<br />
+</p>
+<ul class="list-paddingleft-2" style="font-family: 'lucida grande', 微软雅黑; font-size: 14px; white-space: normal; line-height: 1.5; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255);">
+<li>
+<p>
+<span style="font-size: 18px;">
+            Java/JVM性能咨询专家，
+           </span>
+<wbr />
+<span style="font-size: 18px;">
+            2013年JavaOne大会明星讲师 Monica Beckwith；
+           </span>
+</p>
+</li>
+<li>
+<p>
+<span style="font-size: 18px;">
+            多次参加DevOps，OSCon，JAX，PHP UK等技术大会演讲的jClarity CEO Martijn Verburg；
+           </span>
+</p>
+</li>
+<li>
+<p>
+<span style="font-size: 18px;">
+            热爱历史和唐诗宋词的LinkedIn Staff Software Engineer 庄振运；
+           </span>
+</p>
+</li>
+<li>
+<p>
+<span style="font-size: 18px;">
+            在大规模数据挖掘和大数据机器学习方面经验丰富的AppDyna
+           </span>
+<wbr />
+<span style="font-size: 18px;">
+            mics首席数据科学家 赵宇辰；
+           </span>
+</p>
+</li>
+<li>
+<p>
+<span style="font-size: 18px;">
+            阿里巴巴高级无线技术专家 陈武；
+           </span>
+</p>
+</li>
+<li>
+<p>
+<span style="font-size: 18px;">
+            腾讯社交多媒体业务负责人 梁定安；
+           </span>
+</p>
+</li>
+<li>
+<p>
+<span style="font-size: 18px;">
+            Oracle ACE总监 盖国强；
+           </span>
+</p>
+</li>
+<li>
+<p>
+<span style="font-size: 18px;">
+            热爱马拉松的听云CTO Wood；
+           </span>
+</p>
+</li>
+<li>
+<p>
+<span style="font-size: 18px;">
+            民生银行信息科技部高级质量管理经理 陈绍英；
+           </span>
+</p>
+</li>
+<li>
+<p>
+<span style="font-size: 18px;">
+            工行银行测试部高级经理 李雁南；
+           </span>
+</p>
+</li>
+<li>
+<p>
+<span style="font-size: 18px;">
+            携程框架研发部高级研发经理 魏晓军；
+           </span>
+</p>
+</li>
+<li>
+<p>
+<span style="font-size: 18px;">
+            《Oracle DBA工作笔记》作者 杨建荣；
+           </span>
+</p>
+</li>
+<li>
+<p>
+<span style="font-size: 18px;">
+            清华大学计算机系副教授 裴丹；
+           </span>
+</p>
+<p>
+<br />
+</p>
+</li>
+</ul>
+<p>
+<span style="font-size: 18px;">
+          相关议题均为各大一线互联网公司实战解决方案，任何一个方案，只要对你的企业应用场景有契合度，都可以说是价值千金。
+         </span>
+</p>
+<p>
+<span style="font-size: 18px;">
+<br />
+</span>
+</p>
+<p>
+<span style="font-size: 18px;">
+<span style="color: rgb(255, 0, 0); font-family: helvetica; line-height: normal; background-color: rgb(255, 255, 255);">
+           优惠码
+          </span>
+<span style="color: rgb(255, 0, 0); font-family: verdana, sans-serif; line-height: 1.5; background-color: rgb(255, 255, 255);">
+           "
+          </span>
+<span style="color: rgb(255, 0, 0); font-family: 'lucida grande', 微软雅黑; line-height: 1.5; background-color: rgb(255, 255, 255);">
+           APM_caoz
+          </span>
+<span style="color: rgb(255, 0, 0); font-family: verdana, sans-serif; line-height: 1.5; background-color: rgb(255, 255, 255);">
+           "
+          </span>
+<span style="color: rgb(255, 0, 0); font-family: 'lucida grande', 微软雅黑; line-height: 1.5; background-color: rgb(255, 255, 255);">
+           进入阅读原文购票，
+          </span>
+<span style="color: rgb(255, 0, 0); line-height: normal; font-family: 'lucida grande', 微软雅黑; background-color: rgb(255, 255, 255);">
+           在8折基础上
+          </span>
+<span style="color: rgb(255, 0, 0); line-height: normal; font-family: 'lucida grande', 微软雅黑; background-color: rgb(255, 255, 255);">
+<wbr />
+           可再优惠500RMB
+          </span>
+</span>
+</p>
+<p>
+<br />
+</p>
+<p>
+<img data-ratio="0.47902869757174393" data-s="300,640" data-src="" data-type="png" data-w="453" src="/wechat/img/nBKX0s8fer3iacBHNfC24jcpAS86qu124iaQ6lZYELysGGrF7tiaO4KMBYS6XwqKQ8EvBMkC6mtkNoMFlia3Tydhrw.png" />
+<br />
+</p>
+</div>
+</div>
+
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+
+        
+        <li class="previous">
+            <a href="/caozsay/2016/08/04/caozsay-418/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/caozsay">caoz的梦呓</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/caozsay/2016/07/31/caozsay-420/">后一篇</a>
+        </li>
+        
+
+    </div>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- 匹配内容-lijiaocn -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="autorelaxed"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="6443696990"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+        </div>
+    </div>
+    <!--div class="bottom">
+            <p style="color:white">Thanks for use. Remember us.</p>
+    </div-->
+    <script src="/wechat/assets/js/js.js" charset="utf-8"></script>
+    
+
+    
+</body>
+</html>

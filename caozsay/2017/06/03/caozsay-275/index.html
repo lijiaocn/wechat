@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="chinese">
+<head>
+<meta charset="utf-8" content="text/html">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>alphago 50盘自战棋谱的简单解读|caoz的梦呓|微信公众号文章合集|鼹鼠看看</title>
+<meta name="description" content="alphago公开了50盘自战对局，有职业棋手表示，要重新学习围棋了，但我觉得，有些理念，甚至不止是用于围棋领域。" />
+<meta name="keywords" content="caoz的梦呓,caozsay,微信公众号,公众号文章导出"/>
+<link rel="shortcut icon" href="/wechat/favicon.ico"/>
+<link rel="bookmark" href="/wechat/favicon.ico"/>
+<link rel="stylesheet" href="/wechat/assets/css/style.css">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- google ad -->
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8176866190626448",
+          enable_page_level_ads: true
+     });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105389858-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-105389858-1');
+</script>
+
+<script async>
+/*百度统计*/
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8f59ea10145df28da8932c8743ec1d60";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+/*百度自动收录*/
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+</head>
+
+<body class="body">
+    <div class="top">
+            
+<style type="text/css" scoped>
+    .innerbanner{
+        background:gray;
+        color:white;
+        padding-right:10px;
+        padding-right:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-top:10px;
+        padding-top:1rem;
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: flex-start;
+        width:100%;
+        font-size:15px;
+        font-size:1.5rem;
+        /*
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        */
+    }
+    .innerbanner a{
+        color:white;
+    }
+    .innerbanner a:hover{
+        color: black;
+        text-decoration: none;
+        font-size:large;
+    }
+    .innerbanner #inner_ul {
+        display:flex;
+        color:white;
+        padding-left:0px;
+        margin:0px;
+        align-items: flex-start;
+    }
+    .innerbanner #inner_li {
+        list-style:none;
+        display:inline-block;
+        line-height:25px;
+        line-height:2.5rem
+    }
+    .topdetails{
+        top:10px;
+        top:1rem;
+        display: inline-block;
+    }
+    .topdetails summary::-webkit-details-marker {
+        display: none;
+    }
+    .topdetails summary:first-of-type {
+        list-style-type: none;
+    }
+    .topdetails ul{
+        padding:0px;
+    }
+    .topdetails li{
+        list-style:none;
+        text-indent:0px;
+    }
+    .topdetails a{
+        display:block;
+        background:gray;
+        color:white;
+        height:30px;
+        height:3rem;
+        padding-top:10px;
+        padding-top:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-right:10px;
+        padding-right:1rem;
+    }
+    .topdetails a:hover{
+        background:darkgray;
+        /*color: white;*/
+        color: black;
+    }
+
+    @media screen and (max-width: 1024px){
+        .innerbanner #inner_ul{
+            list-style:none;
+            display:block;
+        }
+    }
+</style>
+<div class="innerbanner" id="bannerid">
+    <ul id="inner_ul">
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                鼹鼠首页
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                <span style='color:blue'>全球网购></span>
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=WYppWas1DZpVXZmcDOwMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLzYTMuU3b5ZkMlYkMlE0MlAHd0hWP0Zibj9">
+                网易严选
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=j9WYppWas1DZpVXZmczM3ETPklWYmAjMzUjMy0DZp9VZ0l2cmYiJGJTJt92YuEGbvF2auc3d3ZkMlYkMlE0MlAHd0hWP0Zib">
+                考拉海购
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom">
+                无人机
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=lAHd0hWP0Zibj9WYppWas1DZpVXZmQDOzMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiJpFWbvVHZfB3ckR0Ml02byZmeGNTJGJTJt92Yu8Wd69WY6ZkMlYkMlE0M">
+                造作
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=m0DZpVXZmITO5MTPklWYmAjMzUjMy0DZp9VZ0l2cm02bj5CdyF2d55yd3dnRyUiRyUSQzUycwRHdo1Dd">
+                艺网
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=ibj9WYppWas1DZpVXZmMDMxITPklWYmAjMzUjMy0DZp9VZ0l2cmYiJuNmLt92YukHbu9WZz9mcuc3d3ZkMlYkMlE0MlAHd0hWP0Z">
+                RoseOnly.
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="http://g.click.taobao.com/q?ak=24663635&pid=mm_33963329_6520758_142982992&unid=lijiaocn&rf=http%3A%2F%2Fwww.lijiaocn.com%2F%25E5%25A5%25BD%25E8%25B4%25A7%2F2010%2F10%2F10%2Fsites.html&rd=2&et=97775937&pgid=be61cbd8f3af2ff376aa0c1a3103628d&ct=url%3Dhttps%253A%252F%252Fwww.tmall.com%252F&v=1.2&ttype=1&cm=674%2C742%3B654%2C598%3B615%2C639%3B579%2C634%3B597%2C656%3B587%2C667%3B639%2C797%3B777%2C675%3B624%2C701%3B561%2C709&ck=&cw=0">
+                天猫
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?site_id=224482&lid=4193&aid=61&euid=lijiaocn&t=http%3A%2F%2Fwww.360buy.com%2F">
+                京东
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=uN2bhlmapxWPklWdlZSMyYTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLllma1d2bt5yd3dnRyUiRyUSQzUCc0RHa9QnJ">
+                蘑菇街
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://p.gouwuke.com/0Rdyy">
+                益丰药房
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>亚马逊&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHhN7">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2N0KGzS">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRl3e">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zodOgB">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHpfz">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRwvq">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2O4YeyF">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.cn/?tag=znrio-23">中国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xKqLiP">巴西</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2DotW60">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.com.mx/">墨西哥</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 1&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com/">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.uk/">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.de/">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.au/">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.it/">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.fr/">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.es/">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ca/">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ie/">爱尔兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.at/">奥地利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://www.ebay.be/">比利时</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.nl/">荷兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ch/">瑞士</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 2&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.gittigidiyor.com/">土耳其</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.pl/">波兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.hk/">中国香港</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://global.gmarket.co.kr/Home/Main">韩国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.sg/">新加坡</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ph/">菲律宾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.my/">马来西亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.in/">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.cn/">中国大陆</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.jp/">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.th/">泰国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.vn/">越南</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.tw/">台湾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.se/">瑞典</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+    </ul>
+</div>
+
+<p id="hiddenid" style="color:white;position:absolute;right:15px;top:1px;margin:0;padding:0;font-size:1.2rem;" onclick="hiddenBanner()"></p>
+<script>
+    function hiddenBanner() {
+        var b = document.getElementById("bannerid");
+        var p = document.getElementById("hiddenid");
+        if (b.style.display=="none"){
+            b.style.display="flex";
+            p.innerHTML="";
+            p.style.color="white"
+        }else{
+            b.style.display="none";
+            p.innerHTML="";
+            p.style.color="white"
+        }
+    }
+</script>
+
+    </div>
+    <div class="center">
+        <div class="leftbar">
+            <nav id="nav" class="nav" >
+            
+
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<!--details class="menu"-->
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<details class="menu" open>
+    <summary>鼹鼠看看</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/news" >全站最新</a>
+        </li>
+        <li>
+            
+            <a href="/wechat/about" >本站服务</a>
+        </li>
+        <li>
+            
+            <a href="/wechat">鼹鼠首页</a>
+        </li>
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>精彩连载</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/specialserial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/gh_4c12eeda5979" >灼识新维度</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/flashsky" >我的安全之路</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>政经启蒙</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/finacial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/worldofboss" >饭统戴老板</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-net" >水库论坛</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/wm221x" >猛哥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-Off" >水库线下</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WatcherCommander" >守夜人总司令</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>互联网</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/internet" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/z7z8day" >观点推荐</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/caozsay"  style="color:white;" >caoz的梦呓</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/TOMsInsight" >TOMsInsight</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/tencent_fsq" >腾讯防水墙</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WebNotes" >小道消息</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/ColinHuangZheng" >黄峥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/vc-ziliu" >投资人子柳</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/yirensay" >亦无所知</a>
+        </li>
+        
+    </ul>
+</details>
+
+
+            </nav>
+        </div>
+        <div class="workspace">
+            <style>
+    .logo {
+        width: 391px;
+        width: 39.1rem;
+        height: 70px;
+        height: 7rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .logo .logo-font{
+        width: 150px;
+        width: 15rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        background: white;
+        font-size: 37px;
+        font-size: 3.7rem;
+        font-family: "楷体";
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .logo .logo-text{
+        width: 200px;
+        width: 20rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+    }
+    .source {
+        width: 351px;
+        width: 35.1rem;
+        height: 50px;
+        height: 5rem;
+        background: lightgray;
+        display:flex;
+        flex-direction: row;
+    }
+    .source .photo{
+        width: 48px;
+        width: 4.8rem;
+        height: 48px;
+        height: 4.8rem;
+        padding: 1px;
+    }
+    .source .detail{
+        width: 295px;
+        width: 29.5rem;
+        padding-left: 5px;
+        padding-left: 0.5rem;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .desc{
+        font-size:12px;
+        font-size:1.2rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .nick{
+        font-size:15px;
+        font-size:1.5rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .workspace_top{
+        display: flex;
+        height: auto;
+        padding-top: 10px;
+        padding-top: 1rem;
+        padding-bottom: 10px;
+        padding-bottom: 1rem;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        background: darkblue;
+    }
+    @media screen and (max-width: 1020px){
+        .source{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 750px){
+        .workspace_top{
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .source{
+            display: none;
+        }
+    }
+    @media screen and (max-width: 391px){
+        .logo {
+            width: 100%;
+            padding:0px;
+        }
+        .logo .logo-font{
+            padding:0px;
+            font-size: 10vw;
+            width: 50%;
+        }
+        .logo .logo-text{
+            padding:0px;
+            font-size: 4vw;
+            width: 50%;
+        }
+        .source {
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+            display:none;
+        }
+        .source .photo{
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail{
+            width: 80%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .desc{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .nick{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+    }
+
+</style>
+<div style="width: 100%">
+ <div class="workspace_top">
+     <div class="logo">
+        <div class="logo-font">
+            <div><a href="/wechat" style="color:black">文章精选</a></div>
+        </div>
+        <div class="logo-text">
+            <div>微信公众号文章精选</div>
+            <div><a href="/wechat/">https://www.lijiaocn.com</a></div>
+        </div>
+     </div>
+
+
+     <div class="source">
+         
+         <div class="photo"><a href="/wechat/img/caozsay.photo.png"><img width=100% height=100% src="/wechat/img/caozsay.photo.png"></a></div>
+         <div class="detail">
+            <div class="nick"><a href="/wechat/categories/caozsay.html"><span>caoz的梦呓/caozsay</span></a></div>
+            <div class="desc"><span>caoz的心得与分享,只此一家,别无分号.</span></div>
+         </div>
+     </div>
+
+
+
+ </div>
+</div>
+
+
+<div style="width: 100%; text-align: center">
+    <h1 style="text-align: center">alphago 50盘自战棋谱的简单解读</h1>
+    <p style="text-align: center"><span>发布日期：2017-06-03 15:36:14 +0000</span></p>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- kankan_post_top -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="8060913530"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="article">
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+        
+        <li class="previous">
+            <a href="/caozsay/2017/06/05/caozsay-274/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/caozsay">caoz的梦呓</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/caozsay/2017/06/01/caozsay-276/">后一篇</a>
+        </li>
+        
+
+    </div>
+
+    <div><div class="rich_media_content" id="js_content">
+<p>
+         乌镇 alphago与柯洁，及其他国手对弈结束后，deepmind官方表示要送给棋界一个礼物，也就是50盘 alphago自我对弈的棋谱。 目前，所知几乎所有职业棋手，都在认真研读和分析这些棋谱，而很多围棋业余爱好者也试图通过这些棋谱，去更好的理解围棋。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         作为业余中的俗手，如果试图去理解和解读每一步棋的妙处，我自认为是没有资格的，只是粗略的根据棋谱的感受，做一些简单的总结，希望对爱好者更好的了解alphago和围棋，有所帮助。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         1、目前贴目规则白棋有利。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         alphago 棋力目前已经胜于人类，其自我对弈是一个很有价值的参考，50盘自我对弈里，白棋的胜率超过了75%，我们可以认为大贴目是存在问题的。黑先的优势没有现在的贴目那么大。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         2、在alphago眼里，外势没有人类感觉的那么重要。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         我们知道alphago比较喜欢点33，而一般职业棋手认为开局不久点33是亏的，因为对手的棋可以轻松拿到厚势。 但从alphago而言，至少认为这样做双方是均势的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         典型如第21局棋谱，一上来就形成了白棋捞实地而黑棋占大场的格局，从传统人类的观点来说，开局白棋有太多子下在二三线，肯定是亏透了。但我们知道alphago自战棋谱，在中盘之前，系统肯定是认为双方均势的。也就是alphago绝不会认为那一串二三线的子是亏的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         可以这么理解为，alphago比人类更知道如何破解厚势，更会在对手厚势的情况下找到侵消和打入的机会。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         3、关于子效，需要有新的认识。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         以日本传统棋道而言，特别强调优美的棋形，所谓优美的棋形，其实说白了就是棋子以有效率的方式呈列在棋盘上。如果一盘棋中，有太多的愚型（所谓愚型，其实是典型没有效率的棋子分布），可能会被认为对弈者水平有限，或下出的招法存在问题。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         但alphago 自我对战的第二盘，不但白棋被提了超过50个子（即便是业余棋手对局里，被提50个子也可以认为是惨绝人寰的事情了），而且中间出现了一大坨的愚型，3×5的白子密密麻麻的堆在一起，这是职业棋手对弈中从未出现过的，让人恍惚觉得这是黑白棋，而不是围棋，然而，最终结果，白棋居然赢了。认真的说，如果把alphago的名字去掉，不讲出处，只把结局的图发给一个围棋高手（假设没经历过alphago洗礼过），一定认为这盘棋是两个纯业余的棋手下出来的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         围棋毕竟是两个人下出来的，之所以出现这样的情况，只能说是因为双方彼此的克制太强了。以前有所谓争棋无名局一说，往往竞争激烈的棋局，彼此遏制的厉害，棋形和招法都很难潇洒如意。 唐韦星九段的棋风有个外号，叫做泥泞流，就是下起来对手也难受，自己也难受。我觉得alphago的自我对弈可能就很符合这个风格，双方总是下到让对手很难受的地方，任谁都无法走出效率高的手段，只能在泥泞中挣扎，一个愚型，又一个愚型。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         4、alphago没有战略构思。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         人类下围棋的时候，往往有一个整体构思，比如要围中腹，比如先捞后洗，比如通过缠绕攻击获利；当然，由于对手的招法，构思不一定会彻底实现，中间也可能会调整或者转向，但人类往往基于某个构思进行布局，进行攻击，进行子力的分布。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         但alphago，在对局谱里，看不到这样的整体作战计划和构思，丧心病狂的脱先，疯狂的转换，你无法预测他的计划，他的目的，甚至，你可以认为，他根本没有所谓的计划和目的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         知乎上，知名大V 曾加说了一个观点，我非常的赞同，alphago的每一步，都是基于当前局面下，它认为最佳的下法。是的，逻辑就是这么简单。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         虽然所谓最佳下法也是通过大量的计算和后续步骤的推演进行的，但当对手落子后，计算会根据新的局面重新进行，鉴于对手落子的选点和不同，其下一步的最佳下法可能是延续之前的步骤，也可能是断然脱先寻找其他机会，之前的落子，既然是当时最佳下法，肯定对后续的步骤会有一定的正向影响，但鉴于人类的水平，往往很难快速理解这里的因果关联。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         在乌镇，古力九段与alphago 对 连笑九段与alphago，下了一盘联棋。（所谓联棋，就是一边两人或多人，每人各走一步）。通常，国内联棋比赛，古力，连笑，作为顶尖职业棋手，往往都是联棋中的主导者，主导棋局的方向跟核心战斗，棋局胜负关键往往看另一个合作伙伴的贯彻和执行程度。 但在与alphago合作的联棋对决里，整个过程就变得完全不可控了。 因为alphago并不会试图去理会和迎合他们的意图，只是按照他们理解的最优点落子；而古力，连笑，也很难理解alphago的意图和目标，结果整盘棋就变得很不可理喻，所谓配合更是无从谈起。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         如果让业余高手，或职业棋手，学会理解抛弃整体构思，仅仅从当前局面寻求最优解，不知道是否会提升他们的棋力。曾加大V另一个观点我也很赞成，当人类棋手陷入自己的构思和规划的时候，往往存在沉没成本的考虑，在对手下出制约招法的时候，无法快速应变，改变策略，而导致后续落子效率的下降。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         5、alphago 不遵循定式，棋理
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这事其实从源头说，我们下围棋为什么有定式，有棋理。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         围棋博大精深，主要是因为每一步棋，后续都变化无穷；而人类的计算力是非常有限的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         其实我们想想人类是怎么下棋的，之前我们说alphago的策略是搜索树，会有选择的剪枝，减少搜索广度。人类的思维方式也类似，每一步棋，厉害的棋手，都会脑补后续可能的多个变化图，但由于人类的计算力非常有限，所以，需要极大的剪枝，才能保证计算深度。一个职业棋手，针对一个局面，可能会考虑几十个变化图，每个变化图十几手棋到几十手棋（所谓一本道的情况），我觉得这已经很了不起了。我脑补能力极弱，我下网棋往往要通过对弈工具的变化图的功能来摆，针对一手棋，大部分是凭感觉应对，少数关键点，摆出四五个变化图就已经很难得了。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         那么我们知道，alphago一手棋，可以摆几万个，几十万个变化图。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         所以，人类学习研究围棋的历史，总结了一些棋理，一些定式，可以让棋手在面对典型局面的时候，基于棋理和定式，快速剪枝，快速缩小搜索范围，实现最低成本的深度搜索。而这套人脑剪枝策略，在几千年的历史演进下，已经证明是很有效的了，所以诸如zen等其他围棋程序，固然拥有远大于人脑的计算力，但由于缺乏有效的剪枝策略，依然无法战胜人类顶级棋手。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         那么一些名局中，之所以有一些所谓的妙手，鬼手，往往是因为这些手段，恰好处于普通棋手的搜索范围之外，属于被普通棋手大脑剪枝的部分，而又具有极佳的实战效果。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         以前，罗洗河的名局，消除三劫循环大胜对手的那盘棋，好像是俞斌教练就点评过，说罗洗河的思考广度超过其他棋手，所谓思考广度，也就是搜索广度，一些常人剪枝的手段，他会去考虑一下，这里可能就存在更好的招法和手段。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         回过头来说，alphago其实也有剪枝的规则，因为它不可能遍历所有落子选择，也就是说，通过大规模的深度学习，其实它也总结了自己所遵循的“棋理”，但由于它的计算能力太强大，所以其搜索广度远大于人类所定义的棋理，定式，也就会出现很多我们棋理所无法理解的招法，以及针对人类定式很多不可思议的改动。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         那么，我们知道很多年轻棋手，在大量网棋的训练下，有很多新的招法，新的手段，往往也让人眼前一亮，但说实话，这里存在很多招法，是因为大家都不熟悉，把局面带入对局双方均未知的境地，硬拼计算量，很可能这些招法并非最佳下法，但对手计算广度和深度不足，应对失当，吃下大亏。也就是所谓骗招，甚至施展的棋手都未必知道最佳应对是什么。而alphago的招法，从目前来说，骗招的可能性很小，就算有，很可能也是人类计算能力很难应对的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         6、alphago也会打勺。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         是的，从棋谱上还是能看到alphago打勺（所谓打勺，就是明确的坏棋，失误的棋），你没看错，就算我的棋力，都能看出是打勺。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         但其实都是不足以影响胜负的勺子，alphago是不是有足以影响胜负的勺子？去年对李世石的时候是有的，但今年，好像目前连职业棋手都没有能力发现或者证明。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         那么一种勺子，是之前提到的，稳如狗的退让策略，比如本来赢两目半的棋，下了一步自损一目的棋，反正总也赢了。别指望它会损到让你有机会翻盘。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         还有一种勺子比较触目惊心，是狗急跳墙的勺子，第22局棋非常典型，下到308手的时候，白棋小败的局面难以动摇，正常收的话差不多输一目半吧，（如果我说错了请高手指正），黑309是个简单的先手一目的官子，连我都知道要粘啊，结果白310去抢了一个后手两目的官子，然后黑311直接断掉白棋，这时候正解是白棋自补一手，加上断开后有一目棋要粘，算下来是损失了两目官子，得不偿失。但白在走了一步绝先之后，312又去抢了一个后手两目官子，于是黑313一出，白大龙的尾巴肯定保不住了。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这棋业余棋手都能看得很清楚，alphago不可能看不出来，但情况就是，正常收败局已定。于是狗急跳墙去逆收官子，将胜负寄希望于对手不去追究，但对手也是狗，怎么可能不追究。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         不过这种失误，因为没有影响到全局胜负，不能说是alphago的水平问题。只能说，它们面对败局的时候，在某些情况下，可能不如人类棋手更大度。（不知道具体认输策略是怎么制定的）
+        </p>
+<p>
+<br />
+</p>
+<p>
+         7、alphago毕竟不是围棋上帝，但确实相当接近了。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         我们注意到，alphago的自战对局，大部分对局的胜负差都很小，很多盘半目胜负，就算如上第22局这种所谓中盘胜，但其实是很小的差距情况下，狗急跳墙走出勺子变成大败的。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         当然，必须承认，很多半目胜负也是因为稳如狗退让出来的。但和与人类对弈相比，alphago自战对弈，从中盘到终局时候的黑白的差距通常要小很多，退让的招法出现的也明显比和人类对弈要少。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         我的理解是，如果存在围棋上帝左右互搏，那么结局应该基本上一致，比如白棋一目半胜或半目胜，也就是所有对弈的招法极限已经测试出来了。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         而人类顶级职业棋手对弈，在当前贴目情况下，统计上似乎 黑白胜率差不多在45%和55%。 我的理解是这样的，棋手水平越低，这种贴目带来的影响越小。棋手水平越高，贴目带来的影响越大。所以看比例可以看出，比起顶级职业棋手，贴目对alphago的影响更显著的多。相对于围棋上帝而言，alphago比人类接近的不是一点半点。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         那么扯了半天alphago，最近有个问题开始在思考。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         作为创业者，作为企业家，我们常说，要有长远规划，要有整体的战略设计，但是，我们试图理解一下，如果每次选择，都只去考虑当前局面下的最优方案，会怎样？当然，当前局面的最优方案，也是要有后续的搜索深度和广度的考虑在内，但，这个考虑，并非是战略性的，也不是明确目的的。而是兼容了多种战略，多种目的，多种可能性，选择当前最恰当的，这样发展下去，会怎样？
+        </p>
+<p>
+<br />
+</p>
+<p>
+         从alphago的棋谱，我觉得，至少，这个话题，可以讨论一下了。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         最后，期待deepmind公开最新的研究成果，我们知道腾讯的绝艺，是基于去年deepmind发表的论文，短短一年时间，成功的成为世界上第二强的围棋AI程序，并在日本围棋电竞赛夺冠，在腾讯围棋大杀四方，线上等级分遥遥领先于所有人类顶尖棋手；但同时我们也知道绝艺并非alphago那么无敌，经常还会输给人类棋手，而且一些关键问题尚未得到解决。这个围棋程序的水平基本上和去年战胜李世石的alphago版本相当，面对顶尖棋手胜多负少，但依然存在一些不完美的地方。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         所以，我相信一点，如果deepmind把最新成果公开出来，以腾讯的实力，是可以快速跟进到这个水平的，这样也可以减少alphago退出江湖的遗憾了。
+        </p>
+<hr />
+<p>
+<br />
+</p>
+<p>
+         最近看到不少借势alphago的文章，其实蹭热点我觉得还好，但有那种阴谋论，说alphago和柯洁联手上演骗局，欺骗国人，以及各种阴谋论云云。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         这种脑残文，不值得反驳，更难听的话，我就不说了。
+        </p>
+<p>
+<br />
+</p>
+<p>
+         本文写的很乖，应该不会违规了。
+        </p>
+</div>
+</div>
+
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+
+        
+        <li class="previous">
+            <a href="/caozsay/2017/06/05/caozsay-274/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/caozsay">caoz的梦呓</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/caozsay/2017/06/01/caozsay-276/">后一篇</a>
+        </li>
+        
+
+    </div>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- 匹配内容-lijiaocn -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="autorelaxed"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="6443696990"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+        </div>
+    </div>
+    <!--div class="bottom">
+            <p style="color:white">Thanks for use. Remember us.</p>
+    </div-->
+    <script src="/wechat/assets/js/js.js" charset="utf-8"></script>
+    
+
+    
+</body>
+</html>

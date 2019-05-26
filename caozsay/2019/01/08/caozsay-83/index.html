@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="chinese">
+<head>
+<meta charset="utf-8" content="text/html">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度学习席卷互联网，你还没有跟进么？|caoz的梦呓|微信公众号文章合集|鼹鼠看看</title>
+<meta name="description" content="不夸张的说，TensorFlow 是谷歌公司送给这个世界的礼物，其对整个世界的影响和改变，正在悄然发生。" />
+<meta name="keywords" content="caoz的梦呓,caozsay,微信公众号,公众号文章导出"/>
+<link rel="shortcut icon" href="/wechat/favicon.ico"/>
+<link rel="bookmark" href="/wechat/favicon.ico"/>
+<link rel="stylesheet" href="/wechat/assets/css/style.css">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- google ad -->
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8176866190626448",
+          enable_page_level_ads: true
+     });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105389858-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-105389858-1');
+</script>
+
+<script async>
+/*百度统计*/
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8f59ea10145df28da8932c8743ec1d60";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+/*百度自动收录*/
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+</head>
+
+<body class="body">
+    <div class="top">
+            
+<style type="text/css" scoped>
+    .innerbanner{
+        background:gray;
+        color:white;
+        padding-right:10px;
+        padding-right:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-top:10px;
+        padding-top:1rem;
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: flex-start;
+        width:100%;
+        font-size:15px;
+        font-size:1.5rem;
+        /*
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        */
+    }
+    .innerbanner a{
+        color:white;
+    }
+    .innerbanner a:hover{
+        color: black;
+        text-decoration: none;
+        font-size:large;
+    }
+    .innerbanner #inner_ul {
+        display:flex;
+        color:white;
+        padding-left:0px;
+        margin:0px;
+        align-items: flex-start;
+    }
+    .innerbanner #inner_li {
+        list-style:none;
+        display:inline-block;
+        line-height:25px;
+        line-height:2.5rem
+    }
+    .topdetails{
+        top:10px;
+        top:1rem;
+        display: inline-block;
+    }
+    .topdetails summary::-webkit-details-marker {
+        display: none;
+    }
+    .topdetails summary:first-of-type {
+        list-style-type: none;
+    }
+    .topdetails ul{
+        padding:0px;
+    }
+    .topdetails li{
+        list-style:none;
+        text-indent:0px;
+    }
+    .topdetails a{
+        display:block;
+        background:gray;
+        color:white;
+        height:30px;
+        height:3rem;
+        padding-top:10px;
+        padding-top:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-right:10px;
+        padding-right:1rem;
+    }
+    .topdetails a:hover{
+        background:darkgray;
+        /*color: white;*/
+        color: black;
+    }
+
+    @media screen and (max-width: 1024px){
+        .innerbanner #inner_ul{
+            list-style:none;
+            display:block;
+        }
+    }
+</style>
+<div class="innerbanner" id="bannerid">
+    <ul id="inner_ul">
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                鼹鼠首页
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="/">
+                <span style='color:blue'>全球网购></span>
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=WYppWas1DZpVXZmcDOwMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLzYTMuU3b5ZkMlYkMlE0MlAHd0hWP0Zibj9">
+                网易严选
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=j9WYppWas1DZpVXZmczM3ETPklWYmAjMzUjMy0DZp9VZ0l2cmYiJGJTJt92YuEGbvF2auc3d3ZkMlYkMlE0MlAHd0hWP0Zib">
+                考拉海购
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom">
+                无人机
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=lAHd0hWP0Zibj9WYppWas1DZpVXZmQDOzMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiJpFWbvVHZfB3ckR0Ml02byZmeGNTJGJTJt92Yu8Wd69WY6ZkMlYkMlE0M">
+                造作
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=m0DZpVXZmITO5MTPklWYmAjMzUjMy0DZp9VZ0l2cm02bj5CdyF2d55yd3dnRyUiRyUSQzUycwRHdo1Dd">
+                艺网
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=ibj9WYppWas1DZpVXZmMDMxITPklWYmAjMzUjMy0DZp9VZ0l2cmYiJuNmLt92YukHbu9WZz9mcuc3d3ZkMlYkMlE0MlAHd0hWP0Z">
+                RoseOnly.
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="http://g.click.taobao.com/q?ak=24663635&pid=mm_33963329_6520758_142982992&unid=lijiaocn&rf=http%3A%2F%2Fwww.lijiaocn.com%2F%25E5%25A5%25BD%25E8%25B4%25A7%2F2010%2F10%2F10%2Fsites.html&rd=2&et=97775937&pgid=be61cbd8f3af2ff376aa0c1a3103628d&ct=url%3Dhttps%253A%252F%252Fwww.tmall.com%252F&v=1.2&ttype=1&cm=674%2C742%3B654%2C598%3B615%2C639%3B579%2C634%3B597%2C656%3B587%2C667%3B639%2C797%3B777%2C675%3B624%2C701%3B561%2C709&ck=&cw=0">
+                天猫
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?site_id=224482&lid=4193&aid=61&euid=lijiaocn&t=http%3A%2F%2Fwww.360buy.com%2F">
+                京东
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://c.duomai.com/track.php?k=uN2bhlmapxWPklWdlZSMyYTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLllma1d2bt5yd3dnRyUiRyUSQzUCc0RHa9QnJ">
+                蘑菇街
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <a target="_blank" href="https://p.gouwuke.com/0Rdyy">
+                益丰药房
+                </a>&nbsp&nbsp&nbsp
+        
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>亚马逊&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHhN7">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2N0KGzS">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRl3e">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zodOgB">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2NBHpfz">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2zoRwvq">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2O4YeyF">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xAksiw">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.cn/?tag=znrio-23">中国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2xKqLiP">巴西</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://amzn.to/2DotW60">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.amazon.com.mx/">墨西哥</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 1&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com/">美国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.uk/">英国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.de/">德国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.au/">澳大利亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.it/">意大利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.fr/">法国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.es/">西班牙</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ca/">加拿大</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ie/">爱尔兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.at/">奥地利</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://www.ebay.be/">比利时</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.nl/">荷兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ch/">瑞士</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+        <li id="inner_li" style="">
+        
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>易趣 2&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.gittigidiyor.com/">土耳其</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.pl/">波兰</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.hk/">中国香港</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="http://global.gmarket.co.kr/Home/Main">韩国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.sg/">新加坡</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.ph/">菲律宾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.my/">马来西亚</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.in/">印度</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.cn/">中国大陆</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.jp/">日本</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.co.th/">泰国</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.vn/">越南</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.com.tw/">台湾</a>
+                            </li>
+                        
+                            <li>
+                                <a target="_blank" href="https://www.ebay.se/">瑞典</a>
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+        </li>
+    
+    </ul>
+</div>
+
+<p id="hiddenid" style="color:white;position:absolute;right:15px;top:1px;margin:0;padding:0;font-size:1.2rem;" onclick="hiddenBanner()"></p>
+<script>
+    function hiddenBanner() {
+        var b = document.getElementById("bannerid");
+        var p = document.getElementById("hiddenid");
+        if (b.style.display=="none"){
+            b.style.display="flex";
+            p.innerHTML="";
+            p.style.color="white"
+        }else{
+            b.style.display="none";
+            p.innerHTML="";
+            p.style.color="white"
+        }
+    }
+</script>
+
+    </div>
+    <div class="center">
+        <div class="leftbar">
+            <nav id="nav" class="nav" >
+            
+
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<!--details class="menu"-->
+<!--details class="menu" open onmouseover="opendetail(this)" -->
+<details class="menu" open>
+    <summary>鼹鼠看看</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/news" >全站最新</a>
+        </li>
+        <li>
+            
+            <a href="/wechat/about" >本站服务</a>
+        </li>
+        <li>
+            
+            <a href="/wechat">鼹鼠首页</a>
+        </li>
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>精彩连载</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/specialserial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/gh_4c12eeda5979" >灼识新维度</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/flashsky" >我的安全之路</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>政经启蒙</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/finacial" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/worldofboss" >饭统戴老板</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-net" >水库论坛</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/wm221x" >猛哥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/Shuiku-Off" >水库线下</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WatcherCommander" >守夜人总司令</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="menu" open>
+    <summary>互联网</summary>
+    <ul>
+        <li>
+            
+            <a href="/wechat/tags/internet" >最近更新</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/z7z8day" >观点推荐</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/caozsay"  style="color:white;" >caoz的梦呓</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/TOMsInsight" >TOMsInsight</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/tencent_fsq" >腾讯防水墙</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/WebNotes" >小道消息</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/ColinHuangZheng" >黄峥</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/vc-ziliu" >投资人子柳</a>
+        </li>
+        
+        <li>
+            
+            <a href="/wechat/categories/yirensay" >亦无所知</a>
+        </li>
+        
+    </ul>
+</details>
+
+
+            </nav>
+        </div>
+        <div class="workspace">
+            <style>
+    .logo {
+        width: 391px;
+        width: 39.1rem;
+        height: 70px;
+        height: 7rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .logo .logo-font{
+        width: 150px;
+        width: 15rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        background: white;
+        font-size: 37px;
+        font-size: 3.7rem;
+        font-family: "楷体";
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .logo .logo-text{
+        width: 200px;
+        width: 20rem;
+        height: 70px;
+        height: 7rem;
+        padding-left: 10px;
+        padding-left: 1rem;
+        padding-right: 10px;
+        padding-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+    }
+    .source {
+        width: 351px;
+        width: 35.1rem;
+        height: 50px;
+        height: 5rem;
+        background: lightgray;
+        display:flex;
+        flex-direction: row;
+    }
+    .source .photo{
+        width: 48px;
+        width: 4.8rem;
+        height: 48px;
+        height: 4.8rem;
+        padding: 1px;
+    }
+    .source .detail{
+        width: 295px;
+        width: 29.5rem;
+        padding-left: 5px;
+        padding-left: 0.5rem;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .desc{
+        font-size:12px;
+        font-size:1.2rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .source .detail .nick{
+        font-size:15px;
+        font-size:1.5rem;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .workspace_top{
+        display: flex;
+        height: auto;
+        padding-top: 10px;
+        padding-top: 1rem;
+        padding-bottom: 10px;
+        padding-bottom: 1rem;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        background: darkblue;
+    }
+    @media screen and (max-width: 1020px){
+        .source{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 750px){
+        .workspace_top{
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .source{
+            display: none;
+        }
+    }
+    @media screen and (max-width: 391px){
+        .logo {
+            width: 100%;
+            padding:0px;
+        }
+        .logo .logo-font{
+            padding:0px;
+            font-size: 10vw;
+            width: 50%;
+        }
+        .logo .logo-text{
+            padding:0px;
+            font-size: 4vw;
+            width: 50%;
+        }
+        .source {
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+            display:none;
+        }
+        .source .photo{
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail{
+            width: 80%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .desc{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+        .source .detail .nick{
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+    }
+
+</style>
+<div style="width: 100%">
+ <div class="workspace_top">
+     <div class="logo">
+        <div class="logo-font">
+            <div><a href="/wechat" style="color:black">文章精选</a></div>
+        </div>
+        <div class="logo-text">
+            <div>微信公众号文章精选</div>
+            <div><a href="/wechat/">https://www.lijiaocn.com</a></div>
+        </div>
+     </div>
+
+
+     <div class="source">
+         
+         <div class="photo"><a href="/wechat/img/caozsay.photo.png"><img width=100% height=100% src="/wechat/img/caozsay.photo.png"></a></div>
+         <div class="detail">
+            <div class="nick"><a href="/wechat/categories/caozsay.html"><span>caoz的梦呓/caozsay</span></a></div>
+            <div class="desc"><span>caoz的心得与分享,只此一家,别无分号.</span></div>
+         </div>
+     </div>
+
+
+
+ </div>
+</div>
+
+
+<div style="width: 100%; text-align: center">
+    <h1 style="text-align: center">深度学习席卷互联网，你还没有跟进么？</h1>
+    <p style="text-align: center"><span>发布日期：2019-01-08 05:58:44 +0000</span></p>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- kankan_post_top -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="8060913530"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="article">
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+        
+        <li class="previous">
+            <a href="/caozsay/2019/01/09/caozsay-82/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/caozsay">caoz的梦呓</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/caozsay/2019/01/03/caozsay-84/">后一篇</a>
+        </li>
+        
+
+    </div>
+
+    <div><div class="rich_media_content" id="js_content">
+<p style="margin-right: 8px;margin-left: 8px;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;letter-spacing: 1px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          2016年，AlphaGo战胜围棋世界冠军李世石，震惊了世界。人们深刻体会到了AI技术的突破带来的震撼，而深度学习的热潮也愈演愈烈。
+         </span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;letter-spacing: 1px;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br />
+</span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;letter-spacing: 1px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          经过几年的发展，深度学习已经成为人工智能领域最热门的技术。谷歌、亚马逊、百度、Facebook 纷纷开源了自己的深度学习框架。而支撑AlphaGo的核心技术架构，TensorFlow，以其一鸣惊人的绝对表现，
+          <span style="font-size: 14px;letter-spacing: 1px;background-color: rgb(255, 255, 255);">
+           凭借其强劲的运算性能、高效的超大集群并行能力、生产环境部署的稳定性，
+          </span>
+          自然也成为最流行的深度学习框架。但TensorFlow的强大远远不止如此，在业界众多公司的追捧和应用中，其语言接口越加丰富，对模型设计的灵活性也足以让它拓展到更多领域。
+         </span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;letter-spacing: 1px;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br />
+</span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;letter-spacing: 1px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          我们已知的事实是，Google Deepmind仅仅让这个架构学习了新的规则，在很短的时间内，甚至只是几个小时的零基础自我学习训练环境中，在日本将棋，国际象棋领域均以压倒性优势战胜了之前相关领域已经研发多年，优化多年的最强大的电脑系统（当然人类自然更不在话下），并已进入非对称信息博弈的领域，比如电竞。而我们更清楚的是，Google花这么大的代价做出的这套架构，绝不只是为了下棋和玩游戏，它只是用最直白最容易理解的方式证明了一下，传统技术方案的所谓智能系统，在这套新架构下，彻底不堪一击。
+         </span>
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 0px;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;color: rgb(255, 104, 39);font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          掌握 TensorFlow 是从事人工智能相关工作必不可少的一环。
+         </span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          目前，阿里、腾讯、京东、小米、网易、滴滴等国内知名互联网企业和 Airbnb、Uber、Dropbox 等硅谷明星公司，都在生产环境大规模地使用 TensorFlow。
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          在力推TensorFlow的谷歌内部，更有超过80%的软件项目采用了TensorFlow，而且Google还设计和发布了专门基于TensorFlow架构的张量芯片，开拓了智能AI芯片的新领域，相信不久之后，各大云主机平台也会普及这种芯片为核心的硬件架构支持，到时候，中小企业也会方便的进入这一领域。
+         </span>
+</p>
+<p line="p9Te" linespacing="115" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          如上，大势所在，越来越多的程序员都选择通过 TensorFlow 开始自己的深度学习之路，并逐步成为专业的深度学习 / 机器学习工程师。
+         </span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          如果你所在的企业有大量数据，或想学习人工智能最先进的技术，
+         </span>
+<span style="max-width: 100%;font-size: 14px;color: rgb(255, 104, 39);box-sizing: border-box !important;word-wrap: break-word !important;">
+          TensorFlow 一定可以让你如虎添翼
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          。
+         </span>
+</p>
+<p line="eBiJ" linespacing="115" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          而TensorFlow 的初学者经常会遇到以下问题：
+         </span>
+</p>
+<p line="mP5J" linespacing="115" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 15px;box-sizing: border-box !important;word-wrap: break-word !important;">
+<strong style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;color: rgb(0, 0, 0);box-sizing: border-box !important;word-wrap: break-word !important;">
+<em style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+             1、
+            </em>
+</span>
+</strong>
+</span>
+<span style="max-width: 100%;font-size: 14px;color: rgb(255, 104, 39);box-sizing: border-box !important;word-wrap: break-word !important;">
+          网上各种教程参差不齐，且各自基于不同的 TensorFlow 版本
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          ，完全照着做，难免会遇到各种奇怪的问题，有时候折腾半天都解决不了，越看越焦虑，还浪费时间。
+         </span>
+</p>
+<p line="og7p" linespacing="115" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 15px;box-sizing: border-box !important;word-wrap: break-word !important;">
+<strong style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;color: rgb(0, 0, 0);box-sizing: border-box !important;word-wrap: break-word !important;">
+<em style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+             2、
+            </em>
+</span>
+</strong>
+</span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          TensorFlow 使用了大量的抽象概念来描述算法模型及其计算过程，譬如张量、操作、占位符、数据流图、会话等。
+         </span>
+<span style="max-width: 100%;font-size: 14px;color: rgb(255, 104, 39);box-sizing: border-box !important;word-wrap: break-word !important;">
+          初学者往往难以理解，如果没有详细的指导和点拨，学习起来困难重重
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          。
+         </span>
+</p>
+<p line="TRBY" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;color: rgb(0, 0, 0);font-size: 15px;box-sizing: border-box !important;word-wrap: break-word !important;">
+<strong style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<em style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+            3、
+           </em>
+</strong>
+</span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          由于初学者对 TensorFlow 的模块和架构设计缺乏整体认知，就
+         </span>
+<span style="max-width: 100%;font-size: 14px;color: rgb(255, 104, 39);box-sizing: border-box !important;word-wrap: break-word !important;">
+          无法根据自身需求快速学习和应用
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          ，容易胡子眉毛一把抓，皱着眉头钻研半天也抓不住重点。
+         </span>
+</p>
+<p line="FSc1" linespacing="115" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;color: rgb(0, 0, 0);box-sizing: border-box !important;word-wrap: break-word !important;">
+<strong style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 15px;box-sizing: border-box !important;word-wrap: break-word !important;">
+            是否有资源可以让你快速学习，并且入门呢？
+           </span>
+</strong>
+</span>
+</p>
+<p line="AMS2" linespacing="115" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          推荐极客时间的一门内容完整、又不会过度复杂的课程：
+         </span>
+<span style="max-width: 100%;font-size: 14px;color: rgb(255, 104, 39);box-sizing: border-box !important;word-wrap: break-word !important;">
+          《TensorFlow 快速入门与实战》
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          。
+         </span>
+</p>
+<p line="qYIJ" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          讲师彭靖田，是谷歌机器学习开发专家，曾为 TensorFlow 社区全球前 40 的贡献者，也是国内第一本深度剖析 Google AI 框架的畅销书《深入理解TensorFlow》的作者。
+         </span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          另外，他还参与主导了华为2012实验室深度学习平台和华为深度学习云服务的设计与研发工作。
+         </span>
+</p>
+<p line="7o61" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          相比网上的快餐内容，
+         </span>
+<span style="max-width: 100%;font-size: 14px;color: rgb(255, 104, 39);box-sizing: border-box !important;word-wrap: break-word !important;">
+          这个教程不仅良心，讲的内容也不是随便抄抄改改的，而是作者在实战中的经验和总结
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          。有些知识点
+         </span>
+<span style="max-width: 100%;font-size: 14px;color: rgb(255, 104, 39);box-sizing: border-box !important;word-wrap: break-word !important;">
+          （比如 SVM 的原理公式)
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          ，你花了好几个小时在网上学习也未必真能看明白，课程里就讲得十分通透，让你少走很多弯路。
+         </span>
+</p>
+<p line="305P" linespacing="115" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="text-align: center;">
+<br />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;color: rgb(255, 104, 39);box-sizing: border-box !important;word-wrap: break-word !important;">
+          如果你是一个 TensorFlow 初学者，这门课确实非常适合你。
+         </span>
+</p>
+<p line="slAi" linespacing="115" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          总结一下
+          <strong style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+           有几个原因
+          </strong>
+          ：
+         </span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<strong style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<em style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+            1.
+           </span>
+</em>
+</strong>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          课程
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span data-shimo-docs="[[20,&quot;从张量（Tensor）、变量（Variable）、操作（Operation）、会话（Session）、优化器（Optimizer）&quot;]]" style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+           从张量（Tensor）、变量（Variable）、操作（Operation）、会话（Session）、优化器（Optimizer）
+          </span>
+          等
+         </span>
+<span style="max-width: 100%;font-size: 14px;color: rgb(255, 104, 39);box-sizing: border-box !important;word-wrap: break-word !important;">
+          TensorFlow 基本概念讲起，帮你打牢基础
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          ，再进行下一步学习。
+         </span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<strong style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;color: rgb(0, 0, 0);box-sizing: border-box !important;word-wrap: break-word !important;">
+<em style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+             2.
+            </span>
+</em>
+</span>
+</strong>
+<span style="max-width: 100%;font-size: 14px;color: rgb(0, 0, 0);box-sizing: border-box !important;word-wrap: break-word !important;">
+          实战应用由浅入深
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          ：包含了房价预测、手写体数字识别、验证码识别、人脸识别
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          四大典型应用场景
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          ，难度和涉及知识点的
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          复杂程度都是循序渐进的
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          ，
+         </span>
+<span style="max-width: 100%;font-size: 14px;color: rgb(255, 104, 39);box-sizing: border-box !important;word-wrap: break-word !important;">
+          通过合适的学习梯度帮助初学者逐步建立自信
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          。
+         </span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<strong style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;color: rgb(0, 0, 0);box-sizing: border-box !important;word-wrap: break-word !important;">
+<em style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+             3.
+            </span>
+</em>
+</span>
+</strong>
+<span style="max-width: 100%;font-size: 14px;color: rgb(255, 104, 39);box-sizing: border-box !important;word-wrap: break-word !important;">
+          基本概念梳理得很清晰
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          ，让你搞清楚深度学习的框架和概念。
+         </span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br />
+</p>
+<p style="max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);text-align: center;box-sizing: border-box !important;word-wrap: break-word !important;">
+<img class="" data-copyright="0" data-ratio="4.374666666666666" data-s="300,640" data-src="" data-type="jpeg" data-w="750" src="/wechat/img/HXiabut2oicnP5vI5pm1JrDX6UseZIKJMowjrzhnnh7iaS16rWOAqGBhcwNHvcHQCTG370s1LHPLBZC1nLjKqYcOA.jpeg" style="box-sizing: border-box !important;word-wrap: break-word !important;width: 677px !important;visibility: visible !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<strong style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;color: rgb(0, 0, 0);box-sizing: border-box !important;word-wrap: break-word !important;">
+<em style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+             4.
+            </span>
+</em>
+</span>
+</strong>
+<span style="max-width: 100%;font-size: 14px;color: rgb(255, 104, 39);box-sizing: border-box !important;word-wrap: break-word !important;">
+          教程、课件和代码应有尽有
+         </span>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          ，不仅可以辅助理解，还能综合填补知识空白点，从而找到自己的学习路径。
+         </span>
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p line="Uydj" linespacing="115" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);text-align: center;letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<strong style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<img class="" data-copyright="0" data-ratio="0.56171875" data-s="300,640" data-src="" data-type="jpeg" data-w="1280" src="/wechat/img/HXiabut2oicnO9EDhlOmROo3tauQNUtibSuGs2Kjdb9YvDvibQFa6mPwbEuCWy2w1sUb9p7LpcerAL5rHHm72ZibVxw.jpeg" style="box-sizing: border-box !important;word-wrap: break-word !important;width: 677px !important;visibility: visible !important;" />
+</strong>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<strong style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+           学完课程后，你将获得
+          </span>
+</strong>
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          ：
+         </span>
+</p>
+<ul class="list-paddingleft-2" style="margin-left: 8px;margin-right: 8px;">
+<li>
+<p style="max-width: 100%;min-height: 1em;letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+            快速掌握 TensorFlow 核心概念和架构；
+           </span>
+</p>
+</li>
+<li>
+<p style="max-width: 100%;min-height: 1em;letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+            熟练进行模型结构设计、训练及测试；
+           </span>
+</p>
+</li>
+<li>
+<p style="max-width: 100%;min-height: 1em;letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+            参数调优及损失函数设计的基本方法；
+           </span>
+</p>
+</li>
+<li>
+<p style="max-width: 100%;min-height: 1em;letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+            四个典型的 TensorFlow 应用场景实战。
+           </span>
+</p>
+</li>
+</ul>
+<p line="iMTF" linespacing="115" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          无论你是立志投身人工智能行业的工程师，还是想利用深度学习为自身业务赋能的行业专家，这门课都将是一个绝佳的选择。
+         </span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br />
+</span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          *友情提醒，需要一定研发经验和基础，并不适合对研发零基础的童鞋。
+         </span>
+</p>
+<p line="BR1y" linespacing="115" style="padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="text-align: center;">
+<img class="" data-copyright="0" data-ratio="1.7777777777777777" data-s="300,640" data-src="" data-type="jpeg" data-w="1080" src="/wechat/img/nBKX0s8fer1xHDhuzdIMEmYjrrTwJzAbiaOiasLgYG3sYLN1ibwMqRgt7KAs4xgbcZ9NpjQRXWlGicLvXiaJojYeIag.jpeg" style="" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);text-align: center;letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          △扫描二维码试读或订阅
+         </span>
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);text-align: center;line-height: 1.5em;letter-spacing: 1px;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;padding-right: 0em;padding-left: 0em;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);text-align: left;letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<br />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;color: rgb(255, 120, 0);font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          → 看到这里，才有彩蛋：
+         </span>
+</p>
+<p line="WGcy" style="max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);text-align: left;letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          凡
+          <span style="max-width: 100%;color: rgb(0, 0, 0);box-sizing: border-box !important;word-wrap: break-word !important;">
+<strong style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;">
+            订阅用户
+           </strong>
+</span>
+          ，即可获得高手总结的“
+          <strong style="max-width: 100%;color: rgb(0, 0, 0);box-sizing: border-box !important;word-wrap: break-word !important;">
+           TensorFlow技能图谱
+          </strong>
+          ”及“极客时间2018全年的资料集锦（共50G，含
+          <strong style="max-width: 100%;color: rgb(0, 0, 0);box-sizing: border-box !important;word-wrap: break-word !important;">
+           20套程序员必备技能知识图谱、20篇+的专栏精华内容总结、十年架构师文集100本和近100位CTO的访谈实录
+          </strong>
+          ）。
+         </span>
+</p>
+<p line="9i79" style="max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;">
+<br style="max-width: 100%;box-sizing: border-box !important;word-wrap: break-word !important;" />
+</p>
+<p style="margin-right: 8px;margin-left: 8px;max-width: 100%;min-height: 1em;white-space: normal;background-color: rgb(255, 255, 255);letter-spacing: 1px;line-height: 1.5em;box-sizing: border-box !important;word-wrap: break-word !important;">
+<span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;word-wrap: break-word !important;">
+          部分内容截图：
+         </span>
+</p>
+<p style="max-width: 100%;min-height: 1em;letter-spacing: 0.544px;white-space: normal;background-color: rgb(255, 255, 255);text-align: center;box-sizing: border-box !important;word-wrap: break-word !important;">
+<img class="" data-copyright="0" data-ratio="1.6353982300884955" data-s="300,640" data-src="" data-type="jpeg" data-w="565" src="/wechat/img/HXiabut2oicnP5vI5pm1JrDX6UseZIKJMoJpYGjHtYPWLs1h6fcLEwWaIfCAibEngaLa6q7SSpxD7eSLSwW2GULaA.jpeg" style="box-sizing: border-box !important;word-wrap: break-word !important;width: 565px !important;visibility: visible !important;" />
+</p>
+<p>
+<br />
+</p>
+<p>
+<span style="font-size: 14px;">
+          获取方法，加微信 caoz-zhushou，并贴出订阅截图。谢谢。
+         </span>
+</p>
+<p>
+<span style="font-size: 14px;">
+<br />
+</span>
+</p>
+<p>
+<span style="font-size: 14px;">
+          点击“阅读原文”亦可进入课程。
+         </span>
+</p>
+</div>
+</div>
+
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+
+        
+        <li class="previous">
+            <a href="/caozsay/2019/01/09/caozsay-82/">前一篇</a>
+        </li>
+        
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            
+            
+            <span><a href="/wechattags/internet">internet</a> / <a href="/wechatcategories/caozsay">caoz的梦呓</a></span>
+        </div>
+
+        
+        <li class="next">
+            <a href="/caozsay/2019/01/03/caozsay-84/">后一篇</a>
+        </li>
+        
+
+    </div>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- 匹配内容-lijiaocn -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="autorelaxed"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="6443696990"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+        </div>
+    </div>
+    <!--div class="bottom">
+            <p style="color:white">Thanks for use. Remember us.</p>
+    </div-->
+    <script src="/wechat/assets/js/js.js" charset="utf-8"></script>
+    
+
+    
+</body>
+</html>

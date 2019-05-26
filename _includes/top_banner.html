@@ -1,0 +1,193 @@
+{% case page.language %}
+
+{% when "chinese" %}
+{% assign links = site.data.links.chinese %}
+{% assign text = site.data.text.chinese %}
+
+{% when "english" %}
+{% assign links = site.data.links.english %}
+{% assign text = site.data.text.english %}
+
+{% when "bengali" %}
+{% assign links = site.data.links.bengali %}
+{% assign text = site.data.text.bengali %}
+
+{% when "vietnamese" %}
+{% assign links = site.data.links.vietnamese %}
+{% assign text = site.data.text.vietnamese %}
+
+{% when "thai" %}
+{% assign links = site.data.links.thai %}
+{% assign text = site.data.text.thai %}
+
+{% when "korean" %}
+{% assign links = site.data.links.korean %}
+{% assign text = site.data.text.korean %}
+
+{% when "russian" %}
+{% assign links = site.data.links.russian %}
+{% assign text = site.data.text.russian %}
+
+{% when "italian" %}
+{% assign links = site.data.links.italian %}
+{% assign text = site.data.text.italian %}
+
+{% when "french" %}
+{% assign links = site.data.links.french %}
+{% assign text = site.data.text.french %}
+
+{% when "japanese" %}
+{% assign links = site.data.links.japanese %}
+{% assign text = site.data.text.japanese %}
+
+{% when "german" %}
+{% assign links = site.data.links.german %}
+{% assign text = site.data.text.german %}
+
+{% when "spanish" %}
+{% assign links = site.data.links.spanish %}
+{% assign text = site.data.text.spanish %}
+
+{% when "hindi" %}
+{% assign links = site.data.links.hindi %}
+{% assign text = site.data.text.hindi %}
+
+{% when "arabic" %}
+{% assign links = site.data.links.arabic %}
+{% assign text = site.data.text.arabic %}
+
+{% when "portuguese" %}
+{% assign links = site.data.links.portuguese %}
+{% assign text = site.data.text.portuguese %}
+
+{% endcase %}
+<style type="text/css" scoped>
+    .innerbanner{
+        background:gray;
+        color:white;
+        padding-right:10px;
+        padding-right:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-top:10px;
+        padding-top:1rem;
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: flex-start;
+        width:100%;
+        font-size:15px;
+        font-size:1.5rem;
+        /*
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        */
+    }
+    .innerbanner a{
+        color:white;
+    }
+    .innerbanner a:hover{
+        color: black;
+        text-decoration: none;
+        font-size:large;
+    }
+    .innerbanner #inner_ul {
+        display:flex;
+        color:white;
+        padding-left:0px;
+        margin:0px;
+        align-items: flex-start;
+    }
+    .innerbanner #inner_li {
+        list-style:none;
+        display:inline-block;
+        line-height:25px;
+        line-height:2.5rem
+    }
+    .topdetails{
+        top:10px;
+        top:1rem;
+        display: inline-block;
+    }
+    .topdetails summary::-webkit-details-marker {
+        display: none;
+    }
+    .topdetails summary:first-of-type {
+        list-style-type: none;
+    }
+    .topdetails ul{
+        padding:0px;
+    }
+    .topdetails li{
+        list-style:none;
+        text-indent:0px;
+    }
+    .topdetails a{
+        display:block;
+        background:gray;
+        color:white;
+        height:30px;
+        height:3rem;
+        padding-top:10px;
+        padding-top:1rem;
+        padding-left:10px;
+        padding-left:1rem;
+        padding-right:10px;
+        padding-right:1rem;
+    }
+    .topdetails a:hover{
+        background:darkgray;
+        /*color: white;*/
+        color: black;
+    }
+
+    @media screen and (max-width: 1024px){
+        .innerbanner #inner_ul{
+            list-style:none;
+            display:block;
+        }
+    }
+</style>
+<div class="innerbanner" id="bannerid">
+    <ul id="inner_ul">
+    {% for item in links %}
+        <li id="inner_li" style="{{ item.style }}">
+        {% case item.type %}
+            {% when 'menu' %}
+                <details class="topdetails" onmouseover="showmenu(this)" onmouseleave="hiddenmenu(this)">
+                    <summary>{{ item.name }}&nbsp&nbsp&nbsp</summary>
+                    <ul>
+                        {% for link in item.links %}
+                            <li>
+                                <a target="_blank" href="{{ link.link }}">{{ link.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </details>
+            {% else %}
+                <a target="_blank" href="{{ item.link }}">
+                {{ item.name }}
+                </a>&nbsp&nbsp&nbsp
+        {% endcase %}
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+
+<p id="hiddenid" style="color:white;position:absolute;right:15px;top:1px;margin:0;padding:0;font-size:1.2rem;" onclick="hiddenBanner()">{{ text.hidden }}</p>
+<script>
+    function hiddenBanner() {
+        var b = document.getElementById("bannerid");
+        var p = document.getElementById("hiddenid");
+        if (b.style.display=="none"){
+            b.style.display="flex";
+            p.innerHTML="{{ text.hidden }}";
+            p.style.color="white"
+        }else{
+            b.style.display="none";
+            p.innerHTML="{{ text.show }}";
+            p.style.color="white"
+        }
+    }
+</script>

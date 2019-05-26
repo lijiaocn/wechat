@@ -1,0 +1,1463 @@
+english:
+  - name: "Remember the URL:&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>Discounted! ></span>"
+  - name: Drone
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: amazon
+    type: menu
+    links:
+      - name: United States
+        link: "https://amzn.to/2NBHhN7"
+      - name: Japan
+        link: "https://amzn.to/2N0KGzS"
+      - name: Germany
+        link: "https://amzn.to/2zoRl3e"
+      - name: United Kingdom
+        link: "https://amzn.to/2zodOgB"
+      - name: India
+        link: "https://amzn.to/2xAksiw"
+      - name: France
+        link: "https://amzn.to/2NBHpfz"
+      - name: Italy
+        link: "https://amzn.to/2zoRwvq"
+      - name: Spain
+        link: "https://amzn.to/2O4YeyF"
+      - name: Canada
+        link: "https://amzn.to/2xAksiw"
+      - name: China
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: Brazil
+        link: "https://amzn.to/2xKqLiP"
+      - name: Australia
+        link: "https://amzn.to/2DotW60"
+      - name: Mexico
+        link: "https://www.amazon.com.mx/"
+  - name: ebay 1
+    type: menu
+    links:
+      - name: United States
+        link: "https://www.ebay.com/"
+      - name: United Kingdom
+        link: "https://www.ebay.co.uk/"
+      - name: Germany
+        link: "https://www.ebay.de/"
+      - name: Australia
+        link: "https://www.ebay.com.au/"
+      - name: Italy
+        link: "https://www.ebay.it/"
+      - name: France
+        link: "https://www.ebay.fr/"
+      - name: Spain
+        link: "https://www.ebay.es/"
+      - name: Canada
+        link: "https://www.ebay.ca/"
+      - name: Ireland
+        link: "https://www.ebay.ie/"
+      - name: Austria
+        link: "https://www.ebay.at/"
+      - name: Belgium
+        link: "http://www.ebay.be/"
+      - name: Netherlands
+        link: "https://www.ebay.nl/"
+      - name: Switzerland
+        link: "https://www.ebay.ch/"
+  - name: ebay 2
+    type: menu
+    links:
+      - name: Turkey
+        link: "https://www.gittigidiyor.com/"
+      - name: Poland
+        link: "https://www.ebay.pl/"
+      - name: China Hong Kong
+        link: "https://www.ebay.com.hk/"
+      - name: Korea
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: Singapore
+        link: "https://www.ebay.com.sg/"
+      - name: Philippines
+        link: "https://www.ebay.ph/"
+      - name: Malaysia
+        link: "https://www.ebay.com.my/"
+      - name: India
+        link: "https://www.ebay.in/"
+      - name: China Mainland
+        link: "https://www.ebay.cn/"
+      - name: Japan
+        link: "https://www.ebay.co.jp/"
+      - name: Thailand
+        link: "https://www.ebay.co.th/"
+      - name: Vietnam
+        link: "https://www.ebay.vn/"
+      - name: Taiwan,China
+        link: "https://www.ebay.com.tw/"
+      - name: Sweden
+        link: "https://www.ebay.se/"
+
+japanese:
+  - name: "URLを覚えている:&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>Discounted! ></span>"
+  - name: "無人機"
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: アマゾン
+    type: menu
+    links:
+      - name: アメリカ合衆国
+        link: "https://amzn.to/2NBHhN7"
+      - name: 日本
+        link: "https://amzn.to/2N0KGzS"
+      - name: ドイツ
+        link: "https://amzn.to/2zoRl3e"
+      - name: イギリス
+        link: "https://amzn.to/2zodOgB"
+      - name: インド
+        link: "https://amzn.to/2xAksiw"
+      - name: フランス
+        link: "https://amzn.to/2NBHpfz"
+      - name: イタリア
+        link: "https://amzn.to/2zoRwvq"
+      - name: スペイン
+        link: "https://amzn.to/2O4YeyF"
+      - name: カナダ
+        link: "https://amzn.to/2xAksiw"
+      - name: 中国
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: ブラジル
+        link: "https://amzn.to/2xKqLiP"
+      - name: オーストラリア
+        link: "https://amzn.to/2DotW60"
+      - name: メキシコ
+        link: "https://www.amazon.com.mx/"
+  - name: ebay 1
+    type: menu
+    links:
+      - name: アメリカ合衆国
+        link: "https://www.ebay.com/"
+      - name: イギリス
+        link: "https://www.ebay.co.uk/"
+      - name: ドイツ
+        link: "https://www.ebay.de/"
+      - name: オーストラリア
+        link: "https://www.ebay.com.au/"
+      - name: イタリア
+        link: "https://www.ebay.it/"
+      - name: フランス
+        link: "https://www.ebay.fr/"
+      - name: スペイン
+        link: "https://www.ebay.es/"
+      - name: カナダ
+        link: "https://www.ebay.ca/"
+      - name: アイルランド
+        link: "https://www.ebay.ie/"
+      - name: オーストリア
+        link: "https://www.ebay.at/"
+      - name: ベルギー
+        link: "http://www.ebay.be/"
+      - name: オランダ
+        link: "https://www.ebay.nl/"
+      - name: スイス
+        link: "https://www.ebay.ch/"
+  - name: ebay 2
+    type: menu
+    links:
+      - name: トルコ
+        link: "https://www.gittigidiyor.com/"
+      - name: ポーランド
+        link: "https://www.ebay.pl/"
+      - name: 香港、中国
+        link: "https://www.ebay.com.hk/"
+      - name: 韓国
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: シンガポール
+        link: "https://www.ebay.com.sg/"
+      - name: フィリピン
+        link: "https://www.ebay.ph/"
+      - name: マレーシア
+        link: "https://www.ebay.com.my/"
+      - name: インド
+        link: "https://www.ebay.in/"
+      - name: 中国本土
+        link: "https://www.ebay.cn/"
+      - name: 日本
+        link: "https://www.ebay.co.jp/"
+      - name: タイ
+        link: "https://www.ebay.co.th/"
+      - name: ベトナム
+        link: "https://www.ebay.vn/"
+      - name: 台湾、中国
+        link: "https://www.ebay.com.tw/"
+      - name: スウェーデン
+        link: "https://www.ebay.se/"
+
+
+chinese:
+  - name: "鼹鼠首页"
+    link: "/"
+  - name: "<span style='color:blue'>全球网购></span>"
+    link: "/"
+  - name: 网易严选
+    link: "https://c.duomai.com/track.php?k=WYppWas1DZpVXZmcDOwMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLzYTMuU3b5ZkMlYkMlE0MlAHd0hWP0Zibj9"
+  - name: 考拉海购
+    link: "https://c.duomai.com/track.php?k=j9WYppWas1DZpVXZmczM3ETPklWYmAjMzUjMy0DZp9VZ0l2cmYiJGJTJt92YuEGbvF2auc3d3ZkMlYkMlE0MlAHd0hWP0Zib"
+  - name: 无人机
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: 造作
+    link: "https://c.duomai.com/track.php?k=lAHd0hWP0Zibj9WYppWas1DZpVXZmQDOzMTPklWYmAjMzUjMy0DZp9VZ0l2cmYiJpFWbvVHZfB3ckR0Ml02byZmeGNTJGJTJt92Yu8Wd69WY6ZkMlYkMlE0M"
+  - name: 艺网
+    link: "https://c.duomai.com/track.php?k=m0DZpVXZmITO5MTPklWYmAjMzUjMy0DZp9VZ0l2cm02bj5CdyF2d55yd3dnRyUiRyUSQzUycwRHdo1Dd"
+  - name: RoseOnly.
+    link: "https://c.duomai.com/track.php?k=ibj9WYppWas1DZpVXZmMDMxITPklWYmAjMzUjMy0DZp9VZ0l2cmYiJuNmLt92YukHbu9WZz9mcuc3d3ZkMlYkMlE0MlAHd0hWP0Z"
+  - name: 天猫
+    link: "http://g.click.taobao.com/q?ak=24663635&pid=mm_33963329_6520758_142982992&unid=lijiaocn&rf=http%3A%2F%2Fwww.lijiaocn.com%2F%25E5%25A5%25BD%25E8%25B4%25A7%2F2010%2F10%2F10%2Fsites.html&rd=2&et=97775937&pgid=be61cbd8f3af2ff376aa0c1a3103628d&ct=url%3Dhttps%253A%252F%252Fwww.tmall.com%252F&v=1.2&ttype=1&cm=674%2C742%3B654%2C598%3B615%2C639%3B579%2C634%3B597%2C656%3B587%2C667%3B639%2C797%3B777%2C675%3B624%2C701%3B561%2C709&ck=&cw=0"
+  - name: 京东
+    link: "https://c.duomai.com/track.php?site_id=224482&lid=4193&aid=61&euid=lijiaocn&t=http%3A%2F%2Fwww.360buy.com%2F"
+  - name: 蘑菇街
+    link: "https://c.duomai.com/track.php?k=uN2bhlmapxWPklWdlZSMyYTPklWYmAjMzUjMy0DZp9VZ0l2cmYiRyUSbvNmLllma1d2bt5yd3dnRyUiRyUSQzUCc0RHa9QnJ"
+  - name: 益丰药房
+    link: "https://p.gouwuke.com/0Rdyy"
+  - name: 亚马逊
+    type: menu
+    links:
+      - name: 美国
+        link: "https://amzn.to/2NBHhN7"
+      - name: 日本
+        link: "https://amzn.to/2N0KGzS"
+      - name: 德国
+        link: "https://amzn.to/2zoRl3e"
+      - name: 英国
+        link: "https://amzn.to/2zodOgB"
+      - name: 印度
+        link: "https://amzn.to/2xAksiw"
+      - name: 法国
+        link: "https://amzn.to/2NBHpfz"
+      - name: 意大利
+        link: "https://amzn.to/2zoRwvq"
+      - name: 西班牙
+        link: "https://amzn.to/2O4YeyF"
+      - name: 加拿大
+        link: "https://amzn.to/2xAksiw"
+      - name: 中国
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: 巴西
+        link: "https://amzn.to/2xKqLiP"
+      - name: 澳大利亚
+        link: "https://amzn.to/2DotW60"
+      - name: 墨西哥
+        link: "https://www.amazon.com.mx/"
+  - name: 易趣 1
+    type: menu
+    links:
+      - name: 美国
+        link: "https://www.ebay.com/"
+      - name: 英国
+        link: "https://www.ebay.co.uk/"
+      - name: 德国
+        link: "https://www.ebay.de/"
+      - name: 澳大利亚
+        link: "https://www.ebay.com.au/"
+      - name: 意大利
+        link: "https://www.ebay.it/"
+      - name: 法国
+        link: "https://www.ebay.fr/"
+      - name: 西班牙
+        link: "https://www.ebay.es/"
+      - name: 加拿大
+        link: "https://www.ebay.ca/"
+      - name: 爱尔兰
+        link: "https://www.ebay.ie/"
+      - name: 奥地利
+        link: "https://www.ebay.at/"
+      - name: 比利时
+        link: "http://www.ebay.be/"
+      - name: 荷兰
+        link: "https://www.ebay.nl/"
+      - name: 瑞士
+        link: "https://www.ebay.ch/"
+  - name: 易趣 2
+    type: menu
+    links:
+      - name: 土耳其
+        link: "https://www.gittigidiyor.com/"
+      - name: 波兰
+        link: "https://www.ebay.pl/"
+      - name: 中国香港
+        link: "https://www.ebay.com.hk/"
+      - name: 韩国
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: 新加坡
+        link: "https://www.ebay.com.sg/"
+      - name: 菲律宾
+        link: "https://www.ebay.ph/"
+      - name: 马来西亚
+        link: "https://www.ebay.com.my/"
+      - name: 印度
+        link: "https://www.ebay.in/"
+      - name: 中国大陆
+        link: "https://www.ebay.cn/"
+      - name: 日本
+        link: "https://www.ebay.co.jp/"
+      - name: 泰国
+        link: "https://www.ebay.co.th/"
+      - name: 越南
+        link: "https://www.ebay.vn/"
+      - name: 台湾
+        link: "https://www.ebay.com.tw/"
+      - name: 瑞典
+        link: "https://www.ebay.se/"
+  
+korean:
+  - name: "URL 기억하기:&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>할인되었습니다! ></span>"
+  - name: "무인 비행기"
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: 아마존
+    type: menu
+    links:
+      - name: 미국
+        link: "https://amzn.to/2NBHhN7"
+      - name: 일본
+        link: "https://amzn.to/2N0KGzS"
+      - name: 독일
+        link: "https://amzn.to/2zoRl3e"
+      - name: 영국
+        link: "https://amzn.to/2zodOgB"
+      - name: 인도
+        link: "https://amzn.to/2xAksiw"
+      - name: 프랑스
+        link: "https://amzn.to/2NBHpfz"
+      - name: 이탈리아
+        link: "https://amzn.to/2zoRwvq"
+      - name: 스페인
+        link: "https://amzn.to/2O4YeyF"
+      - name: 캐나다
+        link: "https://amzn.to/2xAksiw"
+      - name: 중국
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: 브라질
+        link: "https://amzn.to/2xKqLiP"
+      - name: 호주
+        link: "https://amzn.to/2DotW60"
+      - name: 멕시코
+        link: "https://www.amazon.com.mx/"
+  - name: 이베이 1
+    type: menu
+    links:
+      - name: 미국
+        link: "https://www.ebay.com/"
+      - name: 영국
+        link: "https://www.ebay.co.uk/"
+      - name: 독일
+        link: "https://www.ebay.de/"
+      - name: 호주
+        link: "https://www.ebay.com.au/"
+      - name: 이탈리아
+        link: "https://www.ebay.it/"
+      - name: 프랑스
+        link: "https://www.ebay.fr/"
+      - name: 스페인
+        link: "https://www.ebay.es/"
+      - name: 캐나다
+        link: "https://www.ebay.ca/"
+      - name: 아일랜드
+        link: "https://www.ebay.ie/"
+      - name: 오스트리아
+        link: "https://www.ebay.at/"
+      - name: 벨기에
+        link: "http://www.ebay.be/"
+      - name: 네덜란드
+        link: "https://www.ebay.nl/"
+      - name: 스위스
+        link: "https://www.ebay.ch/"
+  - name: 이베이 2
+    type: menu
+    links:
+      - name: 터키
+        link: "https://www.gittigidiyor.com/"
+      - name: 폴란드
+        link: "https://www.ebay.pl/"
+      - name: 홍콩, 중국
+        link: "https://www.ebay.com.hk/"
+      - name: 한국
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: 싱가포르
+        link: "https://www.ebay.com.sg/"
+      - name: 필리핀
+        link: "https://www.ebay.ph/"
+      - name: 말레이시아
+        link: "https://www.ebay.com.my/"
+      - name: 인도
+        link: "https://www.ebay.in/"
+      - name: 중국 대륙
+        link: "https://www.ebay.cn/"
+      - name: 일본
+        link: "https://www.ebay.co.jp/"
+      - name: 태국
+        link: "https://www.ebay.co.th/"
+      - name: 베트남
+        link: "https://www.ebay.vn/"
+      - name: 대만, 중국
+        link: "https://www.ebay.com.tw/"
+      - name: 스웨덴
+        link: "https://www.ebay.se/"
+
+
+
+german:
+  - name: "Merken Sie sich die URL:&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>Ermäßigte! ></span>"
+  - name: "Drohne"
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: Amazonas
+    type: menu
+    links:
+      - name: Vereinigte Staaten
+        link: "https://amzn.to/2NBHhN7"
+      - name: Japan
+        link: "https://amzn.to/2N0KGzS"
+      - name: Deutschland
+        link: "https://amzn.to/2zoRl3e"
+      - name: Vereinigtes Königreich
+        link: "https://amzn.to/2zodOgB"
+      - name: Indien
+        link: "https://amzn.to/2xAksiw"
+      - name: Frankreich
+        link: "https://amzn.to/2NBHpfz"
+      - name: Italien
+        link: "https://amzn.to/2zoRwvq"
+      - name: Spanien
+        link: "https://amzn.to/2O4YeyF"
+      - name: Kanada
+        link: "https://amzn.to/2xAksiw"
+      - name: China
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: Brasilien
+        link: "https://amzn.to/2xKqLiP"
+      - name: Australien
+        link: "https://amzn.to/2DotW60"
+      - name: Mexiko
+        link: "https://www.amazon.com.mx/"
+  - name: ebay 1
+    type: menu
+    links:
+      - name: Vereinigte Staaten
+        link: "https://www.ebay.com/"
+      - name: Vereinigtes Königreich
+        link: "https://www.ebay.co.uk/"
+      - name: Deutschland
+        link: "https://www.ebay.de/"
+      - name: Australien
+        link: "https://www.ebay.com.au/"
+      - name: Italien
+        link: "https://www.ebay.it/"
+      - name: Frankreich
+        link: "https://www.ebay.fr/"
+      - name: Spanien
+        link: "https://www.ebay.es/"
+      - name: Kanada
+        link: "https://www.ebay.ca/"
+      - name: Irland
+        link: "https://www.ebay.ie/"
+      - name: Österreich
+        link: "https://www.ebay.at/"
+      - name: Belgien
+        link: "http://www.ebay.be/"
+      - name: Niederlande
+        link: "https://www.ebay.nl/"
+      - name: Schweiz
+        link: "https://www.ebay.ch/"
+  - name: ebay 2
+    type: menu
+    links:
+      - name: Türkei
+        link: "https://www.gittigidiyor.com/"
+      - name: Polen
+        link: "https://www.ebay.pl/"
+      - name: Hongkong, China
+        link: "https://www.ebay.com.hk/"
+      - name: Korea
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: Singapur
+        link: "https://www.ebay.com.sg/"
+      - name: Philippinen
+        link: "https://www.ebay.ph/"
+      - name: Malaysia
+        link: "https://www.ebay.com.my/"
+      - name: Indien
+        link: "https://www.ebay.in/"
+      - name: Festlandchina
+        link: "https://www.ebay.cn/"
+      - name: Japan
+        link: "https://www.ebay.co.jp/"
+      - name: Thailand
+        link: "https://www.ebay.co.th/"
+      - name: Vietnam
+        link: "https://www.ebay.vn/"
+      - name: Taiwan, China
+        link: "https://www.ebay.com.tw/"
+      - name: Schweden
+        link: "https://www.ebay.se/"
+
+french:
+  - name: "Rappelez-vous l'URL:&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>Discounted! ></span>"
+  - name: "drone"
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: amazone
+    type: menu
+    links:
+      - name: États-Unis
+        link: "https://amzn.to/2NBHhN7"
+      - name: Le Japon
+        link: "https://amzn.to/2N0KGzS"
+      - name: Allemagne
+        link: "https://amzn.to/2zoRl3e"
+      - name: Royaume-Uni
+        link: "https://amzn.to/2zodOgB"
+      - name: L'Inde
+        link: "https://amzn.to/2xAksiw"
+      - name: La france
+        link: "https://amzn.to/2NBHpfz"
+      - name: L'Italie
+        link: "https://amzn.to/2zoRwvq"
+      - name: L'Espagne
+        link: "https://amzn.to/2O4YeyF"
+      - name: Le canada
+        link: "https://amzn.to/2xAksiw"
+      - name: La chine
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: Le brésil
+        link: "https://amzn.to/2xKqLiP"
+      - name: Australie
+        link: "https://amzn.to/2DotW60"
+      - name: Mexique
+        link: "https://www.amazon.com.mx/"
+  - name: ebay 1
+    type: menu
+    links:
+      - name: États-Unis
+        link: "https://www.ebay.com/"
+      - name: Royaume-Uni
+        link: "https://www.ebay.co.uk/"
+      - name: Allemagne
+        link: "https://www.ebay.de/"
+      - name: Australie
+        link: "https://www.ebay.com.au/"
+      - name: L'Italie
+        link: "https://www.ebay.it/"
+      - name: La france
+        link: "https://www.ebay.fr/"
+      - name: L'Espagne
+        link: "https://www.ebay.es/"
+      - name: Le canada
+        link: "https://www.ebay.ca/"
+      - name: Irlande
+        link: "https://www.ebay.ie/"
+      - name: Autriche
+        link: "https://www.ebay.at/"
+      - name: La Belgique
+        link: "http://www.ebay.be/"
+      - name: Pays-Bas
+        link: "https://www.ebay.nl/"
+      - name: La suisse
+        link: "https://www.ebay.ch/"
+  - name: ebay 2
+    type: menu
+    links:
+      - name: La turquie
+        link: "https://www.gittigidiyor.com/"
+      - name: La pologne
+        link: "https://www.ebay.pl/"
+      - name: Hong Kong, Chine
+        link: "https://www.ebay.com.hk/"
+      - name: Corée
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: Singapour
+        link: "https://www.ebay.com.sg/"
+      - name: Philippines
+        link: "https://www.ebay.ph/"
+      - name: Malaisie
+        link: "https://www.ebay.com.my/"
+      - name: L'Inde
+        link: "https://www.ebay.in/"
+      - name: Chine continentale
+        link: "https://www.ebay.cn/"
+      - name: Le Japon
+        link: "https://www.ebay.co.jp/"
+      - name: La thaïlande
+        link: "https://www.ebay.co.th/"
+      - name: Vietnam
+        link: "https://www.ebay.vn/"
+      - name: Taiwan, Chine
+        link: "https://www.ebay.com.tw/"
+      - name: Suède
+        link: "https://www.ebay.se/"
+
+italian:
+  - name: "Ricorda l'URL:&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>Scontato! ></span>"
+  - name: "fuco"
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: amazon
+    type: menu
+    links:
+      - name: Stati Uniti
+        link: "https://amzn.to/2NBHhN7"
+      - name: Giappone
+        link: "https://amzn.to/2N0KGzS"
+      - name: Germania
+        link: "https://amzn.to/2zoRl3e"
+      - name: Regno Unito
+        link: "https://amzn.to/2zodOgB"
+      - name: India
+        link: "https://amzn.to/2xAksiw"
+      - name: Francia
+        link: "https://amzn.to/2NBHpfz"
+      - name: Italia
+        link: "https://amzn.to/2zoRwvq"
+      - name: Spagna
+        link: "https://amzn.to/2O4YeyF"
+      - name: Canada
+        link: "https://amzn.to/2xAksiw"
+      - name: porcellana
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: Brasile
+        link: "https://amzn.to/2xKqLiP"
+      - name: Australia
+        link: "https://amzn.to/2DotW60"
+      - name: Messico
+        link: "https://www.amazon.com.mx/"
+  - name: ebay 1
+    type: menu
+    links:
+      - name: Stati Uniti
+        link: "https://www.ebay.com/"
+      - name: Regno Unito
+        link: "https://www.ebay.co.uk/"
+      - name: Germania
+        link: "https://www.ebay.de/"
+      - name: Australia
+        link: "https://www.ebay.com.au/"
+      - name: Italia
+        link: "https://www.ebay.it/"
+      - name: Francia
+        link: "https://www.ebay.fr/"
+      - name: Spagna
+        link: "https://www.ebay.es/"
+      - name: Canada
+        link: "https://www.ebay.ca/"
+      - name: Irlanda
+        link: "https://www.ebay.ie/"
+      - name: Austria
+        link: "https://www.ebay.at/"
+      - name: Belgio
+        link: "http://www.ebay.be/"
+      - name: Paesi Bassi
+        link: "https://www.ebay.nl/"
+      - name: Svizzera
+        link: "https://www.ebay.ch/"
+  - name: ebay 2
+    type: menu
+    links:
+      - name: Turchia
+        link: "https://www.gittigidiyor.com/"
+      - name: Polonia
+        link: "https://www.ebay.pl/"
+      - name: Hong Kong, Cina
+        link: "https://www.ebay.com.hk/"
+      - name: Corea
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: Singapore
+        link: "https://www.ebay.com.sg/"
+      - name: Filippine
+        link: "https://www.ebay.ph/"
+      - name: Malaysia
+        link: "https://www.ebay.com.my/"
+      - name: India
+        link: "https://www.ebay.in/"
+      - name: Cina continentale
+        link: "https://www.ebay.cn/"
+      - name: Giappone
+        link: "https://www.ebay.co.jp/"
+      - name: Thailandia
+        link: "https://www.ebay.co.th/"
+      - name: Vietnam
+        link: "https://www.ebay.vn/"
+      - name: Taiwan, Cina
+        link: "https://www.ebay.com.tw/"
+      - name: Svezia
+        link: "https://www.ebay.se/"
+
+spanish:
+  - name: "Recuerde la URL:&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>Descuentos! ></span>"
+  - name: "zumbido"
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: Amazonas
+    type: menu
+    links:
+      - name: Estados Unidos
+        link: "https://amzn.to/2NBHhN7"
+      - name: Japón
+        link: "https://amzn.to/2N0KGzS"
+      - name: Alemania
+        link: "https://amzn.to/2zoRl3e"
+      - name: Reino Unido
+        link: "https://amzn.to/2zodOgB"
+      - name: India
+        link: "https://amzn.to/2xAksiw"
+      - name: Francia
+        link: "https://amzn.to/2NBHpfz"
+      - name: Italia
+        link: "https://amzn.to/2zoRwvq"
+      - name: España
+        link: "https://amzn.to/2O4YeyF"
+      - name: Canadá
+        link: "https://amzn.to/2xAksiw"
+      - name: China
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: Brasil
+        link: "https://amzn.to/2xKqLiP"
+      - name: Australia
+        link: "https://amzn.to/2DotW60"
+      - name: México
+        link: "https://www.amazon.com.mx/"
+  - name: ebay 1
+    type: menu
+    links:
+      - name: Estados Unidos
+        link: "https://www.ebay.com/"
+      - name: Reino Unido
+        link: "https://www.ebay.co.uk/"
+      - name: Alemania
+        link: "https://www.ebay.de/"
+      - name: Australia
+        link: "https://www.ebay.com.au/"
+      - name: Italia
+        link: "https://www.ebay.it/"
+      - name: Francia
+        link: "https://www.ebay.fr/"
+      - name: España
+        link: "https://www.ebay.es/"
+      - name: Canadá
+        link: "https://www.ebay.ca/"
+      - name: Irlanda
+        link: "https://www.ebay.ie/"
+      - name: Austria
+        link: "https://www.ebay.at/"
+      - name: Bélgica
+        link: "http://www.ebay.be/"
+      - name: Países Bajos
+        link: "https://www.ebay.nl/"
+      - name: Suiza
+        link: "https://www.ebay.ch/"
+  - name: ebay 2
+    type: menu
+    links:
+      - name: Turquía
+        link: "https://www.gittigidiyor.com/"
+      - name: Polonia
+        link: "https://www.ebay.pl/"
+      - name: Hong Kong, China
+        link: "https://www.ebay.com.hk/"
+      - name: Corea
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: Singapur
+        link: "https://www.ebay.com.sg/"
+      - name: Filipinas
+        link: "https://www.ebay.ph/"
+      - name: Malasia
+        link: "https://www.ebay.com.my/"
+      - name: India
+        link: "https://www.ebay.in/"
+      - name: China continental
+        link: "https://www.ebay.cn/"
+      - name: Japón
+        link: "https://www.ebay.co.jp/"
+      - name: Tailandia
+        link: "https://www.ebay.co.th/"
+      - name: Vietnam
+        link: "https://www.ebay.vn/"
+      - name: Taiwán, China
+        link: "https://www.ebay.com.tw/"
+      - name: Suecia
+        link: "https://www.ebay.se/"
+
+portuguese:
+  - name: "Lembre-se do URL:&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>Com desconto! ></span>"
+  - name: "drone"
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: amazona
+    type: menu
+    links:
+      - name: Estados Unidos
+        link: "https://amzn.to/2NBHhN7"
+      - name: Japão
+        link: "https://amzn.to/2N0KGzS"
+      - name: Alemanha
+        link: "https://amzn.to/2zoRl3e"
+      - name: Reino Unido
+        link: "https://amzn.to/2zodOgB"
+      - name: Índia
+        link: "https://amzn.to/2xAksiw"
+      - name: França
+        link: "https://amzn.to/2NBHpfz"
+      - name: Itália
+        link: "https://amzn.to/2zoRwvq"
+      - name: Espanha
+        link: "https://amzn.to/2O4YeyF"
+      - name: Canada
+        link: "https://amzn.to/2xAksiw"
+      - name: China
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: Brasil
+        link: "https://amzn.to/2xKqLiP"
+      - name: Austrália
+        link: "https://amzn.to/2DotW60"
+      - name: México
+        link: "https://www.amazon.com.mx/"
+  - name: ebay 1
+    type: menu
+    links:
+      - name: Estados Unidos
+        link: "https://www.ebay.com/"
+      - name: Reino Unido
+        link: "https://www.ebay.co.uk/"
+      - name: Alemanha
+        link: "https://www.ebay.de/"
+      - name: Austrália
+        link: "https://www.ebay.com.au/"
+      - name: Itália
+        link: "https://www.ebay.it/"
+      - name: França
+        link: "https://www.ebay.fr/"
+      - name: Espanha
+        link: "https://www.ebay.es/"
+      - name: Canada
+        link: "https://www.ebay.ca/"
+      - name: Ireland
+        link: "https://www.ebay.ie/"
+      - name: Austria
+        link: "https://www.ebay.at/"
+      - name: Bélgica
+        link: "http://www.ebay.be/"
+      - name: Holanda
+        link: "https://www.ebay.nl/"
+      - name: Suíça
+        link: "https://www.ebay.ch/"
+  - name: ebay 2
+    type: menu
+    links:
+      - name: Turquia
+        link: "https://www.gittigidiyor.com/"
+      - name: Polónia
+        link: "https://www.ebay.pl/"
+      - name: Hong Kong, China
+        link: "https://www.ebay.com.hk/"
+      - name: Coréia
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: Cingapura
+        link: "https://www.ebay.com.sg/"
+      - name: Filipinas
+        link: "https://www.ebay.ph/"
+      - name: Malásia
+        link: "https://www.ebay.com.my/"
+      - name: Índia
+        link: "https://www.ebay.in/"
+      - name: China continental
+        link: "https://www.ebay.cn/"
+      - name: Japão
+        link: "https://www.ebay.co.jp/"
+      - name: Tailândia
+        link: "https://www.ebay.co.th/"
+      - name: Vietnam
+        link: "https://www.ebay.vn/"
+      - name: Taiwan, China
+        link: "https://www.ebay.com.tw/"
+      - name: Suécia
+        link: "https://www.ebay.se/"
+
+
+
+russian:
+  - name: "Помните URL-адрес:&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>Discounted! ></span>"
+  - name: "трутень"
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: Амазонка
+    type: menu
+    links:
+      - name: Соединенные Штаты Америки
+        link: "https://amzn.to/2NBHhN7"
+      - name: Япония
+        link: "https://amzn.to/2N0KGzS"
+      - name: Германия
+        link: "https://amzn.to/2zoRl3e"
+      - name: Соединенное Королевство
+        link: "https://amzn.to/2zodOgB"
+      - name: Индия
+        link: "https://amzn.to/2xAksiw"
+      - name: Франция
+        link: "https://amzn.to/2NBHpfz"
+      - name: Италия
+        link: "https://amzn.to/2zoRwvq"
+      - name: Испания
+        link: "https://amzn.to/2O4YeyF"
+      - name: Канада
+        link: "https://amzn.to/2xAksiw"
+      - name: Китай
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: Бразилия
+        link: "https://amzn.to/2xKqLiP"
+      - name: Австралия
+        link: "https://amzn.to/2DotW60"
+      - name: Мексика
+        link: "https://www.amazon.com.mx/"
+  - name: ebay 1
+    type: menu
+    links:
+      - name: Соединенные Штаты Америки
+        link: "https://www.ebay.com/"
+      - name: Соединенное Королевство
+        link: "https://www.ebay.co.uk/"
+      - name: Германия
+        link: "https://www.ebay.de/"
+      - name: Австралия
+        link: "https://www.ebay.com.au/"
+      - name: Италия
+        link: "https://www.ebay.it/"
+      - name: Франция
+        link: "https://www.ebay.fr/"
+      - name: Испания
+        link: "https://www.ebay.es/"
+      - name: Канада
+        link: "https://www.ebay.ca/"
+      - name: Ирландия
+        link: "https://www.ebay.ie/"
+      - name: Австрия
+        link: "https://www.ebay.at/"
+      - name: Бельгия
+        link: "http://www.ebay.be/"
+      - name: Нидерланды
+        link: "https://www.ebay.nl/"
+      - name: Швейцария
+        link: "https://www.ebay.ch/"
+  - name: ebay 2
+    type: menu
+    links:
+      - name: индейка
+        link: "https://www.gittigidiyor.com/"
+      - name: Польша
+        link: "https://www.ebay.pl/"
+      - name: Гонконг, Китай
+        link: "https://www.ebay.com.hk/"
+      - name: Корея
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: Сингапур
+        link: "https://www.ebay.com.sg/"
+      - name: Филиппины
+        link: "https://www.ebay.ph/"
+      - name: Малайзия
+        link: "https://www.ebay.com.my/"
+      - name: Индия
+        link: "https://www.ebay.in/"
+      - name: Материковый Китай
+        link: "https://www.ebay.cn/"
+      - name: Япония
+        link: "https://www.ebay.co.jp/"
+      - name: Таиланд
+        link: "https://www.ebay.co.th/"
+      - name: Вьетнам
+        link: "https://www.ebay.vn/"
+      - name: Тайвань, Китай
+        link: "https://www.ebay.com.tw/"
+      - name: Швеция
+        link: "https://www.ebay.se/"
+
+hindi:
+  - name: "यूआरएल याद रखें:&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>रियायती! ></span>"
+  - name: मुफ़्तक़ोर
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: वीरांगना
+    type: menu
+    links:
+      - name: संयुक्त राज्य अमेरिका
+        link: "https://amzn.to/2NBHhN7"
+      - name: जापान
+        link: "https://amzn.to/2N0KGzS"
+      - name: जर्मनी
+        link: "https://amzn.to/2zoRl3e"
+      - name: यूनाइटेड किंगडम
+        link: "https://amzn.to/2zodOgB"
+      - name: भारत
+        link: "https://amzn.to/2xAksiw"
+      - name: फ्रांस
+        link: "https://amzn.to/2NBHpfz"
+      - name: इटली
+        link: "https://amzn.to/2zoRwvq"
+      - name: स्पेन
+        link: "https://amzn.to/2O4YeyF"
+      - name: कनाडा
+        link: "https://amzn.to/2xAksiw"
+      - name: चीन
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: ब्राज़िल
+        link: "https://amzn.to/2xKqLiP"
+      - name: ऑस्ट्रेलिया
+        link: "https://amzn.to/2DotW60"
+      - name: मेक्सिको
+        link: "https://www.amazon.com.mx/"
+  - name: ईबे 1
+    type: menu
+    links:
+      - name: संयुक्त राज्य अमेरिका
+        link: "https://www.ebay.com/"
+      - name: यूनाइटेड किंगडम
+        link: "https://www.ebay.co.uk/"
+      - name: जर्मनी
+        link: "https://www.ebay.de/"
+      - name: ऑस्ट्रेलिया
+        link: "https://www.ebay.com.au/"
+      - name: इटली
+        link: "https://www.ebay.it/"
+      - name: फ्रांस
+        link: "https://www.ebay.fr/"
+      - name: स्पेन
+        link: "https://www.ebay.es/"
+      - name: कनाडा
+        link: "https://www.ebay.ca/"
+      - name: आयरलैंड
+        link: "https://www.ebay.ie/"
+      - name: ऑस्ट्रिया
+        link: "https://www.ebay.at/"
+      - name: बेल्जियम
+        link: "http://www.ebay.be/"
+      - name: नीदरलैंड
+        link: "https://www.ebay.nl/"
+      - name: स्विट्जरलैंड
+        link: "https://www.ebay.ch/"
+  - name: ईबे 2
+    type: menu
+    links:
+      - name: टर्की
+        link: "https://www.gittigidiyor.com/"
+      - name: पोलैंड
+        link: "https://www.ebay.pl/"
+      - name: हांगकांग, चीन
+        link: "https://www.ebay.com.hk/"
+      - name: कोरिया
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: सिंगापुर
+        link: "https://www.ebay.com.sg/"
+      - name: फिलीपींस
+        link: "https://www.ebay.ph/"
+      - name: मलेशिया
+        link: "https://www.ebay.com.my/"
+      - name: भारत
+        link: "https://www.ebay.in/"
+      - name: मुख्य भूमि चीन
+        link: "https://www.ebay.cn/"
+      - name: जापान
+        link: "https://www.ebay.co.jp/"
+      - name: थाईलैंड
+        link: "https://www.ebay.co.th/"
+      - name: वियतनाम
+        link: "https://www.ebay.vn/"
+      - name: ताइवान, चीन
+        link: "https://www.ebay.com.tw/"
+      - name: स्वीडन
+        link: "https://www.ebay.se/"
+
+bengali:
+  - name: "ইউআরএল মনে রাখবেন:&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>ছাড়! ></span>"
+  - name: "গুঁজনধ্বনি"
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: "নারী-সৈনিক"
+    type: menu
+    links:
+      - name: মার্কিন যুক্তরাষ্ট্র
+        link: "https://amzn.to/2NBHhN7"
+      - name: জাপান
+        link: "https://amzn.to/2N0KGzS"
+      - name: জার্মানি
+        link: "https://amzn.to/2zoRl3e"
+      - name: যুক্তরাজ্য
+        link: "https://amzn.to/2zodOgB"
+      - name: ভারত
+        link: "https://amzn.to/2xAksiw"
+      - name: ফ্রান্স
+        link: "https://amzn.to/2NBHpfz"
+      - name: ইতালি
+        link: "https://amzn.to/2zoRwvq"
+      - name: স্পেন
+        link: "https://amzn.to/2O4YeyF"
+      - name: কানাডা
+        link: "https://amzn.to/2xAksiw"
+      - name: চীন
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: ব্রাজিল
+        link: "https://amzn.to/2xKqLiP"
+      - name: অস্ট্রেলিয়া
+        link: "https://amzn.to/2DotW60"
+      - name: মক্সিকো
+        link: "https://www.amazon.com.mx/"
+  - name: ইবে 1
+    type: menu
+    links:
+      - name: মার্কিন যুক্তরাষ্ট্র
+        link: "https://www.ebay.com/"
+      - name: যুক্তরাজ্য
+        link: "https://www.ebay.co.uk/"
+      - name: জার্মানি
+        link: "https://www.ebay.de/"
+      - name: অস্ট্রেলিয়া
+        link: "https://www.ebay.com.au/"
+      - name: ইতালি
+        link: "https://www.ebay.it/"
+      - name: ফ্রান্স
+        link: "https://www.ebay.fr/"
+      - name: স্পেন
+        link: "https://www.ebay.es/"
+      - name: কানাডা
+        link: "https://www.ebay.ca/"
+      - name: আয়ারল্যাণ্ড
+        link: "https://www.ebay.ie/"
+      - name: অস্ট্রিয়া
+        link: "https://www.ebay.at/"
+      - name: বেলজিয়াম
+        link: "http://www.ebay.be/"
+      - name: হলণ্ড
+        link: "https://www.ebay.nl/"
+      - name: সুইজর্লণ্ড
+        link: "https://www.ebay.ch/"
+  - name: ইবে 2
+    type: menu
+    links:
+      - name: তুরস্ক
+        link: "https://www.gittigidiyor.com/"
+      - name: পোল্যাণ্ড
+        link: "https://www.ebay.pl/"
+      - name: হংকং, চীন
+        link: "https://www.ebay.com.hk/"
+      - name: কোরিয়া
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: সিঙ্গাপুর
+        link: "https://www.ebay.com.sg/"
+      - name: ফিলিপাইন
+        link: "https://www.ebay.ph/"
+      - name: মাল্যাশিয়া
+        link: "https://www.ebay.com.my/"
+      - name: ভারত
+        link: "https://www.ebay.in/"
+      - name: মাইনল্যান্ড চীন
+        link: "https://www.ebay.cn/"
+      - name: জাপান
+        link: "https://www.ebay.co.jp/"
+      - name: থাইল্যান্ড
+        link: "https://www.ebay.co.th/"
+      - name: ভিয়েতনাম
+        link: "https://www.ebay.vn/"
+      - name: তাইওয়ান, চীন
+        link: "https://www.ebay.com.tw/"
+      - name: সুইডেন
+        link: "https://www.ebay.se/"
+
+vietnamese:
+  - name: "Ghi nhớ URL:&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>Đã giảm giá! ></span>"
+  - name: "bay không người lái"
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: amazon
+    type: menu
+    links:
+      - name: Hoa Kỳ
+        link: "https://amzn.to/2NBHhN7"
+      - name: Nhật Bản
+        link: "https://amzn.to/2N0KGzS"
+      - name: Nước Đức
+        link: "https://amzn.to/2zoRl3e"
+      - name: Vương quốc Anh
+        link: "https://amzn.to/2zodOgB"
+      - name: Ấn Độ
+        link: "https://amzn.to/2xAksiw"
+      - name: Nước Pháp
+        link: "https://amzn.to/2NBHpfz"
+      - name: Nước ý
+        link: "https://amzn.to/2zoRwvq"
+      - name: Tây Ban Nha
+        link: "https://amzn.to/2O4YeyF"
+      - name: Canada
+        link: "https://amzn.to/2xAksiw"
+      - name: Trung Quốc
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: Braxin
+        link: "https://amzn.to/2xKqLiP"
+      - name: Nước Úc
+        link: "https://amzn.to/2DotW60"
+      - name: Mexico
+        link: "https://www.amazon.com.mx/"
+  - name: ebay 1
+    type: menu
+    links:
+      - name: Hoa Kỳ
+        link: "https://www.ebay.com/"
+      - name: Vương quốc Anh
+        link: "https://www.ebay.co.uk/"
+      - name: Nước Đức
+        link: "https://www.ebay.de/"
+      - name: Nước Úc
+        link: "https://www.ebay.com.au/"
+      - name: Nước ý
+        link: "https://www.ebay.it/"
+      - name: Nước Pháp
+        link: "https://www.ebay.fr/"
+      - name: Tây Ban Nha
+        link: "https://www.ebay.es/"
+      - name: Canada
+        link: "https://www.ebay.ca/"
+      - name: Ireland
+        link: "https://www.ebay.ie/"
+      - name: Áo
+        link: "https://www.ebay.at/"
+      - name: Nước Bỉ
+        link: "http://www.ebay.be/"
+      - name: Hà lan
+        link: "https://www.ebay.nl/"
+      - name: Thụy Sĩ
+        link: "https://www.ebay.ch/"
+  - name: ebay 2
+    type: menu
+    links:
+      - name: Thổ Nhĩ Kỳ
+        link: "https://www.gittigidiyor.com/"
+      - name: Ba Lan
+        link: "https://www.ebay.pl/"
+      - name: Hồng Kông, Trung Quốc
+        link: "https://www.ebay.com.hk/"
+      - name: Hàn Quốc
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: Singapore
+        link: "https://www.ebay.com.sg/"
+      - name: Philippines
+        link: "https://www.ebay.ph/"
+      - name: Malaysia
+        link: "https://www.ebay.com.my/"
+      - name: Ấn Độ
+        link: "https://www.ebay.in/"
+      - name: Trung Quốc đại lục
+        link: "https://www.ebay.cn/"
+      - name: Nhật Bản
+        link: "https://www.ebay.co.jp/"
+      - name: Thái Lan
+        link: "https://www.ebay.co.th/"
+      - name: Việt nam
+        link: "https://www.ebay.vn/"
+      - name: Đài Loan, Trung Quốc
+        link: "https://www.ebay.com.tw/"
+      - name: Thụy Điển
+        link: "https://www.ebay.se/"
+
+thai:
+  - name: "จดจำ URL:&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>ลด!></span>"
+  - name: "เสียงหึ่งๆ"
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: "อเมซอน"
+    type: menu
+    links:
+      - name: สหรัฐอเมริกา
+        link: "https://amzn.to/2NBHhN7"
+      - name: ประเทศญี่ปุ่น
+        link: "https://amzn.to/2N0KGzS"
+      - name: ประเทศเยอรมัน
+        link: "https://amzn.to/2zoRl3e"
+      - name: สหราชอาณาจักร
+        link: "https://amzn.to/2zodOgB"
+      - name: อินเดีย
+        link: "https://amzn.to/2xAksiw"
+      - name: ฝรั่งเศส
+        link: "https://amzn.to/2NBHpfz"
+      - name: อิตาลี
+        link: "https://amzn.to/2zoRwvq"
+      - name: สเปน
+        link: "https://amzn.to/2O4YeyF"
+      - name: แคนาดา
+        link: "https://amzn.to/2xAksiw"
+      - name: ประเทศจีน
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: บราซิล
+        link: "https://amzn.to/2xKqLiP"
+      - name: ออสเตรเลีย
+        link: "https://amzn.to/2DotW60"
+      - name: เม็กซิโก
+        link: "https://www.amazon.com.mx/"
+  - name: อีเบย์ 1
+    type: menu
+    links:
+      - name: สหรัฐอเมริกา
+        link: "https://www.ebay.com/"
+      - name: สหราชอาณาจักร
+        link: "https://www.ebay.co.uk/"
+      - name: ประเทศเยอรมัน
+        link: "https://www.ebay.de/"
+      - name: ออสเตรเลีย
+        link: "https://www.ebay.com.au/"
+      - name: อิตาลี
+        link: "https://www.ebay.it/"
+      - name: ฝรั่งเศส
+        link: "https://www.ebay.fr/"
+      - name: สเปน
+        link: "https://www.ebay.es/"
+      - name: แคนาดา
+        link: "https://www.ebay.ca/"
+      - name: ไอร์แลนด์
+        link: "https://www.ebay.ie/"
+      - name: ออสเตรีย
+        link: "https://www.ebay.at/"
+      - name: เบลเยียม
+        link: "http://www.ebay.be/"
+      - name: เนเธอร์แลนด์
+        link: "https://www.ebay.nl/"
+      - name: ประเทศสวิสเซอร์แลนด์
+        link: "https://www.ebay.ch/"
+  - name: อีเบย์ 2
+    type: menu
+    links:
+      - name: ตุรกี
+        link: "https://www.gittigidiyor.com/"
+      - name: โปแลนด์
+        link: "https://www.ebay.pl/"
+      - name: ฮ่องกงจีน
+        link: "https://www.ebay.com.hk/"
+      - name: เกาหลี
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: สิงคโปร์
+        link: "https://www.ebay.com.sg/"
+      - name: ฟิลิปปินส์
+        link: "https://www.ebay.ph/"
+      - name: ประเทศมาเลเซีย
+        link: "https://www.ebay.com.my/"
+      - name: อินเดีย
+        link: "https://www.ebay.in/"
+      - name: จีนแผ่นดินใหญ่
+        link: "https://www.ebay.cn/"
+      - name: ประเทศญี่ปุ่น
+        link: "https://www.ebay.co.jp/"
+      - name: ประเทศไทย
+        link: "https://www.ebay.co.th/"
+      - name: เวียดนาม
+        link: "https://www.ebay.vn/"
+      - name: ไต้หวัน, จีน
+        link: "https://www.ebay.com.tw/"
+      - name: สวีเดน
+        link: "https://www.ebay.se/"
+
+arabic:
+  - name: "تذكر عنوان URL :&nbsp&nbsp<span style='font-size:large'>ctool.me</span>"
+    link: "/"
+  - name: "<span style='color:blue'>مخفضة!></span>"
+  - name: "أزيز"
+    link: "https://click.dji.com/AL-LSUOcsiUUt2UUzOSh?as=0003&ch=ctool&pm=custom"
+  - name: الأمازون
+    type: menu
+    links:
+      - name: الولايات المتحدة
+        link: "https://amzn.to/2NBHhN7"
+      - name: اليابان
+        link: "https://amzn.to/2N0KGzS"
+      - name: ألمانيا
+        link: "https://amzn.to/2zoRl3e"
+      - name: المملكة المتحدة
+        link: "https://amzn.to/2zodOgB"
+      - name: الهند
+        link: "https://amzn.to/2xAksiw"
+      - name: فرنسا
+        link: "https://amzn.to/2NBHpfz"
+      - name: إيطاليا
+        link: "https://amzn.to/2zoRwvq"
+      - name: إسبانيا
+        link: "https://amzn.to/2O4YeyF"
+      - name: كندا
+        link: "https://amzn.to/2xAksiw"
+      - name: الصين
+        link: "https://www.amazon.cn/?tag=znrio-23"
+      - name: البرازيل
+        link: "https://amzn.to/2xKqLiP"
+      - name: أستراليا
+        link: "https://amzn.to/2DotW60"
+      - name: المكسيك
+        link: "https://www.amazon.com.mx/"
+  - name: ايباي 1
+    type: menu
+    links:
+      - name: الولايات المتحدة
+        link: "https://www.ebay.com/"
+      - name: المملكة المتحدة
+        link: "https://www.ebay.co.uk/"
+      - name: ألمانيا
+        link: "https://www.ebay.de/"
+      - name: أستراليا
+        link: "https://www.ebay.com.au/"
+      - name: إيطاليا
+        link: "https://www.ebay.it/"
+      - name: فرنسا
+        link: "https://www.ebay.fr/"
+      - name: إسبانيا
+        link: "https://www.ebay.es/"
+      - name: كندا
+        link: "https://www.ebay.ca/"
+      - name: أيرلندا
+        link: "https://www.ebay.ie/"
+      - name: النمسا
+        link: "https://www.ebay.at/"
+      - name: بلجيكا
+        link: "http://www.ebay.be/"
+      - name: هولندا
+        link: "https://www.ebay.nl/"
+      - name: سويسرا
+        link: "https://www.ebay.ch/"
+  - name: ايباي 2
+    type: menu
+    links:
+      - name: تركيا
+        link: "https://www.gittigidiyor.com/"
+      - name: بولندا
+        link: "https://www.ebay.pl/"
+      - name:  هونج كونج ، الصين
+        link: "https://www.ebay.com.hk/"
+      - name: كوريا
+        link: "http://global.gmarket.co.kr/Home/Main"
+      - name: سنغافورة
+        link: "https://www.ebay.com.sg/"
+      - name: الفلبين
+        link: "https://www.ebay.ph/"
+      - name: ماليزيا
+        link: "https://www.ebay.com.my/"
+      - name: الهند
+        link: "https://www.ebay.in/"
+      - name: البر الرئيسى للصين
+        link: "https://www.ebay.cn/"
+      - name: اليابان
+        link: "https://www.ebay.co.jp/"
+      - name: تايلاند
+        link: "https://www.ebay.co.th/"
+      - name: فيتنام
+        link: "https://www.ebay.vn/"
+      - name: تايوان ، الصين
+        link: "https://www.ebay.com.tw/"
+      - name: السويد
+        link: "https://www.ebay.se/"

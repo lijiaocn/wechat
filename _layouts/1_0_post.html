@@ -1,0 +1,82 @@
+---
+layout: "0_0_layout"
+---
+
+{% include workspace_top.html type="post" id=page.channel_id nick=page.channel_name desc=page.channel_desc photo=page.channel_photo %}
+
+<div style="width: 100%; text-align: center">
+    <h1 style="text-align: center">{{ page.title }}</h1>
+    <p style="text-align: center"><span>发布日期：{{ page.createtime }}</span></p>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- kankan_post_top -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="8060913530"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="article">
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+        {% if page.previous_in_category %}
+        <li class="previous">
+            <a href="{{ page.previous_in_category.url }}">前一篇</a>
+        </li>
+        {% endif %}
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            {% assign clink = page.channel_id | prepend: 'categories/' | prepend: site.baseurl | replace: '//','/' %}
+            {% assign tlink = page.tags[0] | prepend: 'tags/' | prepend: site.baseurl | replace: '//','/' %}
+            <span><a href="{{ tlink }}">{{ page.tags[0] }}</a> / <a href="{{ clink }}">{{ page.channel_name }}</a></span>
+        </div>
+
+        {% if page.next_in_category %}
+        <li class="next">
+            <a href="{{ page.next_in_category.url }}">后一篇</a>
+        </li>
+        {% endif %}
+
+    </div>
+
+    <div>{{ content }}</div>
+
+    <div style="display:flex; flex-direction: row; justify-content: space-between">
+
+        {% if page.previous_in_category %}
+        <li class="previous">
+            <a href="{{ page.previous_in_category.url }}">前一篇</a>
+        </li>
+        {% endif %}
+
+        <div class="postinfo" style="text-align:center;color:gray">
+            {% assign clink = page.channel_id | prepend: 'categories/' | prepend: site.baseurl | replace: '//','/' %}
+            {% assign tlink = page.tags[0] | prepend: 'tags/' | prepend: site.baseurl | replace: '//','/' %}
+            <span><a href="{{ tlink }}">{{ page.tags[0] }}</a> / <a href="{{ clink }}">{{ page.channel_name }}</a></span>
+        </div>
+
+        {% if page.next_in_category %}
+        <li class="next">
+            <a href="{{ page.next_in_category.url }}">后一篇</a>
+        </li>
+        {% endif %}
+
+    </div>
+</div>
+
+<div style="width: 100%; text-align: center">
+    <!-- 匹配内容-lijiaocn -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="autorelaxed"
+         data-ad-client="ca-pub-8176866190626448"
+         data-ad-slot="6443696990"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>

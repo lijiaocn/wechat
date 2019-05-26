@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ page.language }}">
+<head>
+{% include head_basic.html %}
+
+{% for item in layout.styles %}
+<link href="{{ site.baseurl }}{{ item }}" rel="stylesheet"/>
+{% endfor %}
+
+{% for item in page.styles %}
+<link href="{{ site.baseurl }}{{ item }}" rel="stylesheet"/>
+{% endfor %}
+
+</head>
+
+<body class="body">
+    <div class="top">
+            {% include top_banner.html %}
+    </div>
+    <div class="center">
+        <div class="leftbar">
+            <nav id="nav" class="nav" >
+            {% include nav_category.html class="menu"%}
+            </nav>
+        </div>
+        <div class="workspace">
+            {{ content }}
+        </div>
+    </div>
+    <!--div class="bottom">
+            {% include bottom_foot.html %}
+    </div-->
+    <script src="{{ site.baseurl }}/assets/js/js.js" charset="utf-8"></script>
+    {% for item in layout.scripts %}
+    <script src="{{ item }}" defer></script>
+    {% endfor %}
+
+    {% for item in page.scripts %}
+    <script src="{{ item }}" defer></script>
+    {% endfor %}
+</body>
+</html>

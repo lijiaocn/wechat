@@ -1,0 +1,46 @@
+div.postlist p {
+    line-height:130%;
+    padding-top:5px;
+    padding-left:0px
+}
+
+div.postlist h3 {
+    font-size:20px;
+    font-family: "宋体";
+    color:black;
+    padding: 0px;
+    background-color: white;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+div.postlist h3 a {
+    color: #000000;
+}
+
+div.postinfo p {
+    font-size:13px;
+    padding-top:0px;
+    padding-left:3px
+}
+
+div.postdesc p {
+    padding-top:0px;
+    padding-left:1px;
+    color: #888;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top-color: currentcolor;
+    border-top-style: none;
+    border-top-width: 0px;
+    border-top: 1px solid #eee;
+    border-top-color: rgb(238, 238, 238);
+    border-top-style: solid;
+    border-top-width: 1px;
+}

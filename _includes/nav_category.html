@@ -1,0 +1,44 @@
+{%- comment -%}
+Include vars:
+        class
+{%- endcomment -%}
+
+{% assign cates = site.data.categories %}
+
+<!--details class="{{ include.class }}" open onmouseover="opendetail(this)" -->
+<!--details class="{{ include.class }}"-->
+<!--details class="{{ include.class }}" open onmouseover="opendetail(this)" -->
+<details class="{{ include.class }}" open>
+    <summary>鼹鼠看看</summary>
+    <ul>
+        <li>
+            {% assign link = '/news' | prepend: site.baseurl | replace: '//','/' %}
+            <a href="{{ link }}" {% if page.url contains link %} style="color:white;" {% endif %}>全站最新</a>
+        </li>
+        <li>
+            {% assign link = '/about' | prepend: site.baseurl | replace: '//','/' %}
+            <a href="{{ link }}" {% if page.url contains link %} style="color:white;" {% endif %}>本站服务</a>
+        </li>
+        <li>
+            {% assign link = site.baseurl | replace: '//','/' %}
+            <a href="{{ site.baseurl }}">鼹鼠首页</a>
+        </li>
+    </ul>
+</details>
+{% for cate in cates %}
+<details class="{{ include.class }}" open>
+    <summary>{{ cate.name }}</summary>
+    <ul>
+        <li>
+            {% assign link = "/tags/" |append: cate.id %}
+            <a href="{{ link | prepend: site.baseurl | replace: '//','/' }}" {% if page.url contains link %} style="color:white;" {% endif %}>最近更新</a>
+        </li>
+        {% for channel in cate.channels %}
+        <li>
+            {% assign link = "/categories/" |append: channel.id %}
+            <a href="{{ link | prepend: site.baseurl | replace: '//','/' }}" {% if page.url contains link or channel.name == page.channel_name %} style="color:white;" {% endif %}>{{ channel.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</details>
+{% endfor %}

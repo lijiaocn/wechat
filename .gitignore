@@ -1,0 +1,8 @@
+_output
+*.iml
+.idea/
+*.swp
+*.pyc
+_site/
+.sass-cache/
+img

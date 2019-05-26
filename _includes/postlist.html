@@ -1,0 +1,17 @@
+{%- comment -%}
+Include vars:
+        posts
+{%- endcomment -%}
+
+<div class="postlist">
+    {% for post in include.posts %}
+      <h3><a href="{{ site.baseurl }}{{ post.url }}"> {{ post.title }}</a></h3>
+      <div class="postinfo">
+        <p><span>{{ post.channel_name }} / {{ post.channel_id}} / {{ post.createtime }}</span></p>
+      </div>
+      <div class="postdesc">
+        <p>{{ post.description }}...<a href="{{ site.baseurl }}{{ post.url }}">more</a></p>
+      </div>
+      <hr>
+    {% endfor %}
+</div>
